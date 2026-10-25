@@ -4,6 +4,7 @@ import {
   PRIMARY_CTA,
   isNavItemActive,
 } from "@/constants/navigation";
+import Drawer from "@/components/shared/Drawer";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -59,7 +60,7 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <div class="flex md:hidden items-center shrink-0">
-      <slot name="mobile-menu" />
+      <Drawer currentPath={currentPath} client:media="(max-width: 768px)" />
     </div>
   </div>
 </header>
