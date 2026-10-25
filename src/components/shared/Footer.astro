@@ -1,0 +1,116 @@
+---
+import { SECTION_CONTACTS } from "@/constants/contacts";
+
+const {
+  organizationName,
+  taxId,
+  address,
+  openingHours,
+  phones,
+  email,
+  social,
+  author,
+} = SECTION_CONTACTS;
+
+const primaryHours = openingHours[0];
+---
+
+<footer class="bg-[#004b97] text-white border-t border-blue-900/40 pt-14 pb-10 sm:pt-16 sm:pb-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <a
+      href="/"
+      aria-label={`${organizationName} - Torna alla Home`}
+      class="inline-block mb-4 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-referee-gold"
+    >
+      <img
+        src="/favicon.svg"
+        alt={organizationName}
+        width="80"
+        height="80"
+        loading="lazy"
+        decoding="async"
+        class="h-16 w-16 sm:h-20 sm:w-20 mx-auto object-contain"
+      />
+    </a>
+
+    <p class="font-heading font-bold text-lg sm:text-xl text-white tracking-tight">
+      {organizationName}
+    </p>
+
+    <address class="not-italic font-sans text-xs sm:text-sm text-blue-100/90 leading-relaxed max-w-2xl mx-auto mt-2.5 space-y-1.5">
+      <p class="tabular-nums">
+        <span>{address.street} - {address.postalCode} {address.city}</span>
+        <span class="mx-1.5 text-blue-300/60" aria-hidden="true">—</span>
+        <span>
+          Tel. e Fax{" "}
+          <a
+            href={`tel:${phones.landline}`}
+            class="text-white hover:text-referee-gold hover:underline underline-offset-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-referee-gold"
+          >
+            {phones.landlineDisplay}
+          </a>
+        </span>
+        <span class="mx-1.5 text-blue-300/60" aria-hidden="true">—</span>
+        <span>C.F./P.IVA {taxId}</span>
+      </p>
+
+      <p class="tabular-nums">
+        <span>
+          Cell.{" "}
+          <a
+            href={`tel:${phones.mobile}`}
+            class="text-white hover:text-referee-gold hover:underline underline-offset-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-referee-gold"
+          >
+            {phones.mobileDisplay}
+          </a>
+        </span>
+        <span class="mx-1.5 text-blue-300/60" aria-hidden="true">·</span>
+        <span>
+          Email:{" "}
+          <a
+            href={`mailto:${email}`}
+            class="text-white hover:text-referee-gold hover:underline underline-offset-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-referee-gold"
+          >
+            {email}
+          </a>
+        </span>
+        {primaryHours && (
+          <>
+            <span class="mx-1.5 text-blue-300/60" aria-hidden="true">·</span>
+            <span>
+              Segreteria: {primaryHours.day} ore {primaryHours.hours}
+            </span>
+          </>
+        )}
+      </p>
+    </address>
+
+    <div class="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 font-sans text-xs sm:text-sm text-blue-100/90">
+      {social.channels.map((channel) => (
+        <a
+          href={channel.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 text-blue-100/90 hover:text-referee-gold transition-colors duration-200 py-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-referee-gold"
+        >
+          <span class="text-blue-200/90 font-medium">{channel.label}:</span>
+          <span class="text-white hover:underline underline-offset-4">{channel.handle}</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="font-sans text-xs sm:text-sm text-blue-200/80 mt-6 pt-4 border-t border-blue-800/60 max-w-xl mx-auto">
+      <p>
+        Sito web realizzato da{" "}
+        <a
+          href={author.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-white hover:text-referee-gold hover:underline underline-offset-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-referee-gold"
+        >
+          {author.name}
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
