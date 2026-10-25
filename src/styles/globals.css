@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+@import "@fontsource/poppins/800.css";
+
+@import "@fontsource/lato/400.css";
+@import "@fontsource/lato/700.css";
+
+@theme {
+  --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --color-surface-bg: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-surface-card: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-surface-border: #e2e8f0;
+  --color-surface-border-subtle: #f1f5f9;
+
+  --color-text-main: #0f172a;
+  --color-text-body: #334155;
+  --color-text-muted: #64748b;
+
+  --color-figc-blue: #004b97;
+  --color-referee-gold: #b45309;
+  --color-referee-yellow: #ca8a04;
+  --color-referee-red: #dc2626;
+  --color-referee-green: #059669;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-surface-bg);
+    color: var(--color-text-body);
+    font-family: var(--font-sans);
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-surface-bg);
+    color: var(--color-text-body);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text-main);
+  }
+}
