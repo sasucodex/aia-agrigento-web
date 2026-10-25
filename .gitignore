@@ -1,0 +1,30 @@
+# build output
+dist/
+.vercel/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# internal docs
+.agents/
+docs/
+
+# legacy backup
+0ld/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# OS & IDE files
+.DS_Store
+.idea/
