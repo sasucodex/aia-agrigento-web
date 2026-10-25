@@ -1,0 +1,130 @@
+{
+  "designations": [
+    {
+      "id": "can-a",
+      "title": "C.A.N. A",
+      "url": "https://www.aia-figc.it/designazioni/cana/",
+      "column": 1
+    },
+    {
+      "id": "can-b",
+      "title": "C.A.N. B",
+      "url": "https://www.aia-figc.it/designazioni/canb/",
+      "column": 2
+    },
+    {
+      "id": "can-c",
+      "title": "C.A.N. C",
+      "url": "https://www.aia-figc.it/designazioni/canc/",
+      "column": 3
+    },
+    {
+      "id": "can-d",
+      "title": "C.A.N. D",
+      "url": "https://www.aia-figc.it/designazioni/cand/",
+      "column": 1
+    },
+    {
+      "id": "cai",
+      "title": "C.A.I.",
+      "url": "https://www.aia-figc.it/designazioni/cai/",
+      "column": 2
+    },
+    {
+      "id": "can-5",
+      "title": "C.A.N. 5",
+      "url": "https://www.aia-figc.it/designazioni/can5/",
+      "column": 3
+    },
+    {
+      "id": "can-bs",
+      "title": "C.A.N. BS",
+      "url": "https://www.aia-figc.it/designazioni/canbs/",
+      "column": 1
+    },
+    {
+      "id": "cra-sicilia",
+      "title": "C.R.A. Sicilia",
+      "url": "https://www.aia-figc.it/designazioni/sicilia/",
+      "column": 2
+    },
+    {
+      "id": "ots-agrigento",
+      "title": "O.T.S. Agrigento",
+      "url": "https://www.aia-figc.it/designazioni/sicilia/default.asp?gare=18-450",
+      "column": 3
+    }
+  ],
+  "officialBulletins": [
+    {
+      "id": "lega-serie-a",
+      "title": "Lega Serie A",
+      "url": "https://www.legaseriea.it/lega-serie-a/documentazione",
+      "column": 1
+    },
+    {
+      "id": "lega-serie-b",
+      "title": "Lega Serie B",
+      "url": "https://www.legab.it/documentazione",
+      "column": 2
+    },
+    {
+      "id": "lega-serie-c",
+      "title": "Lega Serie C",
+      "url": "https://www.seriec.com/documentazione",
+      "column": 3
+    },
+    {
+      "id": "lnd-serie-d",
+      "title": "L.N.D. Serie D",
+      "url": "https://lnd.it/seried/comunicati/",
+      "column": 1
+    },
+    {
+      "id": "lnd-sicilia",
+      "title": "L.N.D. Sicilia",
+      "url": "https://sicilia.lnd.it/archivio/comunicati/all",
+      "column": 2
+    },
+    {
+      "id": "lnd-agrigento",
+      "title": "L.N.D. Agrigento",
+      "url": "https://sicilia.lnd.it/archivio/comunicati/all?cm=2",
+      "column": 3
+    }
+  ],
+  "aiaLinks": [
+    {
+      "id": "aia-figc",
+      "title": "AIA FIGC",
+      "url": "https://www.aia-figc.it/",
+      "column": 1
+    },
+    {
+      "id": "cra-sicilia-portale",
+      "title": "C.R.A. Sicilia",
+      "url": "https://www.crasicilia.it/",
+      "column": 2
+    },
+    {
+      "id": "sezioni-sicilia",
+      "title": "Sezioni Sicilia",
+      "url": "https://www.aia-figc.it/associazione/sezioni/sicilia/",
+      "column": 3
+    }
+  ],
+  "socials": [
+    {
+      "id": "instagram",
+      "platform": "Instagram",
+      "handle": "@aia_agrigento",
+      "url": "https://www.instagram.com/aia_agrigento/"
+    },
+    {
+      "id": "facebook",
+      "platform": "Facebook",
+      "handle": "AIA Agrigento",
+      "url": "https://www.facebook.com/aiaagrigento"
+    }
+  ]
+}

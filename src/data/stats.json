@@ -1,0 +1,32 @@
+{
+  "membersCount": "150+",
+  "historyYears": "75+",
+  "nationalReferees": "11",
+  "nationalAwards": "1",
+  "items": [
+    {
+      "id": "members",
+      "value": "150+",
+      "label": "Associati",
+      "sublabel": "Tra arbitri, assistenti e osservatori"
+    },
+    {
+      "id": "history",
+      "value": "75+",
+      "label": "Anni di storia",
+      "sublabel": "Sezione fondata nel 1950"
+    },
+    {
+      "id": "national-referees",
+      "value": "11",
+      "label": "Arbitri nazionali",
+      "sublabel": "Impegnati in CAN, CAN 5 e CON"
+    },
+    {
+      "id": "national-awards",
+      "value": "1",
+      "label": "Premio Nazionale",
+      "sublabel": "Dedicato al Giudice Beato Rosario Livatino"
+    }
+  ]
+}
