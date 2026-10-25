@@ -1,6 +1,7 @@
 ---
 import "@/styles/globals.css";
 import SEO, { type Props as SEOProps } from "@/components/shared/SEO.astro";
+import Header from "@/components/shared/Header.astro";
 
 import poppinsBoldWoff2 from "@fontsource/poppins/files/poppins-latin-700-normal.woff2?url";
 import poppinsExtraBoldWoff2 from "@fontsource/poppins/files/poppins-latin-800-normal.woff2?url";
@@ -54,7 +55,9 @@ const { bodyClass = "", mainClass = "", ...seoProps } = Astro.props;
       Salta al contenuto principale
     </a>
 
-    <slot name="header" />
+    <slot name="header">
+      <Header />
+    </slot>
 
     <main
       id="main-content"

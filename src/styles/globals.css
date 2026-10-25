@@ -25,10 +25,10 @@
   --color-text-muted: #64748b;
 
   --color-figc-blue: #004b97;
-  --color-referee-gold: #b45309;
-  --color-referee-yellow: #ca8a04;
-  --color-referee-red: #dc2626;
-  --color-referee-green: #059669;
+  --color-referee-gold: #caa866;
+  --color-referee-yellow: #ece602;
+  --color-referee-red: #f80000;
+  --color-referee-green: #059835;
 }
 
 @layer base {

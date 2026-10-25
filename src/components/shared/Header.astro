@@ -1,0 +1,65 @@
+---
+import {
+  MAIN_NAV_ITEMS,
+  PRIMARY_CTA,
+  isNavItemActive,
+} from "@/constants/navigation";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 w-full bg-[#004b97] border-b border-blue-900/40 shadow-xs">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between gap-4">
+    <a
+      href="/"
+      aria-label="AIA Agrigento - Torna alla Home"
+      class="inline-flex items-center shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-referee-gold rounded-full"
+    >
+      <img
+        src="/favicon.svg"
+        alt="Associazione Italiana Arbitri - Sezione di Agrigento"
+        width="80"
+        height="80"
+        loading="eager"
+        decoding="async"
+        class="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+      />
+    </a>
+
+    <div class="hidden md:flex items-center gap-3 lg:gap-5">
+      <nav
+        aria-label="Navigazione principale"
+        class="flex items-center gap-1 lg:gap-1.5"
+      >
+        {MAIN_NAV_ITEMS.map((item) => {
+          const active = isNavItemActive(currentPath, item);
+          return (
+            <a
+              href={item.href}
+              aria-current={active ? "page" : undefined}
+              class:list={[
+                "relative font-heading text-sm tracking-wide py-2 px-2.5 lg:px-3 transition-colors duration-200 whitespace-nowrap rounded-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-referee-gold",
+                active
+                  ? "font-bold text-white after:absolute after:bottom-0.5 after:left-2.5 after:right-2.5 lg:after:left-3 lg:after:right-3 after:h-[2px] after:bg-referee-gold after:rounded-full"
+                  : "font-medium text-white/90 hover:text-white",
+              ]}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <a
+        href={PRIMARY_CTA.href}
+        class="inline-flex items-center justify-center bg-referee-gold hover:brightness-95 active:scale-[0.98] text-slate-950 font-heading font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-sm shadow-xs transition-all duration-200 whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+      >
+        {PRIMARY_CTA.label}
+      </a>
+    </div>
+
+    <div class="flex md:hidden items-center shrink-0">
+      <slot name="mobile-menu" />
+    </div>
+  </div>
+</header>
