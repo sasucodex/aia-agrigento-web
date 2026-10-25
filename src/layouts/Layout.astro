@@ -1,0 +1,69 @@
+---
+import "@/styles/globals.css";
+import SEO, { type Props as SEOProps } from "@/components/shared/SEO.astro";
+
+import poppinsBoldWoff2 from "@fontsource/poppins/files/poppins-latin-700-normal.woff2?url";
+import poppinsExtraBoldWoff2 from "@fontsource/poppins/files/poppins-latin-800-normal.woff2?url";
+import latoRegularWoff2 from "@fontsource/lato/files/lato-latin-400-normal.woff2?url";
+
+export interface Props extends SEOProps {
+  bodyClass?: string;
+  mainClass?: string;
+}
+
+const { bodyClass = "", mainClass = "", ...seoProps } = Astro.props;
+---
+
+<!doctype html>
+<html lang="it" class="scroll-smooth bg-white text-slate-700">
+  <head>
+    <SEO {...seoProps} />
+    <link
+      rel="preload"
+      href={poppinsBoldWoff2}
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href={poppinsExtraBoldWoff2}
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href={latoRegularWoff2}
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <slot name="head" />
+  </head>
+  <body
+    class:list={[
+      "min-h-screen flex flex-col bg-white text-slate-700 font-sans antialiased selection:bg-amber-500/20 selection:text-slate-900",
+      bodyClass,
+    ]}
+  >
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:inline-block focus:rounded-sm focus:bg-amber-500 focus:px-4 focus:py-2.5 focus:font-heading focus:text-xs focus:font-bold focus:uppercase focus:tracking-wider focus:text-slate-950 focus:shadow-md focus:outline-2 focus:outline-offset-2 focus:outline-[#004b97]"
+    >
+      Salta al contenuto principale
+    </a>
+
+    <slot name="header" />
+
+    <main
+      id="main-content"
+      tabindex="-1"
+      class:list={["flex-1 focus:outline-none", mainClass]}
+    >
+      <slot />
+    </main>
+
+    <slot name="footer" />
+  </body>
+</html>

@@ -1,19 +1,20 @@
 ---
-import "@/styles/globals.css";
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<!doctype html>
-<html lang="it">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AIA Agrigento | Associazione Italiana Arbitri - Sezione di Agrigento</title>
-  </head>
-  <body class="bg-white text-slate-900 font-sans">
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 class="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-        AIA Agrigento
-      </h1>
-    </main>
-  </body>
-</html>
+<Layout
+  title="AIA Agrigento | Associazione Italiana Arbitri - Sezione di Agrigento"
+  description="Sito ufficiale dell'Associazione Italiana Arbitri (AIA) - Sezione di Agrigento FIGC. Oltre 75 anni di storia arbitrale, corsi arbitri gratuiti, designazioni, organico e il Premio Nazionale Rosario Livatino."
+>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <p class="font-heading text-xs font-semibold uppercase tracking-widest text-amber-700 mb-3">
+      Sezione di Agrigento — F.I.G.C.
+    </p>
+    <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.1] text-balance">
+      Associazione Italiana Arbitri
+    </h1>
+    <p class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-pretty max-w-prose mt-4">
+      Sito istituzionale della Sezione AIA di Agrigento, fondata nel 1950.
+    </p>
+  </section>
+</Layout>
