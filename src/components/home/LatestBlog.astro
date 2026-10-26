@@ -1,0 +1,45 @@
+---
+import BlogCard from "@/components/home/BlogCard.astro";
+import { getLatestArticles } from "@/lib/utils/news";
+import type { Article } from "@/types/news";
+
+export interface Props {
+  articles?: Article[];
+  limit?: number;
+}
+
+const { limit = 3, articles = getLatestArticles(limit) } = Astro.props;
+---
+
+<section
+  aria-labelledby="latest-blog-heading"
+  class="bg-white pt-10 sm:pt-14 pb-12 sm:pb-16"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+      <div class="h-[2px] bg-figc-blue flex-1" aria-hidden="true"></div>
+      <h2
+        id="latest-blog-heading"
+        class="font-heading font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap"
+      >
+        Ultimi articoli
+      </h2>
+      <div class="h-[2px] bg-figc-blue flex-1" aria-hidden="true"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      {articles.map((article) => (
+        <BlogCard article={article} />
+      ))}
+    </div>
+
+    <div class="mt-8 sm:mt-10 flex justify-center">
+      <a
+        href="/blog"
+        class="w-full sm:w-auto inline-flex items-center justify-center font-heading font-bold text-xs sm:text-sm text-slate-900 border-2 border-slate-900 hover:bg-slate-900 hover:text-white active:scale-[0.98] px-6 py-3.5 min-h-[48px] rounded-sm transition-all duration-200 uppercase tracking-wider focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-figc-blue"
+      >
+        Guarda il blog completo
+      </a>
+    </div>
+  </div>
+</section>

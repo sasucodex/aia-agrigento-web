@@ -1,0 +1,142 @@
+---
+import { ArrowUpRight } from "lucide-react";
+import { getLinksData } from "@/lib/utils/links";
+import type { LinksDataset, ServiceLinkItem } from "@/types/links";
+
+export interface Props {
+  data?: LinksDataset;
+}
+
+const { data = getLinksData() } = Astro.props;
+const { designations, officialBulletins, aiaLinks, socials } = data;
+
+interface LinkGroupSection {
+  id: string;
+  title: string;
+  items: ServiceLinkItem[];
+}
+
+const linkSections: LinkGroupSection[] = [
+  {
+    id: "designazioni-heading",
+    title: "Designazioni Arbitri",
+    items: designations,
+  },
+  {
+    id: "comunicati-heading",
+    title: "Comunicati Ufficiali",
+    items: officialBulletins,
+  },
+  {
+    id: "link-aia-heading",
+    title: "Link A.I.A.",
+    items: aiaLinks,
+  },
+];
+---
+
+<div class="bg-slate-50 border-t border-slate-200/80 py-14 sm:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-16">
+    {linkSections.map((section) => (
+      <section aria-labelledby={section.id}>
+        <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+          <div class="h-[2px] bg-figc-blue flex-1" aria-hidden="true"></div>
+          <h2
+            id={section.id}
+            class="font-heading font-bold text-xl sm:text-2xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap"
+          >
+            {section.title}
+          </h2>
+          <div class="h-[2px] bg-figc-blue flex-1" aria-hidden="true"></div>
+        </div>
+
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-y-1 sm:gap-y-2 gap-x-8 max-w-5xl mx-auto">
+          {section.items.map((item) => (
+            <li>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group font-heading font-semibold text-sm sm:text-base text-slate-800 hover:text-figc-blue transition-colors duration-200 flex items-center justify-between py-2.5 min-h-[48px] border-b border-slate-200/80 hover:border-figc-blue/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-figc-blue"
+              >
+                <span>{item.title}</span>
+                <ArrowUpRight
+                  className="w-4 h-4 shrink-0 text-slate-400 group-hover:text-figc-blue transition-colors duration-200"
+                  aria-hidden="true"
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <section aria-labelledby="social-heading">
+      <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <div class="h-[2px] bg-figc-blue flex-1" aria-hidden="true"></div>
+        <h2
+          id="social-heading"
+          class="font-heading font-bold text-xl sm:text-2xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap"
+        >
+          Seguici sui social
+        </h2>
+        <div class="h-[2px] bg-figc-blue flex-1" aria-hidden="true"></div>
+      </div>
+
+      <div class="max-w-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-6">
+        {socials.map((social) => (
+          <a
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center justify-between gap-3 py-3.5 px-5 min-h-[52px] rounded-sm border border-slate-200 bg-white shadow-xs hover:border-figc-blue/40 hover:shadow-sm transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-figc-blue"
+          >
+            <div class="flex items-center gap-3.5 min-w-0">
+              {social.platform === "Instagram" ? (
+                <svg
+                  class="w-5 h-5 shrink-0 text-figc-blue"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              ) : (
+                <svg
+                  class="w-5 h-5 shrink-0 text-figc-blue"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              )}
+              <div class="min-w-0 text-left">
+                <span class="block font-heading font-semibold text-sm text-slate-900 group-hover:text-figc-blue transition-colors">
+                  {social.platform}
+                </span>
+                <span class="block font-sans text-xs text-slate-600 truncate">
+                  {social.handle}
+                </span>
+              </div>
+            </div>
+            <ArrowUpRight
+              className="w-4 h-4 shrink-0 text-slate-400 group-hover:text-figc-blue transition-colors duration-200"
+              aria-hidden="true"
+            />
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</div>

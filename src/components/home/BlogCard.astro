@@ -1,0 +1,56 @@
+---
+import { formatDateItalian } from "@/lib/utils/date";
+import { getCleanExcerpt } from "@/lib/utils/news";
+import type { Article } from "@/types/news";
+
+export interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+const formattedDate = formatDateItalian(article.pubDate);
+const excerpt = getCleanExcerpt(article, 26);
+const imageSrc = article.image || "/images/blog/fallback-news.webp";
+const articleUrl = `/blog/${article.slug}`;
+---
+
+<article class="group relative bg-white border border-slate-200 rounded-sm shadow-xs overflow-hidden hover:border-figc-blue/40 hover:shadow-sm transition-all duration-200 flex flex-col h-full">
+  <div class="relative aspect-[16/10] w-full bg-slate-100 overflow-hidden border-b border-slate-100">
+    <img
+      src={imageSrc}
+      alt={article.title}
+      width="640"
+      height="400"
+      loading="lazy"
+      decoding="async"
+      class="aspect-[16/10] w-full h-full object-cover rounded-t-sm"
+    />
+  </div>
+
+  <div class="p-5 sm:p-6 flex-1 flex flex-col">
+    <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+      <span class="font-heading text-xs font-semibold uppercase tracking-wider text-figc-blue">
+        {article.category}
+      </span>
+      <time
+        datetime={article.pubDate}
+        class="font-sans text-xs text-slate-500 tabular-nums"
+      >
+        {formattedDate}
+      </time>
+    </div>
+
+    <h3 class="font-heading font-bold text-lg text-slate-900 leading-snug line-clamp-2 group-hover:text-figc-blue transition-colors">
+      <a
+        href={articleUrl}
+        class="after:absolute after:inset-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-figc-blue"
+      >
+        {article.title}
+      </a>
+    </h3>
+
+    <p class="font-sans text-sm text-slate-700 line-clamp-3 leading-relaxed mt-2.5 text-pretty">
+      {excerpt}
+    </p>
+  </div>
+</article>
