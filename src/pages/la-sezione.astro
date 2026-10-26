@@ -1,0 +1,55 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import StoriaIntro from "@/components/sezione/StoriaIntro.astro";
+import AlboPresidenti from "@/components/sezione/AlboPresidenti.astro";
+import ConsiglioDirettivo from "@/components/sezione/ConsiglioDirettivo.astro";
+import { getBoardMembers, getBoardPresident } from "@/lib/utils/members";
+import { getPresidents } from "@/lib/utils/presidents";
+import heroRaduno from "@/assets/images/hero-raduno.jpg";
+
+const president = getBoardPresident();
+const boardMembers = getBoardMembers();
+const presidents = getPresidents();
+const founder = presidents.find((p) => p.isFounder);
+
+const sectionJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "@id": "https://aiaagrigento.it/#organization",
+  name: "Associazione Italiana Arbitri - Sezione di Agrigento",
+  foundingDate: "1950",
+  ...(founder && {
+    founder: {
+      "@type": "Person",
+      name: founder.name,
+    },
+  }),
+  ...(president && {
+    employee: {
+      "@type": "Person",
+      name: president.name,
+      jobTitle: president.role,
+    },
+  }),
+  member: boardMembers.map((member) => ({
+    "@type": "OrganizationRole",
+    roleName: member.role,
+    member: {
+      "@type": "Person",
+      name: member.name,
+    },
+  })),
+};
+---
+
+<Layout
+  title="La Sezione | AIA Sezione di Agrigento FIGC"
+  description="Scopri la storia dell'AIA Sezione di Agrigento dal 1950, l'albo storico dei presidenti e l'organigramma del Consiglio Direttivo Sezionale per la stagione 2026/2027."
+  image={heroRaduno.src}
+  imageAlt="Consiglio Direttivo e Associati della Sezione AIA di Agrigento"
+  jsonLd={sectionJsonLd}
+>
+  <StoriaIntro />
+  <AlboPresidenti />
+  <ConsiglioDirettivo />
+</Layout>

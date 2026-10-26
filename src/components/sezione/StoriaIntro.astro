@@ -1,0 +1,60 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  title = "La Sezione",
+  description = "Fondata su iniziativa di Pietro Arancio, la Sezione accompagna da oltre sette decenni generazioni di giovani sui campi di tutta Italia. L'intero percorso, con i documenti d'epoca e i verbali storici, è raccolto nel volume celebrativo ufficiale.",
+  ctaLabel = "Leggi la storia della Sezione (PDF)",
+  ctaHref = "/documents/libro-70-anni-aia-agrigento.pdf",
+} = Astro.props;
+---
+
+<section
+  aria-labelledby="storia-intro-heading"
+  class="bg-white border-b border-slate-100"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 text-center">
+    <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+      <div class="h-[2px] bg-[#004b97] flex-1" aria-hidden="true"></div>
+      <h1
+        id="storia-intro-heading"
+        class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap uppercase"
+      >
+        {title}
+      </h1>
+      <div class="h-[2px] bg-[#004b97] flex-1" aria-hidden="true"></div>
+    </div>
+
+    <p class="font-sans text-base sm:text-lg text-slate-700 leading-relaxed text-pretty max-w-prose mx-auto mb-8">
+      {description}
+    </p>
+
+    <a
+      href={ctaHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 bg-referee-gold hover:brightness-95 active:scale-[0.98] text-slate-950 font-heading font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3.5 rounded-sm shadow-xs transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+    >
+      <span>{ctaLabel}</span>
+      <svg
+        class="w-4 h-4 shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+        />
+      </svg>
+    </a>
+  </div>
+</section>

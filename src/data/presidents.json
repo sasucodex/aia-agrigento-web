@@ -1,0 +1,81 @@
+[
+  {
+    "id": "arancio-pietro",
+    "name": "Pietro Arancio",
+    "electedYear": "1949",
+    "mandate": "Dal 16/10/1949",
+    "image": "/images/albo-presidenti/arancio.jpg",
+    "isFounder": true
+  },
+  {
+    "id": "mangione-empedocle",
+    "name": "Empedocle Mangione",
+    "electedYear": "1961",
+    "mandate": "Dal 01/07/1961",
+    "image": "/images/albo-presidenti/mangione.jpg"
+  },
+  {
+    "id": "bennici-carmelo",
+    "name": "Carmelo Bennici",
+    "electedYear": "1963",
+    "mandate": "Dal 01/07/1963",
+    "image": "/images/albo-presidenti/bennicic.jpg"
+  },
+  {
+    "id": "marongiu-gaetano",
+    "name": "Gaetano Marongiu",
+    "electedYear": "1988",
+    "mandate": "Dal 01/07/1988",
+    "image": "/images/albo-presidenti/marongiu.jpg"
+  },
+  {
+    "id": "montalbano-giuseppe",
+    "name": "Giuseppe Montalbano",
+    "electedYear": "1994",
+    "mandate": "Dal 01/07/1994",
+    "image": "/images/albo-presidenti/montalbano.jpg"
+  },
+  {
+    "id": "fuca-salvatore",
+    "name": "Salvatore Fucà",
+    "electedYear": "1996",
+    "mandate": "Dal 01/11/1996",
+    "image": "/images/albo-presidenti/fuca.jpg"
+  },
+  {
+    "id": "contino-salvatore",
+    "name": "Salvatore Contino",
+    "electedYear": "2000",
+    "mandate": "Dal 25/10/2000",
+    "image": "/images/albo-presidenti/contino.jpg"
+  },
+  {
+    "id": "salvaggio-armando",
+    "name": "Armando Salvaggio",
+    "electedYear": "2006",
+    "mandate": "Dal 10/11/2006",
+    "image": "/images/albo-presidenti/salvaggio.jpg"
+  },
+  {
+    "id": "arena-calogero",
+    "name": "Calogero Arena",
+    "electedYear": "2012",
+    "mandate": "Dal 20/05/2012",
+    "image": "/images/albo-presidenti/arena.jpg"
+  },
+  {
+    "id": "lo-giudice-antonio",
+    "name": "Antonio Lo Giudice",
+    "electedYear": "2014",
+    "mandate": "Dal 16/04/2014",
+    "image": "/images/albo-presidenti/logiudice.jpg"
+  },
+  {
+    "id": "drago-calogero",
+    "name": "Calogero Drago",
+    "electedYear": "2017",
+    "mandate": "Dal 24/03/2017",
+    "image": "/images/albo-presidenti/dragoc.jpg",
+    "isCurrent": true
+  }
+]

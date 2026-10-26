@@ -1,0 +1,32 @@
+---
+import type { BoardMember } from "@/types/board";
+
+export interface Props {
+  member: BoardMember;
+}
+
+const { member } = Astro.props;
+---
+
+<div class="bg-white border border-slate-200 rounded-sm shadow-xs overflow-hidden text-center hover:border-slate-300 transition-colors duration-200 flex flex-col">
+  <div class="aspect-square w-full bg-slate-100 overflow-hidden relative">
+    <img
+      src={member.image}
+      alt={member.name}
+      width="600"
+      height="600"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-full object-cover object-top"
+      onerror="this.onerror=null;this.src='/images/avatar-placeholder.svg'"
+    />
+  </div>
+  <div class="p-3 sm:p-3.5 flex flex-col flex-1 justify-center">
+    <h4 class="font-heading font-bold text-xs sm:text-sm text-slate-900 tracking-tight leading-snug line-clamp-1">
+      {member.name}
+    </h4>
+    <p class="font-sans text-[11px] sm:text-xs text-slate-600 leading-normal mt-0.5 line-clamp-2">
+      {member.role}
+    </p>
+  </div>
+</div>

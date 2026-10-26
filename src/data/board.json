@@ -1,0 +1,394 @@
+[
+  {
+    "id": "drago-calogero",
+    "name": "Drago Calogero",
+    "role": "Presidente",
+    "category": "president",
+    "order": 1,
+    "image": "/images/cds/Drago-Calogero.jpg"
+  },
+  {
+    "id": "perrone-rosario",
+    "name": "Perrone Rosario",
+    "role": "Vice Presidente Vicario",
+    "category": "executive",
+    "order": 2,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "costanza-antonino",
+    "name": "Costanza Antonino",
+    "role": "Vice Presidente & OT Osservatori",
+    "category": "executive",
+    "order": 3,
+    "image": "/images/cds/Costanza-Antonino.jpg"
+  },
+  {
+    "id": "giardina-calogero",
+    "name": "Giardina Calogero",
+    "role": "Segretario (Resp. Pronto AIA)",
+    "category": "executive",
+    "order": 4,
+    "image": "/images/cds/Giardina-Calogero.jpg"
+  },
+  {
+    "id": "zambuto-sitra-salvatore",
+    "name": "Zambuto Sitra Salvatore",
+    "role": "Cassiere",
+    "category": "executive",
+    "order": 5,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "fuca-salvatore",
+    "name": "Fucà Salvatore",
+    "role": "Consigliere Uff. Presidenza",
+    "category": "executive",
+    "order": 6,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "costanza-pietro",
+    "name": "Costanza Pietro",
+    "role": "Consigliere Collab. OT Osservatori",
+    "category": "executive",
+    "order": 7,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "sicurella-giuseppe",
+    "name": "Giuseppe Sicurella",
+    "role": "O.T. C5",
+    "category": "executive",
+    "order": 8,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "cumbo-piero",
+    "name": "Cumbo Piero",
+    "role": "O.T. C11",
+    "category": "executive",
+    "order": 9,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "butera-ilaria",
+    "name": "Butera Ilaria",
+    "role": "Comp. Referee Woman",
+    "category": "executive",
+    "order": 10,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "di-gregorio-flaminia",
+    "name": "Di Gregorio Flaminia",
+    "role": "Comp. Resp. Corso Arbitri",
+    "category": "executive",
+    "order": 11,
+    "image": "/images/cds/Di Gregorio-Flaminia.jpg"
+  },
+  {
+    "id": "marino-rosario",
+    "name": "Marino Rosario",
+    "role": "Comp. Resp. Codice Etico",
+    "category": "executive",
+    "order": 12,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "di-pumpo-bernardino",
+    "name": "Di Pumpo Bernardino",
+    "role": "Consigliere Resp. Squadra C11 - C5",
+    "category": "executive",
+    "order": 13,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "bennici-pietro",
+    "name": "Bennici Pietro",
+    "role": "Responsabile atletico",
+    "category": "referent",
+    "order": 14,
+    "image": "/images/cds/Bennici-Pietro.jpg"
+  },
+  {
+    "id": "cordaro-salvatore",
+    "name": "Cordaro Salvatore",
+    "role": "Responsabile atletico",
+    "category": "referent",
+    "order": 15,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "piazza-matteo",
+    "name": "Piazza Matteo",
+    "role": "Responsabile comunicazione",
+    "category": "referent",
+    "order": 16,
+    "image": "/images/cds/Piazza-Matteo.jpg"
+  },
+  {
+    "id": "milioto-agostino",
+    "name": "Milioto Agostino",
+    "role": "Osservatorio violenza",
+    "category": "referent",
+    "order": 17,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "catalano-gaetano",
+    "name": "Catalano Gaetano",
+    "role": "Rappr. Giudice sportivo",
+    "category": "referent",
+    "order": 18,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "principato-federico",
+    "name": "Principato Federico",
+    "role": "Perfezionamento A.A.",
+    "category": "collaborator",
+    "order": 19,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "mangiapane-tommaso",
+    "name": "Mangiapane Tommaso",
+    "role": "Perfezionamento A.A.",
+    "category": "collaborator",
+    "order": 20,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "rizzo-boris-mattia",
+    "name": "Rizzo Boris Mattia",
+    "role": "Perfezionamento A.A.",
+    "category": "collaborator",
+    "order": 21,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "crapanzano-salvatore",
+    "name": "Crapanzano Salvatore",
+    "role": "Perfez. Tecnico C5",
+    "category": "collaborator",
+    "order": 22,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "giarratano-gaspare",
+    "name": "Giarratano Gaspare",
+    "role": "Perfez. C5 Prep. Atletica",
+    "category": "collaborator",
+    "order": 23,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "carita-francesco",
+    "name": "Carità Francesco",
+    "role": "Perfez. Atletico C11",
+    "category": "collaborator",
+    "order": 24,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "mandracchia-giuseppe",
+    "name": "Mandracchia Giuseppe",
+    "role": "Perfezionamento Tecnico",
+    "category": "collaborator",
+    "order": 25,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "canicatti-luigi",
+    "name": "Canicattì Luigi",
+    "role": "Perfezionamento Tecnico",
+    "category": "collaborator",
+    "order": 26,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "leone-domenico",
+    "name": "Leone Domenico",
+    "role": "Perfezionamento Tecnico",
+    "category": "collaborator",
+    "order": 27,
+    "image": "/images/cds/Leone-Domenico.jpg"
+  },
+  {
+    "id": "vivacqua-calogero",
+    "name": "Vivacqua Calogero",
+    "role": "Perfezionamento Tecnico",
+    "category": "collaborator",
+    "order": 28,
+    "image": "/images/cds/Vivacqua-Calogero.jpg"
+  },
+  {
+    "id": "lisinicchia-gabriele-salvatore",
+    "name": "Lisinicchia Gabriele Salvatore",
+    "role": "Perfezionamento Tecnico",
+    "category": "collaborator",
+    "order": 29,
+    "image": "/images/cds/Linsinicchia-Gabriele.jpg"
+  },
+  {
+    "id": "gentile-federico",
+    "name": "Gentile Federico",
+    "role": "Perfezionamento Tecnico",
+    "category": "collaborator",
+    "order": 30,
+    "image": "/images/cds/Gentile-Federico.jpg"
+  },
+  {
+    "id": "barbaro-giuseppe",
+    "name": "Barbaro Giuseppe",
+    "role": "Collaboratore OA",
+    "category": "collaborator",
+    "order": 31,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "pasciuta-domenico",
+    "name": "Pasciuta Domenico",
+    "role": "Collaboratore OA",
+    "category": "collaborator",
+    "order": 32,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "fragapane-eduardo",
+    "name": "Fragapane Eduardo",
+    "role": "Collaboratore OA",
+    "category": "collaborator",
+    "order": 33,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "galvano-carmelo",
+    "name": "Galvano Carmelo",
+    "role": "Collaboratore C5",
+    "category": "collaborator",
+    "order": 34,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "garufo-simona",
+    "name": "Garufo Simona",
+    "role": "Collab. Referee Woman",
+    "category": "collaborator",
+    "order": 35,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "coraggioso-ivana-celine",
+    "name": "Coraggioso Ivana Celine",
+    "role": "Collab. Referee Woman",
+    "category": "collaborator",
+    "order": 36,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "contino-salvatore",
+    "name": "Contino Salvatore",
+    "role": "Collab. Attività Associativa",
+    "category": "collaborator",
+    "order": 37,
+    "image": "/images/cds/Contino-Salvatore.jpg"
+  },
+  {
+    "id": "rotulo-andrea",
+    "name": "Rotulo Andrea",
+    "role": "Collab. Cassiere",
+    "category": "collaborator",
+    "order": 38,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "provenzano-luigi",
+    "name": "Provenzano Luigi",
+    "role": "Collab. Uff. Presidenza",
+    "category": "collaborator",
+    "order": 39,
+    "image": "/images/cds/Provenzano-Luigi.jpg"
+  },
+  {
+    "id": "pasciuta-fabio",
+    "name": "Pasciuta Fabio",
+    "role": "Collab. Uff. Presidenza",
+    "category": "collaborator",
+    "order": 40,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "scribani-manfredi",
+    "name": "Scribani Manfredi",
+    "role": "Collab. Corso Arbitri",
+    "category": "collaborator",
+    "order": 41,
+    "image": "/images/cds/Scribani-Manfredi.jpg"
+  },
+  {
+    "id": "bentivegna-francesco",
+    "name": "Bentivegna Francesco",
+    "role": "Collab. Corso Arbitri",
+    "category": "collaborator",
+    "order": 42,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "alaimo-calogero",
+    "name": "Alaimo Calogero",
+    "role": "Collab. Codice Etico",
+    "category": "collaborator",
+    "order": 43,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "di-vita-giuseppe",
+    "name": "Di Vita Giuseppe",
+    "role": "Collab. Segreteria",
+    "category": "collaborator",
+    "order": 44,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "milioto-calogero",
+    "name": "Milioto Calogero",
+    "role": "Collab. Segreteria",
+    "category": "collaborator",
+    "order": 45,
+    "image": "/images/cds/Milioto-Calogero.jpg"
+  },
+  {
+    "id": "frumusa-carlotta",
+    "name": "Frumusa Carlotta",
+    "role": "Collab. Segreteria",
+    "category": "collaborator",
+    "order": 46,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "fabrizio-daniele-pietro",
+    "name": "Fabrizio Daniele Pietro",
+    "role": "Collab. Comunicazione",
+    "category": "collaborator",
+    "order": 47,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "lobue-eliana",
+    "name": "Lobue Eliana",
+    "role": "Collab. Comunicazione",
+    "category": "collaborator",
+    "order": 48,
+    "image": "/images/avatar-placeholder.svg"
+  },
+  {
+    "id": "gallo-samuele",
+    "name": "Samuele Gallo",
+    "role": "Responsabile Web e Innovazione",
+    "category": "collaborator",
+    "order": 49,
+    "image": "/images/avatar-placeholder.svg"
+  }
+]

@@ -1,0 +1,99 @@
+---
+import ConsiglioCard from "@/components/sezione/ConsiglioCard.astro";
+import {
+  getBoardMembersByCategory,
+  getBoardPresident,
+} from "@/lib/utils/members";
+import type { BoardMember } from "@/types/board";
+
+export interface Props {
+  president?: BoardMember;
+  executives?: BoardMember[];
+  referents?: BoardMember[];
+  collaborators?: BoardMember[];
+}
+
+const {
+  president = getBoardPresident(),
+  executives = getBoardMembersByCategory("executive"),
+  referents = getBoardMembersByCategory("referent"),
+  collaborators = getBoardMembersByCategory("collaborator"),
+} = Astro.props;
+---
+
+<section
+  aria-labelledby="consiglio-direttivo-heading"
+  class="bg-white"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <div class="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+      <div class="h-[2px] bg-[#004b97] flex-1" aria-hidden="true"></div>
+      <h2
+        id="consiglio-direttivo-heading"
+        class="font-heading font-extrabold text-lg sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap uppercase"
+      >
+        Consiglio direttivo sezionale
+      </h2>
+      <div class="h-[2px] bg-[#004b97] flex-1" aria-hidden="true"></div>
+    </div>
+
+    {president && (
+      <div class="w-[200px] sm:w-[240px] lg:w-[260px] mx-auto mb-10">
+        <div class="bg-white border-2 border-slate-300 rounded-sm shadow-xs overflow-hidden text-center">
+          <div class="aspect-square w-full bg-slate-100 overflow-hidden relative">
+            <img
+              src={president.image}
+              alt={president.name}
+              width="600"
+              height="600"
+              loading="eager"
+              decoding="async"
+              class="w-full h-full object-cover object-top"
+              onerror="this.onerror=null;this.src='/images/avatar-placeholder.svg'"
+            />
+          </div>
+          <h3 class="font-heading font-extrabold text-base sm:text-lg text-slate-950 tracking-tight leading-tight mt-3 px-3">
+            {president.name}
+          </h3>
+          <p class="font-sans text-xs sm:text-sm text-[#004b97] font-semibold mt-1 mb-3 px-3">
+            {president.role}
+          </p>
+        </div>
+      </div>
+    )}
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+      {executives.map((member) => (
+        <ConsiglioCard member={member} />
+      ))}
+    </div>
+
+    <div class="flex items-center gap-4 mt-12 sm:mt-16 mb-8 max-w-4xl mx-auto">
+      <div class="h-[1px] bg-[#004b97]/50 flex-1" aria-hidden="true"></div>
+      <h3 class="font-heading font-bold text-lg sm:text-xl text-[#004b97] tracking-wider whitespace-nowrap uppercase">
+        Referenti
+      </h3>
+      <div class="h-[1px] bg-[#004b97]/50 flex-1" aria-hidden="true"></div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+      {referents.map((member) => (
+        <ConsiglioCard member={member} />
+      ))}
+    </div>
+
+    <div class="flex items-center gap-4 mt-12 sm:mt-16 mb-8 max-w-4xl mx-auto">
+      <div class="h-[1px] bg-[#004b97]/50 flex-1" aria-hidden="true"></div>
+      <h3 class="font-heading font-bold text-lg sm:text-xl text-[#004b97] tracking-wider whitespace-nowrap uppercase">
+        Collaboratori
+      </h3>
+      <div class="h-[1px] bg-[#004b97]/50 flex-1" aria-hidden="true"></div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+      {collaborators.map((member) => (
+        <ConsiglioCard member={member} />
+      ))}
+    </div>
+  </div>
+</section>
