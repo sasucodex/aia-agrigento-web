@@ -1,0 +1,1056 @@
+{
+  "livatino": {
+    "title": "Premio Nazionale Giudice Beato Rosario Livatino",
+    "subtitle": "Riconoscimento nazionale per arbitri CAN di Serie A e B",
+    "judgeImage": "/images/livatino/giudice-livatino.jpg",
+    "judgeCaption": "Beato Rosario Livatino (1952 – 1990) — Magistrato e Martire della Giustizia",
+    "quote": {
+      "text": "Quando moriremo, nessuno ci verrà a chiedere quanto siamo stati credenti, ma credibili.",
+      "author": "Beato Rosario Livatino — Magistrato"
+    },
+    "description": [
+      "Istituito dalla Sezione AIA di Agrigento con il patrocinio della FIGC e dell'Associazione Italiana Arbitri, il Premio Nazionale è dedicato alla memoria del magistrato canicattinese Rosario Livatino, barbaramente assassinato dalla mafia il 21 settembre 1990 e proclamato Beato il 9 maggio 2021.",
+      "Il riconoscimento viene conferito annualmente all'arbitro della Commissione Arbitri Nazionale (CAN di Serie A e B) distintosi a livello nazionale per doti tecniche, rettitudine, coraggio decisionale e profondo rigore etico, incarnando sul terreno di gioco e nella vita civile i valori di giustizia e credibilità testimoniati dal Giudice Livatino."
+    ],
+    "winners": [
+      {
+        "edition": 9,
+        "season": "2025/2026",
+        "year": 2026,
+        "name": "Kevin Bonacina",
+        "section": "Sezione di Bergamo",
+        "image": "/images/livatino/bonacina.jpg"
+      },
+      {
+        "edition": 8,
+        "season": "2024/2025",
+        "year": 2025,
+        "name": "Luca Zufferli",
+        "section": "Sezione di Udine",
+        "image": "/images/livatino/zufferli.jpg"
+      },
+      {
+        "edition": 7,
+        "season": "2023/2024",
+        "year": 2024,
+        "name": "Paride Tremolada",
+        "section": "Sezione di Monza",
+        "image": "/images/livatino/tremolada.jpg"
+      },
+      {
+        "edition": 6,
+        "season": "2022/2023",
+        "year": 2023,
+        "name": "Maria Sole Ferrieri Caputi",
+        "section": "Sezione di Livorno",
+        "image": "/images/livatino/ferrieri-caputi.jpg"
+      },
+      {
+        "edition": 5,
+        "season": "2021/2022",
+        "year": 2022,
+        "name": "Simone Sozza",
+        "section": "Sezione di Seregno",
+        "image": "/images/livatino/sozza.jpg"
+      },
+      {
+        "edition": 4,
+        "season": "2020/2021",
+        "year": 2021,
+        "name": "Giovanni Ayroldi",
+        "section": "Sezione di Molfetta",
+        "image": "/images/livatino/ayroldi.jpg"
+      },
+      {
+        "edition": 3,
+        "season": "2019/2020",
+        "year": 2020,
+        "name": "Luca Massimi",
+        "section": "Sezione di Termoli",
+        "image": "/images/livatino/massimi.jpg"
+      },
+      {
+        "edition": 2,
+        "season": "2018/2019",
+        "year": 2019,
+        "name": "Manuel Volpi",
+        "section": "Sezione di Arezzo",
+        "image": "/images/livatino/volpi.jpg"
+      },
+      {
+        "edition": 1,
+        "season": "2017/2018",
+        "year": 2018,
+        "name": "Antonio Di Martino",
+        "section": "Sezione di Teramo",
+        "image": "/images/livatino/di-martino.jpg"
+      }
+    ]
+  },
+  "traditional": [
+    {
+      "id": "carmelo-bennici",
+      "name": "Premio Carmelo Bennici",
+      "category": "Arbitro O.T.R. (Eccellenza & Promozione)",
+      "dedicatedTo": "Carmelo Bennici, Presidente di Sezione dal 1962 al 1974",
+      "criteria": "All'Arbitro O.T.R. (Eccellenza e Promozione) particolarmente distintosi durante la stagione sportiva per rendimento tecnico e disciplina.",
+      "historicalImage": "/images/albo-presidenti/bennicic.jpg",
+      "isPersonal": true,
+      "winners": [
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Calogero Vivacqua",
+          "image": null,
+          "note": "Ex aequo"
+        },
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Matteo Piazza",
+          "image": "/images/premi-sezionali/2026/Manfred 1.jpg",
+          "note": "Ex aequo"
+        },
+        {
+          "season": "2023/2024",
+          "year": 2024,
+          "name": "Andrea Augello",
+          "image": "/images/premi-sezionali/2026/Manfred 6.png"
+        },
+        {
+          "season": "2022/2023",
+          "year": 2023,
+          "name": "Giuseppe Mandracchia",
+          "image": "/images/premi-sezionali/2026/Manfred 1.png"
+        },
+        {
+          "season": "2021/2022",
+          "year": 2022,
+          "name": "Luigi Canicattì",
+          "image": "/images/premi-sezionali/2026/Manfred.png"
+        },
+        {
+          "season": "2020/2021",
+          "year": 2021,
+          "name": "Non Assegnato",
+          "unassigned": true,
+          "note": "Campionati interrotti emergenza Covid-19"
+        },
+        {
+          "season": "2019/2020",
+          "year": 2020,
+          "name": "Alfonso Aquilina",
+          "image": "/images/organico/Alfonso_Aquilina_Collab.jpg"
+        },
+        {
+          "season": "2018/2019",
+          "year": 2019,
+          "name": "Silvio Fazio",
+          "image": "/images/premi-sezionali/faziosilvio.jpeg"
+        },
+        {
+          "season": "2017/2018",
+          "year": 2018,
+          "name": "Carlo Virgilio",
+          "image": "/images/premi-sezionali/virgilio.jpg"
+        },
+        {
+          "season": "2016/2017",
+          "year": 2017,
+          "name": "Cristoforo De Caro",
+          "image": "/images/premi-sezionali/decaro.jpg"
+        },
+        {
+          "season": "2015/2016",
+          "year": 2016,
+          "name": "Carlo Virgilio",
+          "image": "/images/premi-sezionali/virgilio.jpg"
+        },
+        {
+          "season": "2014/2015",
+          "year": 2015,
+          "name": "Giuseppe Girgenti",
+          "image": "/images/premi-sezionali/girgenti.jpg"
+        },
+        {
+          "season": "2013/2014",
+          "year": 2014,
+          "name": "Piero Cumbo",
+          "image": "/images/premi-sezionali/cumbo.jpg"
+        },
+        {
+          "season": "2012/2013",
+          "year": 2013,
+          "name": "Antonino Costanza",
+          "image": "/images/premi-sezionali/costanzaa.jpg"
+        },
+        {
+          "season": "2011/2012",
+          "year": 2012,
+          "name": "Giovanni Sanzo",
+          "image": "/images/premi-sezionali/sanzo.jpg"
+        },
+        {
+          "season": "2010/2011",
+          "year": 2011,
+          "name": "Marco Emmanuele",
+          "image": "/images/premi-sezionali/emmanuele.jpg"
+        },
+        {
+          "season": "2009/2010",
+          "year": 2010,
+          "name": "Pietro Bennici",
+          "image": "/images/premi-sezionali/bennicip.jpg"
+        },
+        {
+          "season": "2008/2009",
+          "year": 2009,
+          "name": "Francesco Carità",
+          "image": "/images/premi-sezionali/carita.jpg"
+        },
+        {
+          "season": "2007/2008",
+          "year": 2008,
+          "name": "Felice Favata",
+          "image": "/images/premi-sezionali/favata.jpg"
+        },
+        {
+          "season": "2006/2007",
+          "year": 2007,
+          "name": "Fabio Pasciuta",
+          "image": "/images/premi-sezionali/pasciutaf.jpg"
+        }
+      ]
+    },
+    {
+      "id": "empedocle-mangione",
+      "name": "Premio Empedocle Mangione",
+      "category": "Assistente Arbitrale O.T.R.",
+      "dedicatedTo": "Empedocle Mangione, Presidente di Sezione dal 1961 al 1962 e pioniere arbitrale",
+      "criteria": "All'Assistente Arbitrale O.T.R. particolarmente distintosi per precisione tecnica, tempestività di segnalazione e collaborazione nella terna.",
+      "historicalImage": "/images/albo-presidenti/mangione.jpg",
+      "isPersonal": true,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Davide Trovato",
+          "image": null
+        },
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Tommaso Mangiapane",
+          "image": "/images/premi-sezionali/2026/Manfred 10.png"
+        },
+        {
+          "season": "2023/2024",
+          "year": 2024,
+          "name": "Giuseppe Mangiapane",
+          "image": "/images/premi-sezionali/2026/Manfred 11.png"
+        },
+        {
+          "season": "2022/2023",
+          "year": 2023,
+          "name": "Calogero Milioto",
+          "image": "/images/premi-sezionali/calogero-milioto.jpg"
+        },
+        {
+          "season": "2021/2022",
+          "year": 2022,
+          "name": "Gaetano Florio",
+          "image": "/images/cds/CDS 4.png"
+        },
+        {
+          "season": "2020/2021",
+          "year": 2021,
+          "name": "Non Assegnato",
+          "unassigned": true,
+          "note": "Campionati interrotti emergenza Covid-19"
+        },
+        {
+          "season": "2019/2020",
+          "year": 2020,
+          "name": "Andrea Varisano",
+          "image": "/images/cds/DSC_1638.jpg"
+        },
+        {
+          "season": "2018/2019",
+          "year": 2019,
+          "name": "Manfredi Scribani",
+          "image": "/images/premi-sezionali/scribani-manfredi.jpg"
+        },
+        {
+          "season": "2017/2018",
+          "year": 2018,
+          "name": "Pietro Bennici",
+          "image": "/images/premi-sezionali/bennicip.jpg"
+        },
+        {
+          "season": "2016/2017",
+          "year": 2017,
+          "name": "Marnalo",
+          "image": null
+        },
+        {
+          "season": "2015/2016",
+          "year": 2016,
+          "name": "Giulio Callea",
+          "image": "/images/premi-sezionali/2026/Manfred 7.png"
+        },
+        {
+          "season": "2014/2015",
+          "year": 2015,
+          "name": "Costantin Gabriele Palumbo",
+          "image": "/images/premi-sezionali/palumboc.jpg"
+        },
+        {
+          "season": "2013/2014",
+          "year": 2014,
+          "name": "Federico Principato",
+          "image": "/images/premi-sezionali/principatof.jpg"
+        },
+        {
+          "season": "2012/2013",
+          "year": 2013,
+          "name": "Giuseppe Caico",
+          "image": "/images/premi-sezionali/caico.jpg"
+        },
+        {
+          "season": "2011/2012",
+          "year": 2012,
+          "name": "Roberto Drago",
+          "image": "/images/premi-sezionali/drago.jpg"
+        },
+        {
+          "season": "2010/2011",
+          "year": 2011,
+          "name": "Marco Sciortino",
+          "image": "/images/premi-sezionali/sciortino.jpg"
+        },
+        {
+          "season": "2009/2010",
+          "year": 2010,
+          "name": "Alfonso Saieva",
+          "image": "/images/premi-sezionali/saieva.jpg"
+        },
+        {
+          "season": "2008/2009",
+          "year": 2009,
+          "name": "Salvatore Napoli",
+          "image": "/images/premi-sezionali/napoli.jpg"
+        },
+        {
+          "season": "2007/2008",
+          "year": 2008,
+          "name": "Eduardo Fragapane",
+          "image": "/images/premi-sezionali/fragapane.jpg"
+        },
+        {
+          "season": "2006/2007",
+          "year": 2007,
+          "name": "Gaspare Valenti",
+          "image": "/images/premi-sezionali/valenti.jpg"
+        }
+      ]
+    },
+    {
+      "id": "ulisse-arancio",
+      "name": "Premio Ulisse Arancio",
+      "category": "Arbitro O.T.S. (Campionati Provinciali)",
+      "dedicatedTo": "Ulisse Arancio, storico dirigente sezionale e maestro di arbitraggio",
+      "criteria": "All'Arbitro O.T.S. distintosi per leadership, eccellenza tecnica e costante disponibilità sui terreni di gioco provinciali.",
+      "historicalImage": "/images/albo-presidenti/arancio.jpg",
+      "isPersonal": true,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Failla",
+          "image": null
+        },
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Giulio Callea",
+          "image": "/images/premi-sezionali/2026/Manfred 7.png"
+        },
+        {
+          "season": "2023/2024",
+          "year": 2024,
+          "name": "Andrea Rotulo",
+          "image": "/images/premi-sezionali/2026/rotulo.png"
+        },
+        {
+          "season": "2022/2023",
+          "year": 2023,
+          "name": "Domenico Leone",
+          "image": "/images/premi-sezionali/2026/Manfred 8.png"
+        },
+        {
+          "season": "2021/2022",
+          "year": 2022,
+          "name": "Yari Lauria",
+          "image": "/images/premi-sezionali/2026/Manfred 9.png"
+        },
+        {
+          "season": "2020/2021",
+          "year": 2021,
+          "name": "Non Assegnato",
+          "unassigned": true,
+          "note": "Campionati interrotti emergenza Covid-19"
+        },
+        {
+          "season": "2019/2020",
+          "year": 2020,
+          "name": "Umberto Ciaco",
+          "image": "/images/premi-sezionali/umberto-ciaco2.jpg"
+        },
+        {
+          "season": "2018/2019",
+          "year": 2019,
+          "name": "Giuseppe Mandracchia",
+          "image": "/images/premi-sezionali/Giuseppe_Mandracchia.jpeg"
+        },
+        {
+          "season": "2017/2018",
+          "year": 2018,
+          "name": "Giuseppe Mangiapane",
+          "image": "/images/premi-sezionali/2026/Manfred 11.png"
+        },
+        {
+          "season": "2016/2017",
+          "year": 2017,
+          "name": "Gallo",
+          "image": null
+        },
+        {
+          "season": "2015/2016",
+          "year": 2016,
+          "name": "Alfonso Aquilina",
+          "image": "/images/premi-sezionali/aquilina-alfonso.jpg"
+        },
+        {
+          "season": "2014/2015",
+          "year": 2015,
+          "name": "Pier Calogero Geraldi",
+          "image": "/images/premi-sezionali/gelardi-pier-calogero.jpg"
+        },
+        {
+          "season": "2013/2014",
+          "year": 2014,
+          "name": "Cristoforo De Caro",
+          "image": "/images/premi-sezionali/decaro.jpg"
+        },
+        {
+          "season": "2012/2013",
+          "year": 2013,
+          "name": "Daniele Pisciotto",
+          "image": "/images/premi-sezionali/pisciotto.jpg"
+        },
+        {
+          "season": "2011/2012",
+          "year": 2012,
+          "name": "Giuseppe Girgenti",
+          "image": "/images/premi-sezionali/girgenti.jpg"
+        },
+        {
+          "season": "2010/2011",
+          "year": 2011,
+          "name": "Angelo Lo Bello",
+          "image": "/images/premi-sezionali/lobelloa.jpg"
+        },
+        {
+          "season": "2009/2010",
+          "year": 2010,
+          "name": "Roberto Vella",
+          "image": "/images/premi-sezionali/vellar.jpg"
+        },
+        {
+          "season": "2008/2009",
+          "year": 2009,
+          "name": "Antonino Costanza",
+          "image": "/images/premi-sezionali/costanzaa.jpg"
+        },
+        {
+          "season": "2007/2008",
+          "year": 2008,
+          "name": "Gabriele Guarnotta",
+          "image": "/images/premi-sezionali/guarnotta.jpg"
+        },
+        {
+          "season": "2006/2007",
+          "year": 2007,
+          "name": "Antonio Lalomia",
+          "image": "/images/premi-sezionali/lalomia.jpg"
+        }
+      ]
+    },
+    {
+      "id": "filippo-lentini",
+      "name": "Premio Filippo Lentini",
+      "category": "Giovane Arbitro Emergente (Nuovi Immessi O.T.S.)",
+      "dedicatedTo": "Filippo Lentini, figura carismatica e colonna portante della Sezione",
+      "criteria": "Al Giovane Arbitro emergente (nuovo immesso dall'ultimo corso arbitri) distintosi per entusiasmo, serietà e rapida maturazione tecnica.",
+      "historicalImage": "/images/albo-presidenti/arancio.jpg",
+      "isPersonal": true,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Diego Riccardo Cuva",
+          "image": "/images/premi-sezionali/cuva.jpg"
+        },
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Salvatore Abbate",
+          "image": "/images/premi-sezionali/2026/Manfred 2.png"
+        },
+        {
+          "season": "2023/2024",
+          "year": 2024,
+          "name": "Federico Gentile",
+          "image": "/images/premi-sezionali/gentile.jpg"
+        },
+        {
+          "season": "2022/2023",
+          "year": 2023,
+          "name": "Luca Moscato",
+          "image": null
+        },
+        {
+          "season": "2021/2022",
+          "year": 2022,
+          "name": "Giuseppe Fara",
+          "image": "/images/premi-sezionali/premi 2122/11.png"
+        },
+        {
+          "season": "2020/2021",
+          "year": 2021,
+          "name": "Non Assegnato",
+          "unassigned": true,
+          "note": "Campionati interrotti emergenza Covid-19"
+        },
+        {
+          "season": "2019/2020",
+          "year": 2020,
+          "name": "Matteo Piazza",
+          "image": "/images/premi-sezionali/matteo-piazza.jpg"
+        },
+        {
+          "season": "2018/2019",
+          "year": 2019,
+          "name": "Umberto Ciaco",
+          "image": "/images/premi-sezionali/umberto-ciaco.jpeg"
+        },
+        {
+          "season": "2017/2018",
+          "year": 2018,
+          "name": "Lipani",
+          "image": null
+        },
+        {
+          "season": "2016/2017",
+          "year": 2017,
+          "name": "Salvatore Crapanzano",
+          "image": "/images/premi-sezionali/marco-campanella.jpg"
+        },
+        {
+          "season": "2015/2016",
+          "year": 2016,
+          "name": "Andrea Augello",
+          "image": "/images/premi-sezionali/2026/Manfred 6.png"
+        },
+        {
+          "season": "2014/2015",
+          "year": 2015,
+          "name": "Alfonso Aquilina",
+          "image": "/images/premi-sezionali/aquilina.jpg"
+        },
+        {
+          "season": "2013/2014",
+          "year": 2014,
+          "name": "Valerio Navarino",
+          "image": "/images/premi-sezionali/navarino.jpg"
+        },
+        {
+          "season": "2012/2013",
+          "year": 2013,
+          "name": "Silvio Fazio",
+          "image": "/images/premi-sezionali/fazio.jpg"
+        },
+        {
+          "season": "2011/2012",
+          "year": 2012,
+          "name": "Carlo Virgilio",
+          "image": "/images/premi-sezionali/virgilio.jpg"
+        },
+        {
+          "season": "2010/2011",
+          "year": 2011,
+          "name": "Salvatore Cacciatore",
+          "image": "/images/premi-sezionali/cacciatore.jpg"
+        },
+        {
+          "season": "2009/2010",
+          "year": 2010,
+          "name": "Giuseppe Girgenti",
+          "image": "/images/premi-sezionali/girgenti.jpg"
+        },
+        {
+          "season": "2008/2009",
+          "year": 2009,
+          "name": "Giovanni Sanzo",
+          "image": "/images/premi-sezionali/sanzo.jpg"
+        },
+        {
+          "season": "2007/2008",
+          "year": 2008,
+          "name": "Giuseppe Marsala",
+          "image": "/images/premi-sezionali/marsala.jpg"
+        },
+        {
+          "season": "2006/2007",
+          "year": 2007,
+          "name": "Giuseppe Portella",
+          "image": "/images/premi-sezionali/portella.jpg"
+        }
+      ]
+    },
+    {
+      "id": "pietro-arancio",
+      "name": "Premio Pietro Arancio",
+      "category": "Osservatore Arbitrale O.T.S.",
+      "dedicatedTo": "Pietro Arancio, Fondatore e primo Presidente della Sezione dal 1949 al 1961",
+      "criteria": "All'Osservatore Arbitrale O.T.S. maggiormente distintosi per dedizione formativa, precisione delle relazioni e passione pedagogica.",
+      "historicalImage": "/images/albo-presidenti/arancio.jpg",
+      "isPersonal": true,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Bruno Longo",
+          "image": "/images/premi-sezionali/longo.jpg"
+        },
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Rosario Marino",
+          "image": "/images/premi-sezionali/marino.jpg"
+        },
+        {
+          "season": "2023/2024",
+          "year": 2024,
+          "name": "Gaetano Catalano",
+          "image": "/images/premi-sezionali/catalanog.jpg"
+        },
+        {
+          "season": "2022/2023",
+          "year": 2023,
+          "name": "Calogero Alaimo",
+          "image": "/images/premi-sezionali/alaimo-calogero.jpeg"
+        },
+        {
+          "season": "2021/2022",
+          "year": 2022,
+          "name": "Anselmo Prado",
+          "image": "/images/premi-sezionali/premi 2122/prado.jpg"
+        },
+        {
+          "season": "2020/2021",
+          "year": 2021,
+          "name": "Non Assegnato",
+          "unassigned": true,
+          "note": "Campionati interrotti emergenza Covid-19"
+        },
+        {
+          "season": "2019/2020",
+          "year": 2020,
+          "name": "Giuseppe Rumè",
+          "image": "/images/cds/DSC_1647.jpg"
+        },
+        {
+          "season": "2018/2019",
+          "year": 2019,
+          "name": "Giuseppe Liberto",
+          "image": "/images/albo-presidenti/liberto.jpg"
+        },
+        {
+          "season": "2017/2018",
+          "year": 2018,
+          "name": "Giuseppe Barbaro",
+          "image": "/images/premi-sezionali/barbaro01.jpg"
+        },
+        {
+          "season": "2016/2017",
+          "year": 2017,
+          "name": "Calogero Alaimo",
+          "image": "/images/premi-sezionali/alaimo-calogero.jpeg"
+        },
+        {
+          "season": "2015/2016",
+          "year": 2016,
+          "name": "Giuseppe Di Vita",
+          "image": "/images/premi-sezionali/giuseppe-divita.jpeg"
+        },
+        {
+          "season": "2014/2015",
+          "year": 2015,
+          "name": "Dino Di Pumpo",
+          "image": "/images/premi-sezionali/dipumpo.jpg"
+        },
+        {
+          "season": "2013/2014",
+          "year": 2014,
+          "name": "Mario Chillura",
+          "image": "/images/premi-sezionali/chillura.jpg"
+        },
+        {
+          "season": "2012/2013",
+          "year": 2013,
+          "name": "Rosario Marino",
+          "image": "/images/premi-sezionali/marino.jpg"
+        },
+        {
+          "season": "2011/2012",
+          "year": 2012,
+          "name": "Gaetano Catalano",
+          "image": "/images/premi-sezionali/catalanog.jpg"
+        },
+        {
+          "season": "2010/2011",
+          "year": 2011,
+          "name": "Calogero Todaro",
+          "image": "/images/premi-sezionali/todaro.jpg"
+        },
+        {
+          "season": "2009/2010",
+          "year": 2010,
+          "name": "Antonino Sciabarrà",
+          "image": "/images/premi-sezionali/sciabarra.jpg"
+        },
+        {
+          "season": "2008/2009",
+          "year": 2009,
+          "name": "Anselmo Prado",
+          "image": "/images/premi-sezionali/prado.jpg"
+        },
+        {
+          "season": "2007/2008",
+          "year": 2008,
+          "name": "Calogero Giardina",
+          "image": "/images/premi-sezionali/giardina.jpg"
+        },
+        {
+          "season": "2006/2007",
+          "year": 2007,
+          "name": "Carmelo Taormina",
+          "image": "/images/premi-sezionali/taormina.jpg"
+        }
+      ]
+    },
+    {
+      "id": "andrea-gueli",
+      "name": "Premio Andrea Gueli",
+      "category": "Valori Etici e Tecnici Sezionali",
+      "dedicatedTo": "Andrea Gueli, associato e riferimento morale della famiglia arbitrale agrigentina",
+      "criteria": "All'Arbitro che si è particolarmente distinto nella stagione per eccezionali valori tecnici, condotta morale irreprensibile e spirito associativo.",
+      "historicalImage": "/images/albo-presidenti/arancio.jpg",
+      "isPersonal": true,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Pietro Costanza",
+          "image": "/images/premi-sezionali/costanza-pietro.jpg"
+        },
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Calogero Giardina",
+          "image": "/images/premi-sezionali/giardina-gueli.jpg"
+        },
+        {
+          "season": "2023/2024",
+          "year": 2024,
+          "name": "Rosario Perrone",
+          "image": "/images/premi-sezionali/perrone-gueli.jpg"
+        },
+        {
+          "season": "2022/2023",
+          "year": 2023,
+          "name": "Salvatore Fucà",
+          "image": "/images/premi-sezionali/fuca.jpg"
+        },
+        {
+          "season": "2021/2022",
+          "year": 2022,
+          "name": "Salvatore Zambuto Sitra",
+          "image": "/images/premi-sezionali/premi 2122/9.png"
+        }
+      ]
+    },
+    {
+      "id": "futsal-c5-otr",
+      "name": "Premio Futsal Calcio a 5 (Regionale)",
+      "category": "Arbitro Calcio a 5 O.T.R.",
+      "dedicatedTo": "Alla tradizione arbitrale del Futsal agrigentino",
+      "criteria": "All'Arbitro regionale di Calcio a 5 particolarmente distintosi nella stagione per dinamismo, applicazione del regolamento e autorevolezza.",
+      "historicalImage": "",
+      "isPersonal": false,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Bennici",
+          "image": null
+        },
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Salvatore Zambuto Sitra",
+          "image": "/images/premi-sezionali/2026/Manfred 3.png"
+        },
+        {
+          "season": "2023/2024",
+          "year": 2024,
+          "name": "Luigi Provenzano",
+          "image": "/images/premi-sezionali/provenzano-c5.jpg"
+        },
+        {
+          "season": "2022/2023",
+          "year": 2023,
+          "name": "Salvatore Crapanzano",
+          "image": "/images/premi-sezionali/2026/Manfred 4.png"
+        },
+        {
+          "season": "2021/2022",
+          "year": 2022,
+          "name": "Gaspare Giarratano",
+          "image": "/images/premi-sezionali/2026/Manfred 5.png"
+        },
+        {
+          "season": "2020/2021",
+          "year": 2021,
+          "name": "Non Assegnato",
+          "unassigned": true,
+          "note": "Campionati interrotti emergenza Covid-19"
+        },
+        {
+          "season": "2019/2020",
+          "year": 2020,
+          "name": "Vincenzo Lo Presti",
+          "image": "/images/organico/Vincenzo_Lo_Presti_C5.jpg"
+        },
+        {
+          "season": "2018/2019",
+          "year": 2019,
+          "name": "Mario Luparello",
+          "image": "/images/premi-sezionali/luparello-mario.jpeg"
+        },
+        {
+          "season": "2017/2018",
+          "year": 2018,
+          "name": "Salvatore Modica",
+          "image": null
+        },
+        {
+          "season": "2016/2017",
+          "year": 2017,
+          "name": "Vincenzo Lo Presti",
+          "image": "/images/organico/Vincenzo_Lo_Presti_C5.jpg"
+        }
+      ]
+    },
+    {
+      "id": "miglior-arbitro-ots",
+      "name": "Premio Miglior Arbitro O.T.S.",
+      "category": "Associato O.T.S. Non Proponibile",
+      "dedicatedTo": "Alla dedizione silenziosa e all'attaccamento ai colori sezionali",
+      "criteria": "All'associato non proponibile distintosi per straordinaria disponibilità nelle designazioni dell'ultimo minuto, affidabilità e spirito di servizio.",
+      "historicalImage": "",
+      "isPersonal": false,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Salvatore Cacciatore",
+          "image": null
+        },
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Tommaso Russello",
+          "image": "/images/premi-sezionali/russello.png"
+        },
+        {
+          "season": "2023/2024",
+          "year": 2024,
+          "name": "Salvatore Cordaro",
+          "image": "/images/premi-sezionali/cordaro.png"
+        },
+        {
+          "season": "2022/2023",
+          "year": 2023,
+          "name": "Luigi Provenzano",
+          "image": "/images/premi-sezionali/provenzano-c5.jpg"
+        },
+        {
+          "season": "2021/2022",
+          "year": 2022,
+          "name": "Francesco Carità",
+          "image": "/images/cds/DSC_1640.jpg"
+        },
+        {
+          "season": "2020/2021",
+          "year": 2021,
+          "name": "Non Assegnato",
+          "unassigned": true,
+          "note": "Campionati interrotti emergenza Covid-19"
+        },
+        {
+          "season": "2019/2020",
+          "year": 2020,
+          "name": "Giuseppe Scanio",
+          "image": null
+        },
+        {
+          "season": "2018/2019",
+          "year": 2019,
+          "name": "Giuseppe Mandracchia",
+          "image": "/images/premi-sezionali/Giuseppe_Mandracchia.jpeg"
+        },
+        {
+          "season": "2017/2018",
+          "year": 2018,
+          "name": "Agostino Milioto",
+          "image": "/images/cds/DSC_1641.jpg"
+        }
+      ]
+    },
+    {
+      "id": "aia-scuola",
+      "name": "Premio AIA / Scuola",
+      "category": "Merito Scolastico e Associativo",
+      "dedicatedTo": "Alla formazione integrale del giovane cittadino-arbitro",
+      "criteria": "Agli studenti-arbitri meritevoli per il brillante profitto negli studi abbinato a passione, correttezza ed eccellente rendimento sui campi da gioco.",
+      "historicalImage": "",
+      "isPersonal": false,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Ivan Gaziano",
+          "image": "/images/premi-sezionali/gaziano.jpg"
+        },
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Nicolò Fiore",
+          "image": null
+        },
+        {
+          "season": "2023/2024",
+          "year": 2024,
+          "name": "Ignazio D'Asaro",
+          "image": "/images/premi-sezionali/2026/dasaro.png"
+        },
+        {
+          "season": "2022/2023",
+          "year": 2023,
+          "name": "Gabriel Ingrao",
+          "image": "/images/premi-sezionali/2026/ingrao.png"
+        },
+        {
+          "season": "2021/2022",
+          "year": 2022,
+          "name": "Matteo Venezia",
+          "image": "/images/premi-sezionali/premi 2122/VENEZIA.png"
+        },
+        {
+          "season": "2020/2021",
+          "year": 2021,
+          "name": "Non Assegnato",
+          "unassigned": true,
+          "note": "Campionati interrotti emergenza Covid-19"
+        },
+        {
+          "season": "2019/2020",
+          "year": 2020,
+          "name": "Gabriele Lisinicchia",
+          "image": "/images/premi-sezionali/lisinicchia.jpg"
+        },
+        {
+          "season": "2018/2019",
+          "year": 2019,
+          "name": "Giuseppe Mandracchia",
+          "image": "/images/premi-sezionali/Giuseppe_Mandracchia.jpeg"
+        },
+        {
+          "season": "2017/2018",
+          "year": 2018,
+          "name": "Alberto Miccichè",
+          "image": "/images/premi-sezionali/2bc9fd85-04b2-41d4-992b-19b759b7ed5c.jpg"
+        }
+      ]
+    },
+    {
+      "id": "futsal-c5-ots",
+      "name": "Premio Futsal Calcio a 5 (Provinciale)",
+      "category": "Arbitro Calcio a 5 O.T.S.",
+      "dedicatedTo": "Alla crescita del futsal giovanile provinciale",
+      "criteria": "All'Arbitro di Calcio a 5 in forza all'Organo Tecnico Sezionale distintosi per crescita tecnica, affidabilità e presenza attiva.",
+      "historicalImage": "",
+      "isPersonal": false,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Carlotta Frumusa",
+          "image": "/images/premi-sezionali/frumusa.jpg"
+        },
+        {
+          "season": "2024/2025",
+          "year": 2025,
+          "name": "Ilaria Butera",
+          "image": "/images/premi-sezionali/butera.jpg"
+        }
+      ]
+    },
+    {
+      "id": "attivita-sezionale",
+      "name": "Premio Attività Sezionale",
+      "category": "Impegno Associativo e Organizzativo",
+      "dedicatedTo": "Al volontariato attivo e allo spirito di aggregazione sezionale",
+      "criteria": "Agli associati distintisi per straordinario impegno organizzativo, cura dei locali e partecipazione alla vita associativa.",
+      "historicalImage": "",
+      "isPersonal": false,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Salvatore Mulè & Dario Fabrizio",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "tutor",
+      "name": "Premio Miglior Tutor",
+      "category": "Tutoraggio e Formazione Nuovi Arbitri",
+      "dedicatedTo": "Al valore educativo della guida sul campo per gli arbitri esordienti",
+      "criteria": "Al collega che ha svolto con massima generosità, pazienza e valore pedagogico l'incarico di tutor accompagnatore dei neo-arbitri.",
+      "historicalImage": "",
+      "isPersonal": false,
+      "winners": [
+        {
+          "season": "2025/2026",
+          "year": 2026,
+          "name": "Salvatore Crapanzano",
+          "image": "/images/premi-sezionali/2026/Manfred 4.png"
+        }
+      ]
+    }
+  ]
+}

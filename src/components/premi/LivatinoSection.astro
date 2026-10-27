@@ -1,0 +1,72 @@
+---
+import AlboOroLivatinoGrid from "@/components/premi/AlboOroLivatinoGrid.astro";
+import { getLivatinoAward } from "@/lib/utils/awards";
+import type { LivatinoData } from "@/types/awards";
+
+export interface Props {
+  livatino?: LivatinoData;
+}
+
+const { livatino = getLivatinoAward() } = Astro.props;
+---
+
+<section
+  aria-labelledby="livatino-section-heading"
+  class="bg-white border-b border-slate-100"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <div class="bg-slate-50/70 border border-slate-200/80 rounded-sm p-4 sm:p-8 lg:p-10 shadow-xs">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12">
+        <figure class="lg:col-span-5 max-w-sm mx-auto w-full">
+          <div class="relative aspect-[4/5] w-full rounded-sm overflow-hidden border border-slate-200 shadow-xs bg-slate-100">
+            <img
+              src={livatino.judgeImage}
+              alt={livatino.judgeCaption}
+              width="480"
+              height="600"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              class="w-full h-full object-cover object-top"
+            />
+          </div>
+          <figcaption class="font-sans text-xs text-slate-500 mt-2.5 text-center italic">
+            {livatino.judgeCaption}
+          </figcaption>
+        </figure>
+
+        <div class="lg:col-span-7 text-left">
+          <p class="font-heading text-xs font-bold uppercase tracking-widest text-referee-gold">
+            PREMIO NAZIONALE FIGC AIA · CAN SERIE A E B
+          </p>
+
+          <h2
+            id="livatino-section-heading"
+            class="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl text-slate-900 tracking-tight leading-[1.1] text-balance mt-3 sm:mt-4 mb-4"
+          >
+            L'integrità morale come unica regola.
+          </h2>
+
+          <div class="space-y-4 mb-6">
+            {livatino.description.map((paragraph) => (
+              <p class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty max-w-prose">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <div class="bg-white border-l-4 border-referee-gold border-y border-r border-slate-200 p-6 sm:p-7 rounded-r-sm shadow-xs">
+            <blockquote class="font-heading italic text-base sm:text-lg text-slate-900 leading-snug">
+              “{livatino.quote.text}”
+            </blockquote>
+            <p class="font-heading text-xs font-semibold uppercase tracking-widest text-slate-500 mt-3">
+              {livatino.quote.author}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <AlboOroLivatinoGrid winners={livatino.winners} />
+    </div>
+  </div>
+</section>

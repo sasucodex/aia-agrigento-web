@@ -1,0 +1,38 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import PremiHero from "@/components/premi/PremiHero.astro";
+import LivatinoSection from "@/components/premi/LivatinoSection.astro";
+import { getAwardsData } from "@/lib/utils/awards";
+import premioLivatinoImg from "@/assets/images/premio-livatino.jpg";
+
+const awardsData = getAwardsData();
+const { livatino, traditional } = awardsData;
+
+const premiJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "@id": "https://aiaagrigento.it/#organization",
+  name: "Associazione Italiana Arbitri - Sezione di Agrigento",
+  url: "https://aiaagrigento.it/premi",
+  award: [
+    livatino.title,
+    ...traditional.map((award) => award.name),
+  ],
+  alumni: livatino.winners.map((winner) => ({
+    "@type": "Person",
+    name: winner.name,
+    award: `${livatino.title} (${winner.edition}ª Edizione - ${winner.season})`,
+  })),
+};
+---
+
+<Layout
+  title="Premi Sezionali & Nazionali | AIA Sezione di Agrigento FIGC"
+  description="Scopri il prestigioso Premio Nazionale Giudice Beato Rosario Livatino per arbitri CAN di Serie A e i premi storici della tradizione arbitrale agrigentina dal 1950 a oggi."
+  image={premioLivatinoImg.src}
+  imageAlt="Premio Nazionale Giudice Beato Rosario Livatino - Sezione AIA di Agrigento"
+  jsonLd={premiJsonLd}
+>
+  <PremiHero />
+  <LivatinoSection />
+</Layout>

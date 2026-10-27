@@ -1,0 +1,36 @@
+---
+import LivatinoWinnerCard from "@/components/premi/LivatinoWinnerCard.astro";
+import { getLivatinoAward } from "@/lib/utils/awards";
+import type { LivatinoWinner } from "@/types/awards";
+
+export interface Props {
+  winners?: LivatinoWinner[];
+}
+
+const { winners = getLivatinoAward().winners } = Astro.props;
+---
+
+<div>
+  <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-12">
+    <div
+      class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+      aria-hidden="true"
+    >
+    </div>
+    <h3
+      id="albo-oro-livatino-heading"
+      class="font-heading font-extrabold text-base sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-balance text-center uppercase"
+    >
+      Albo d'oro del premio nazionale giudice beato rosario livatino
+    </h3>
+    <div
+      class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+      aria-hidden="true"
+    >
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+    {winners.map((winner) => <LivatinoWinnerCard winner={winner} />)}
+  </div>
+</div>

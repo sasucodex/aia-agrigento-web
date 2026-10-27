@@ -1,0 +1,28 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Premi & Albo d'Oro",
+  subtitle = "Dai riflettori della Serie A nel nome del Beato Rosario Livatino all'impegno silenzioso sui campi provinciali e regionali. I riconoscimenti che celebrano il merito, l'integrità e la passione arbitrale.",
+} = Astro.props;
+---
+
+<section
+  aria-labelledby="premi-hero-heading"
+  class="bg-white border-b border-slate-100"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 text-center">
+    <h1
+      id="premi-hero-heading"
+      class="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-[1.1] uppercase text-balance mb-4"
+    >
+      {title}
+    </h1>
+    <p class="font-sans text-base sm:text-lg text-slate-700 leading-relaxed text-pretty max-w-2xl mx-auto">
+      {subtitle}
+    </p>
+  </div>
+</section>
