@@ -1,0 +1,68 @@
+---
+export interface TableRow {
+  qualifica: string;
+  cognome: string;
+  nome: string;
+  ruolo: string;
+}
+
+export interface Props {
+  rows: TableRow[];
+  colLabel?: string;
+}
+
+const { rows, colLabel = "Organo / Ruolo" } = Astro.props;
+---
+
+<div class="w-full max-w-3xl mx-auto rounded-sm border border-slate-200 shadow-xs bg-white my-4 overflow-hidden">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse text-xs sm:text-sm">
+      <thead>
+        <tr class="bg-slate-50 border-b border-slate-200">
+          <th
+            scope="col"
+            class="py-2.5 sm:py-3 px-2 sm:px-4 font-heading font-bold text-xs uppercase tracking-wider text-slate-700 w-12 sm:w-20"
+          >
+            Qual.
+          </th>
+          <th
+            scope="col"
+            class="py-2.5 sm:py-3 px-2 sm:px-4 font-heading font-bold text-xs uppercase tracking-wider text-slate-700"
+          >
+            Cognome
+          </th>
+          <th
+            scope="col"
+            class="py-2.5 sm:py-3 px-2 sm:px-4 font-heading font-bold text-xs uppercase tracking-wider text-slate-700"
+          >
+            Nome
+          </th>
+          <th
+            scope="col"
+            class="py-2.5 sm:py-3 px-2 sm:px-4 font-heading font-bold text-xs uppercase tracking-wider text-slate-700 text-right sm:text-left"
+          >
+            {colLabel}
+          </th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100">
+        {rows.map((row) => (
+          <tr class="even:bg-slate-50/50 hover:bg-slate-50 transition-colors min-h-[40px]">
+            <td class="py-2 sm:py-2.5 px-2 sm:px-4 font-heading font-bold text-xs text-slate-700">
+              {row.qualifica}
+            </td>
+            <td class="py-2 sm:py-2.5 px-2 sm:px-4 font-heading font-bold text-xs sm:text-sm text-slate-900 uppercase">
+              {row.cognome}
+            </td>
+            <td class="py-2 sm:py-2.5 px-2 sm:px-4 font-sans text-xs sm:text-sm text-slate-700 capitalize">
+              {row.nome.toLowerCase()}
+            </td>
+            <td class="py-2 sm:py-2.5 px-2 sm:px-4 font-sans text-xs sm:text-sm text-slate-600 text-right sm:text-left">
+              {row.ruolo}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>

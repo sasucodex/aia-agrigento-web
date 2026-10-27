@@ -39,11 +39,11 @@ const linkSections: LinkGroupSection[] = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-16">
     {linkSections.map((section) => (
       <section aria-labelledby={section.id}>
-        <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <div class="flex items-center gap-2 sm:gap-4 mb-6 sm:mb-8">
           <div class="h-[2px] bg-figc-blue flex-1" aria-hidden="true"></div>
           <h2
             id={section.id}
-            class="font-heading font-bold text-xl sm:text-2xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap"
+            class="font-heading font-extrabold text-lg sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap uppercase"
           >
             {section.title}
           </h2>
@@ -72,11 +72,11 @@ const linkSections: LinkGroupSection[] = [
     ))}
 
     <section aria-labelledby="social-heading">
-      <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+      <div class="flex items-center gap-2 sm:gap-4 mb-6 sm:mb-8">
         <div class="h-[2px] bg-figc-blue flex-1" aria-hidden="true"></div>
         <h2
           id="social-heading"
-          class="font-heading font-bold text-xl sm:text-2xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap"
+          class="font-heading font-extrabold text-lg sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap uppercase"
         >
           Seguici sui social
         </h2>

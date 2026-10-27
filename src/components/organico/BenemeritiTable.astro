@@ -1,0 +1,12 @@
+---
+import BenemeritiGrid from "@/components/organico/BenemeritiGrid.astro";
+import type { Associato } from "@/types/organico";
+
+export interface Props {
+  benemeriti?: Associato[];
+}
+
+const { benemeriti } = Astro.props;
+---
+
+<BenemeritiGrid benemeriti={benemeriti} />

@@ -1,0 +1,46 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import OrganicoHero from "@/components/organico/OrganicoHero.astro";
+import BenemeritiGrid from "@/components/organico/BenemeritiGrid.astro";
+import NazionaliGrid from "@/components/organico/NazionaliGrid.astro";
+import RegionaliGrid from "@/components/organico/RegionaliGrid.astro";
+import OTSSection from "@/components/organico/OTSSection.astro";
+import { getOrganico } from "@/lib/utils/organico";
+import heroRaduno from "@/assets/images/hero-raduno.jpg";
+
+const organico = getOrganico();
+
+const organicoJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "@id": "https://aiaagrigento.it/#organization",
+  name: "Associazione Italiana Arbitri - Sezione di Agrigento",
+  url: "https://aiaagrigento.it/organico",
+  numberOfEmployees: {
+    "@type": "QuantitativeValue",
+    value: organico.length,
+  },
+  member: organico.map((associato) => ({
+    "@type": "OrganizationRole",
+    roleName: `${associato.qualifica} - ${associato.ruolo} (${associato.organoTecnico})`,
+    member: {
+      "@type": "Person",
+      name: `${associato.cognome} ${associato.nome}`,
+    },
+  })),
+};
+---
+
+<Layout
+  title="Organico Sezionale | AIA Sezione di Agrigento FIGC"
+  description="L'organico completo degli arbitri, assistenti e osservatori arbitrali della Sezione AIA di Agrigento: Arbitri Benemeriti, Ufficiali Nazionali CON/CAN, Regionali CRA Sicilia e Organico Sezionale OTS."
+  image={heroRaduno.src}
+  imageAlt="Organico della Sezione AIA di Agrigento"
+  jsonLd={organicoJsonLd}
+>
+  <OrganicoHero />
+  <BenemeritiGrid />
+  <NazionaliGrid />
+  <RegionaliGrid />
+  <OTSSection />
+</Layout>

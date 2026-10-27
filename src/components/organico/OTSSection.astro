@@ -1,0 +1,65 @@
+---
+import OrganicoTable from "@/components/organico/OrganicoTable.astro";
+import { getOTS } from "@/lib/utils/organico";
+import type { Associato } from "@/types/organico";
+
+export interface Props {
+  c11?: Associato[];
+  c5?: Associato[];
+  osservatori?: Associato[];
+}
+
+const {
+  c11 = getOTS("c11"),
+  c5 = getOTS("c5"),
+  osservatori = getOTS("osservatore"),
+} = Astro.props;
+---
+
+<section
+  aria-labelledby="organico-ots-heading"
+  class="bg-white"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <div class="flex items-center gap-2 sm:gap-4 mb-8 sm:mb-10">
+      <div class="h-[2px] bg-[#004b97] flex-1" aria-hidden="true"></div>
+      <h2
+        id="organico-ots-heading"
+        class="font-heading font-extrabold text-lg sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap uppercase"
+      >
+        Organico Sezionale (O.T.S.)
+      </h2>
+      <div class="h-[2px] bg-[#004b97] flex-1" aria-hidden="true"></div>
+    </div>
+
+    <div class="flex items-center gap-3 sm:gap-4 mt-8 mb-5 max-w-3xl mx-auto">
+      <div class="h-[1px] bg-[#004b97]/50 flex-1" aria-hidden="true"></div>
+      <h3 class="font-heading font-bold text-sm sm:text-base text-[#004b97] tracking-wider text-center sm:whitespace-nowrap uppercase">
+        Arbitri Calcio a 11 (O.T.S.)
+      </h3>
+      <div class="h-[1px] bg-[#004b97]/50 flex-1" aria-hidden="true"></div>
+    </div>
+
+    <OrganicoTable rows={c11} colLabel="Organo Tecnico" />
+
+    <div class="flex items-center gap-3 sm:gap-4 mt-12 mb-5 max-w-3xl mx-auto">
+      <div class="h-[1px] bg-[#004b97]/50 flex-1" aria-hidden="true"></div>
+      <h3 class="font-heading font-bold text-sm sm:text-base text-[#004b97] tracking-wider text-center sm:whitespace-nowrap uppercase">
+        Arbitri Calcio a 5 (O.T.S.)
+      </h3>
+      <div class="h-[1px] bg-[#004b97]/50 flex-1" aria-hidden="true"></div>
+    </div>
+
+    <OrganicoTable rows={c5} colLabel="Disciplina" />
+
+    <div class="flex items-center gap-3 sm:gap-4 mt-12 mb-5 max-w-3xl mx-auto">
+      <div class="h-[1px] bg-[#004b97]/50 flex-1" aria-hidden="true"></div>
+      <h3 class="font-heading font-bold text-sm sm:text-base text-[#004b97] tracking-wider text-center sm:whitespace-nowrap uppercase">
+        Osservatori Arbitrali (O.T.S.)
+      </h3>
+      <div class="h-[1px] bg-[#004b97]/50 flex-1" aria-hidden="true"></div>
+    </div>
+
+    <OrganicoTable rows={osservatori} colLabel="Ruolo" />
+  </div>
+</section>

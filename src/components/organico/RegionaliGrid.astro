@@ -1,0 +1,35 @@
+---
+import RefereeCard from "@/components/organico/RefereeCard.astro";
+import { getRegionali } from "@/lib/utils/organico";
+import type { Associato } from "@/types/organico";
+
+export interface Props {
+  regionali?: Associato[];
+}
+
+const { regionali = getRegionali() } = Astro.props;
+---
+
+<section
+  aria-labelledby="arbitri-regionali-heading"
+  class="bg-slate-50 border-b border-slate-100"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="flex items-center gap-2 sm:gap-4 mb-8 sm:mb-10">
+      <div class="h-[2px] bg-[#004b97] flex-1" aria-hidden="true"></div>
+      <h2
+        id="arbitri-regionali-heading"
+        class="font-heading font-extrabold text-lg sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap uppercase"
+      >
+        Arbitri e Ufficiali Regionali (C.R.A. Sicilia)
+      </h2>
+      <div class="h-[2px] bg-[#004b97] flex-1" aria-hidden="true"></div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+      {regionali.map((associato) => (
+        <RefereeCard associato={associato} />
+      ))}
+    </div>
+  </div>
+</section>
