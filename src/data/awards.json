@@ -101,7 +101,7 @@
           "season": "2024/2025",
           "year": 2025,
           "name": "Calogero Vivacqua",
-          "image": null,
+          "image": "/images/cds/Vivacqua-Calogero.jpg",
           "note": "Ex aequo"
         },
         {
@@ -130,17 +130,10 @@
           "image": "/images/premi-sezionali/2026/Manfred.png"
         },
         {
-          "season": "2020/2021",
-          "year": 2021,
-          "name": "Non Assegnato",
-          "unassigned": true,
-          "note": "Campionati interrotti emergenza Covid-19"
-        },
-        {
           "season": "2019/2020",
           "year": 2020,
           "name": "Alfonso Aquilina",
-          "image": "/images/organico/Alfonso_Aquilina_Collab.jpg"
+          "image": "/images/premi-sezionali/aquilina-alfonso.jpg"
         },
         {
           "season": "2018/2019",
@@ -235,7 +228,7 @@
           "season": "2025/2026",
           "year": 2026,
           "name": "Davide Trovato",
-          "image": null
+          "image": "/images/cds/Trovato-Davide.jpg"
         },
         {
           "season": "2024/2025",
@@ -259,20 +252,13 @@
           "season": "2021/2022",
           "year": 2022,
           "name": "Gaetano Florio",
-          "image": "/images/cds/CDS 4.png"
-        },
-        {
-          "season": "2020/2021",
-          "year": 2021,
-          "name": "Non Assegnato",
-          "unassigned": true,
-          "note": "Campionati interrotti emergenza Covid-19"
+          "image": "/images/premi-sezionali/premi 2122/FLORIO.png"
         },
         {
           "season": "2019/2020",
           "year": 2020,
           "name": "Andrea Varisano",
-          "image": "/images/cds/DSC_1638.jpg"
+          "image": "/images/premi-sezionali/varisano.jpg"
         },
         {
           "season": "2018/2019",
@@ -295,8 +281,8 @@
         {
           "season": "2015/2016",
           "year": 2016,
-          "name": "Giulio Callea",
-          "image": "/images/premi-sezionali/2026/Manfred 7.png"
+          "name": "Callea",
+          "image": null
         },
         {
           "season": "2014/2015",
@@ -360,14 +346,14 @@
       "category": "Arbitro O.T.S. (Campionati Provinciali)",
       "dedicatedTo": "Ulisse Arancio, storico dirigente sezionale e maestro di arbitraggio",
       "criteria": "All'Arbitro O.T.S. distintosi per leadership, eccellenza tecnica e costante disponibilità sui terreni di gioco provinciali.",
-      "historicalImage": "/images/albo-presidenti/arancio.jpg",
+      "historicalImage": "/images/premi-sezionali/ulisse-arancio.jpg",
       "isPersonal": true,
       "winners": [
         {
           "season": "2025/2026",
           "year": 2026,
-          "name": "Failla",
-          "image": null
+          "name": "Giuseppe Failla",
+          "image": "/images/organico/failla-giuseppe.webp"
         },
         {
           "season": "2024/2025",
@@ -392,13 +378,6 @@
           "year": 2022,
           "name": "Yari Lauria",
           "image": "/images/premi-sezionali/2026/Manfred 9.png"
-        },
-        {
-          "season": "2020/2021",
-          "year": 2021,
-          "name": "Non Assegnato",
-          "unassigned": true,
-          "note": "Campionati interrotti emergenza Covid-19"
         },
         {
           "season": "2019/2020",
@@ -492,8 +471,8 @@
       "category": "Giovane Arbitro Emergente (Nuovi Immessi O.T.S.)",
       "dedicatedTo": "Filippo Lentini, figura carismatica e colonna portante della Sezione",
       "criteria": "Al Giovane Arbitro emergente (nuovo immesso dall'ultimo corso arbitri) distintosi per entusiasmo, serietà e rapida maturazione tecnica.",
-      "historicalImage": "/images/albo-presidenti/arancio.jpg",
-      "isPersonal": true,
+      "historicalImage": "",
+      "isPersonal": false,
       "winners": [
         {
           "season": "2025/2026",
@@ -524,13 +503,6 @@
           "year": 2022,
           "name": "Giuseppe Fara",
           "image": "/images/premi-sezionali/premi 2122/11.png"
-        },
-        {
-          "season": "2020/2021",
-          "year": 2021,
-          "name": "Non Assegnato",
-          "unassigned": true,
-          "note": "Campionati interrotti emergenza Covid-19"
         },
         {
           "season": "2019/2020",
@@ -658,17 +630,10 @@
           "image": "/images/premi-sezionali/premi 2122/prado.jpg"
         },
         {
-          "season": "2020/2021",
-          "year": 2021,
-          "name": "Non Assegnato",
-          "unassigned": true,
-          "note": "Campionati interrotti emergenza Covid-19"
-        },
-        {
           "season": "2019/2020",
           "year": 2020,
           "name": "Giuseppe Rumè",
-          "image": "/images/cds/DSC_1647.jpg"
+          "image": "/images/premi-sezionali/rume.jpg"
         },
         {
           "season": "2018/2019",
@@ -756,7 +721,7 @@
       "category": "Valori Etici e Tecnici Sezionali",
       "dedicatedTo": "Andrea Gueli, associato e riferimento morale della famiglia arbitrale agrigentina",
       "criteria": "All'Arbitro che si è particolarmente distinto nella stagione per eccezionali valori tecnici, condotta morale irreprensibile e spirito associativo.",
-      "historicalImage": "/images/albo-presidenti/arancio.jpg",
+      "historicalImage": "/images/premi-sezionali/andrea-gueli.jpg",
       "isPersonal": true,
       "winners": [
         {
@@ -803,8 +768,8 @@
         {
           "season": "2025/2026",
           "year": 2026,
-          "name": "Bennici",
-          "image": null
+          "name": "Pietro Bennici",
+          "image": "/images/cds/Bennici-Pietro.jpg"
         },
         {
           "season": "2024/2025",
@@ -831,17 +796,10 @@
           "image": "/images/premi-sezionali/2026/Manfred 5.png"
         },
         {
-          "season": "2020/2021",
-          "year": 2021,
-          "name": "Non Assegnato",
-          "unassigned": true,
-          "note": "Campionati interrotti emergenza Covid-19"
-        },
-        {
           "season": "2019/2020",
           "year": 2020,
           "name": "Vincenzo Lo Presti",
-          "image": "/images/organico/Vincenzo_Lo_Presti_C5.jpg"
+          "image": "/images/premi-sezionali/lo-presti.jpg"
         },
         {
           "season": "2018/2019",
@@ -852,14 +810,14 @@
         {
           "season": "2017/2018",
           "year": 2018,
-          "name": "Salvatore Modica",
+          "name": "Modica",
           "image": null
         },
         {
           "season": "2016/2017",
           "year": 2017,
           "name": "Vincenzo Lo Presti",
-          "image": "/images/organico/Vincenzo_Lo_Presti_C5.jpg"
+          "image": "/images/premi-sezionali/lo-presti.jpg"
         }
       ]
     },
@@ -876,7 +834,7 @@
           "season": "2025/2026",
           "year": 2026,
           "name": "Salvatore Cacciatore",
-          "image": null
+          "image": "/images/premi-sezionali/cacciatore.jpg"
         },
         {
           "season": "2024/2025",
@@ -894,20 +852,13 @@
           "season": "2022/2023",
           "year": 2023,
           "name": "Luigi Provenzano",
-          "image": "/images/premi-sezionali/provenzano-c5.jpg"
+          "image": "/images/premi-sezionali/provenzano-ots.jpg"
         },
         {
           "season": "2021/2022",
           "year": 2022,
           "name": "Francesco Carità",
-          "image": "/images/cds/DSC_1640.jpg"
-        },
-        {
-          "season": "2020/2021",
-          "year": 2021,
-          "name": "Non Assegnato",
-          "unassigned": true,
-          "note": "Campionati interrotti emergenza Covid-19"
+          "image": "/images/premi-sezionali/premi 2122/23.png"
         },
         {
           "season": "2019/2020",
@@ -925,7 +876,7 @@
           "season": "2017/2018",
           "year": 2018,
           "name": "Agostino Milioto",
-          "image": "/images/cds/DSC_1641.jpg"
+          "image": "/images/premi-sezionali/agostino-milioto.jpg"
         }
       ]
     },
@@ -967,13 +918,6 @@
           "year": 2022,
           "name": "Matteo Venezia",
           "image": "/images/premi-sezionali/premi 2122/VENEZIA.png"
-        },
-        {
-          "season": "2020/2021",
-          "year": 2021,
-          "name": "Non Assegnato",
-          "unassigned": true,
-          "note": "Campionati interrotti emergenza Covid-19"
         },
         {
           "season": "2019/2020",

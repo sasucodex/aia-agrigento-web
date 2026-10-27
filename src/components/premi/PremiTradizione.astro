@@ -1,0 +1,45 @@
+---
+import TraditionalAwardRow from "@/components/premi/TraditionalAwardRow.astro";
+import { getTraditionalAwards } from "@/lib/utils/awards";
+import type { TraditionalAward } from "@/types/awards";
+
+export interface Props {
+  awards?: TraditionalAward[];
+}
+
+const { awards = getTraditionalAwards() } = Astro.props;
+---
+
+<section
+  aria-labelledby="premi-tradizione-heading"
+  class="bg-white"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="flex items-center gap-2 sm:gap-4 mb-4">
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      >
+      </div>
+      <h2
+        id="premi-tradizione-heading"
+        class="font-heading font-extrabold text-xl sm:text-3xl lg:text-4xl text-slate-900 tracking-tight text-balance text-center uppercase"
+      >
+        I Premi della Tradizione Sezionale
+      </h2>
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      >
+      </div>
+    </div>
+
+    <p class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-center max-w-2xl mx-auto mb-10 text-pretty">
+      I riconoscimenti annuali intitolati ai padri fondatori e ai dirigenti che hanno costruito la Sezione di Agrigento. Ciascun premio valorizza l'impegno, la crescita tecnica e lo spirito di servizio.
+    </p>
+
+    <div class="space-y-4 sm:space-y-5">
+      {awards.map((award) => <TraditionalAwardRow award={award} />)}
+    </div>
+  </div>
+</section>

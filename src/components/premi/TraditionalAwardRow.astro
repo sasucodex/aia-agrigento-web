@@ -1,0 +1,87 @@
+---
+import TraditionalWinnerCard from "@/components/premi/TraditionalWinnerCard.astro";
+import type { TraditionalAward } from "@/types/awards";
+
+export interface Props {
+  award: TraditionalAward;
+}
+
+const { award } = Astro.props;
+const hasHistoricalPhoto = Boolean(award.historicalImage);
+const winnersCountLabel =
+  award.winners.length === 1
+    ? "1 premiato"
+    : `${award.winners.length} premiati`;
+---
+
+<details class="group bg-white border border-slate-200 rounded-sm overflow-hidden transition-all duration-200 open:border-slate-300 open:shadow-xs">
+  <summary class="p-5 sm:p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 hover:bg-slate-50/70 transition-colors duration-200">
+    <div class="flex items-start sm:items-center gap-4 sm:gap-5 min-w-0">
+      <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-sm overflow-hidden shrink-0 border border-slate-200 bg-slate-100 flex items-center justify-center">
+        {hasHistoricalPhoto ? (
+          <img
+            src={award.historicalImage!}
+            alt={`Ritratto storico per ${award.name}`}
+            width="160"
+            height="160"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover object-top"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+        ) : null}
+
+        <div
+          class={`w-full h-full items-center justify-center p-2.5 bg-slate-50 ${hasHistoricalPhoto ? "hidden" : "flex"}`}
+        >
+          <img
+            src="/favicon.svg"
+            alt="Sigillo AIA Sezione di Agrigento"
+            width="64"
+            height="64"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-contain opacity-85"
+          />
+        </div>
+      </div>
+
+      <div class="min-w-0 flex-1 text-left">
+        <h3 class="font-heading font-bold text-lg sm:text-xl text-slate-900 tracking-tight leading-snug">
+          {award.name}
+        </h3>
+        <p class="font-sans text-sm text-slate-700 leading-relaxed mt-1 text-pretty max-w-3xl">
+          {award.criteria}
+        </p>
+        <p class="font-sans text-xs text-slate-500 italic mt-1">
+          {award.dedicatedTo}
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between md:justify-end pt-3 md:pt-0 border-t md:border-t-0 border-slate-100 shrink-0">
+      <span class="inline-flex items-center gap-2 text-xs font-heading font-semibold uppercase tracking-wider text-referee-gold group-hover:brightness-90">
+        <span>Albo d'Oro ({winnersCountLabel})</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-4 h-4 transition-transform duration-200 group-open:rotate-180"
+          aria-hidden="true"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </span>
+    </div>
+  </summary>
+
+  <div class="px-5 sm:px-6 pb-6 sm:pb-8 pt-2 border-t border-slate-100 bg-slate-50/40">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-4">
+      {award.winners.map((winner) => <TraditionalWinnerCard winner={winner} />)}
+    </div>
+  </div>
+</details>
