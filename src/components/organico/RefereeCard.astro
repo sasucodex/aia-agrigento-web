@@ -46,10 +46,10 @@ const { associato } = Astro.props;
         </p>
       )}
 
-      <h3 class="font-heading font-bold text-xs sm:text-base text-slate-900 leading-snug line-clamp-1 uppercase">
+      <h3 class="font-heading font-bold text-xs sm:text-base text-slate-900 leading-snug uppercase min-h-[2.5rem] sm:min-h-[2.75rem] flex items-center justify-center text-balance">
         {associato.cognome} {associato.nome}
       </h3>
-      <p class="font-sans text-[11px] sm:text-xs text-slate-600 mt-0.5 line-clamp-1">
+      <p class="font-sans text-[11px] sm:text-xs text-slate-600 mt-0.5">
         {associato.ruolo}
       </p>
     </div>
