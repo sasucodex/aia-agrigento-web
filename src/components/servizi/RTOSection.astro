@@ -1,0 +1,289 @@
+---
+import {
+  formatRTODateShort,
+  formatRTODateVerbose,
+  formatRTOOptionLabel,
+  getNextRTOEvent,
+  getRTOCalendarWithStatus,
+  getRTOSeasonMetadata,
+  RTO_FILTER_CATEGORIES,
+} from "@/lib/utils/services";
+import type { RTOEvent, RTOSeasonMetadata } from "@/types/services";
+
+export interface Props {
+  events?: (RTOEvent & { isCompleted: boolean })[];
+  nextEvent?: RTOEvent;
+  metadata?: RTOSeasonMetadata;
+}
+
+const {
+  events = getRTOCalendarWithStatus(),
+  nextEvent = getNextRTOEvent(),
+  metadata = getRTOSeasonMetadata(),
+} = Astro.props;
+---
+
+<section
+  id="rto"
+  aria-labelledby="rto-section-heading"
+  class="bg-slate-50 border-b border-slate-200/80 scroll-mt-20"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="flex items-center gap-2 sm:gap-4 mb-8 sm:mb-10">
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      ></div>
+      <h2
+        id="rto-section-heading"
+        class="font-heading font-extrabold text-xl sm:text-3xl lg:text-4xl text-slate-900 tracking-tight text-balance text-center uppercase"
+      >
+        Riunioni Tecniche & Calendario
+      </h2>
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      ></div>
+    </div>
+
+    <div class="bg-white border-l-4 border-[#004b97] border-y border-r border-slate-200 p-5 sm:p-8 rounded-sm shadow-xs mb-8 sm:mb-10">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8">
+        <div class="min-w-0 flex-1">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-2">
+            <span class="font-heading font-bold text-xs uppercase tracking-wider text-[#004b97]">
+              Prossima Riunione Tecnica
+            </span>
+            <span class="text-slate-300 font-bold" aria-hidden="true">
+              ·
+            </span>
+            <span class="font-heading font-semibold text-xs sm:text-sm uppercase tracking-wider text-referee-gold tabular-nums">
+              {formatRTODateVerbose(nextEvent.date)} · Ore {nextEvent.time}
+            </span>
+          </div>
+
+          <h3 class="font-heading font-bold text-xl sm:text-2xl text-slate-900 tracking-tight leading-snug mt-1">
+            {nextEvent.title}
+          </h3>
+
+          <dl class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 mt-4 pt-4 border-t border-slate-100">
+            <div>
+              <dt class="font-heading text-[11px] font-semibold uppercase tracking-widest text-slate-500">
+                Organo / Destinatari
+              </dt>
+              <dd class="font-sans text-sm font-bold text-slate-900 mt-0.5">
+                {nextEvent.target}
+              </dd>
+            </div>
+            <div>
+              <dt class="font-heading text-[11px] font-semibold uppercase tracking-widest text-slate-500">
+                Sede di Svolgimento
+              </dt>
+              <dd class="font-sans text-sm font-bold text-slate-900 mt-0.5">
+                {nextEvent.location} — Via Matteo Cimarra 38, Agrigento
+              </dd>
+            </div>
+          </dl>
+
+          <p class="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed mt-4 max-w-prose text-pretty">
+            {metadata.regulationText}
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0 lg:w-72">
+          <a
+            href={metadata.pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full min-h-[48px] inline-flex items-center justify-center gap-2 bg-[#004b97] hover:bg-blue-800 active:scale-[0.98] text-white font-heading font-bold text-xs uppercase tracking-wider px-4 py-3 rounded-sm shadow-xs transition-all duration-200 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+          >
+            <span>Scarica Calendario {metadata.season} (PDF)</span>
+            <svg
+              class="w-4 h-4 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              />
+            </svg>
+          </a>
+
+          <button
+            type="button"
+            data-open-modal="giustificazioni"
+            data-rto-event={formatRTOOptionLabel(nextEvent)}
+            class="w-full min-h-[48px] inline-flex items-center justify-center gap-2 bg-referee-gold hover:brightness-95 active:scale-[0.98] text-slate-950 font-heading font-bold text-xs uppercase tracking-wider px-4 py-3 rounded-sm shadow-xs transition-all duration-200 text-center cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+          >
+            <span>Invia Giustificazione Assenza →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      <div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 tracking-tight">
+          Calendario Ufficiale S.S. {metadata.season} (16 Riunioni)
+        </h3>
+        <p class="font-sans text-xs sm:text-sm text-slate-600">
+          Filtra per tipologia di convocazione o seleziona una riunione per
+          trasmettere la giustificazione.
+        </p>
+      </div>
+
+      <div
+        role="group"
+        aria-label="Filtra riunioni per categoria"
+        class="flex flex-wrap items-center gap-1.5"
+      >
+        {RTO_FILTER_CATEGORIES.map((cat, idx) => (
+          <button
+            type="button"
+            data-rto-filter={cat.id}
+            aria-pressed={idx === 0 ? "true" : "false"}
+            class:list={[
+              "rto-filter-btn min-h-[40px] px-3.5 py-1.5 rounded-sm font-heading font-semibold text-xs uppercase tracking-wider transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]",
+              idx === 0
+                ? "bg-[#004b97] text-white border border-[#004b97]"
+                : "bg-white text-slate-700 border border-slate-200 hover:border-slate-400",
+            ]}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="bg-white border border-slate-200 rounded-sm shadow-xs overflow-hidden">
+      <div class="hidden md:grid md:grid-cols-12 gap-4 px-5 py-3 bg-slate-50 border-b border-slate-200 font-heading text-[11px] font-bold uppercase tracking-wider text-slate-600">
+        <div class="col-span-3">Data e Orario</div>
+        <div class="col-span-4">Argomento Riunione</div>
+        <div class="col-span-2">Destinatari</div>
+        <div class="col-span-3 text-right">Sede e Stato</div>
+      </div>
+
+      <ul class="divide-y divide-slate-100" id="rto-calendar-list">
+        {events.map((event) => {
+          const isNext = event.id === nextEvent.id;
+          const optionLabel = formatRTOOptionLabel(event);
+
+          return (
+            <li
+              data-rto-category={event.category}
+              class:list={[
+                "rto-event-row p-4 sm:px-5 sm:py-4 transition-colors duration-150",
+                isNext
+                  ? "bg-blue-50/40"
+                  : event.isCompleted
+                    ? "bg-white text-slate-500"
+                    : "bg-white hover:bg-slate-50/80",
+              ]}
+            >
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4 md:items-center">
+                <div class="md:col-span-3 flex items-center justify-between md:justify-start gap-2.5">
+                  <span class="font-sans font-bold text-xs sm:text-sm text-slate-400 tabular-nums shrink-0 w-5">
+                    {event.number}.
+                  </span>
+                  <div class="font-sans text-xs sm:text-sm font-bold text-slate-900 tabular-nums">
+                    <span>Ven {formatRTODateShort(event.date)}</span>
+                    <span class="text-slate-500 font-normal">
+                      {" "}
+                      · {event.time}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="md:col-span-4">
+                  <p
+                    class:list={[
+                      "font-heading text-sm sm:text-base font-semibold tracking-tight leading-snug",
+                      event.isCompleted ? "text-slate-600" : "text-slate-900",
+                    ]}
+                  >
+                    {event.title}
+                  </p>
+                </div>
+
+                <div class="md:col-span-2 flex items-center gap-2">
+                  <span class="font-sans text-xs font-medium text-slate-700">
+                    {event.target}
+                  </span>
+                </div>
+
+                <div class="md:col-span-3 flex flex-wrap items-center justify-between md:justify-end gap-2 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100">
+                  <span class="font-sans text-xs text-slate-500">
+                    {event.location}
+                  </span>
+
+                  {isNext ? (
+                    <button
+                      type="button"
+                      data-open-modal="giustificazioni"
+                      data-rto-event={optionLabel}
+                      class="font-heading font-bold text-xs uppercase tracking-wider text-referee-gold hover:underline underline-offset-4 cursor-pointer transition-colors"
+                    >
+                      Prossima RTO · Giustifica →
+                    </button>
+                  ) : event.isCompleted ? (
+                    <span class="font-heading font-semibold text-xs uppercase tracking-wider text-slate-400">
+                      Completata
+                    </span>
+                  ) : (
+                    <button
+                      type="button"
+                      data-open-modal="giustificazioni"
+                      data-rto-event={optionLabel}
+                      class="font-heading font-semibold text-xs uppercase tracking-wider text-[#004b97] hover:underline underline-offset-4 cursor-pointer transition-colors"
+                    >
+                      In Programma · Giustifica →
+                    </button>
+                  )}
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    const filterButtons = document.querySelectorAll(".rto-filter-btn");
+    const rows = document.querySelectorAll(".rto-event-row");
+    if (!filterButtons.length || !rows.length) return;
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const selected = btn.getAttribute("data-rto-filter") || "Tutte";
+
+        filterButtons.forEach((other) => {
+          const isActive = other === btn;
+          other.setAttribute("aria-pressed", isActive ? "true" : "false");
+          if (isActive) {
+            other.className =
+              "rto-filter-btn min-h-[40px] px-3.5 py-1.5 rounded-sm font-heading font-semibold text-xs uppercase tracking-wider transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97] bg-[#004b97] text-white border border-[#004b97]";
+          } else {
+            other.className =
+              "rto-filter-btn min-h-[40px] px-3.5 py-1.5 rounded-sm font-heading font-semibold text-xs uppercase tracking-wider transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97] bg-white text-slate-700 border border-slate-200 hover:border-slate-400";
+          }
+        });
+
+        rows.forEach((row) => {
+          const category = row.getAttribute("data-rto-category");
+          if (selected === "Tutte" || category === selected) {
+            row.classList.remove("hidden");
+          } else {
+            row.classList.add("hidden");
+          }
+        });
+      });
+    });
+  })();
+</script>

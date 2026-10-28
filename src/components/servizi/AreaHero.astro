@@ -1,0 +1,91 @@
+---
+import { getFederalPortals } from "@/lib/utils/services";
+import type { FederalPortal } from "@/types/services";
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  portals?: FederalPortal[];
+}
+
+const {
+  title = "Area Associati",
+  subtitle = "Tutti gli strumenti indispensabili per la gestione della stagione sportiva: il calendario ufficiale delle Riunioni Tecniche, i canali per giustifiche e accrediti, la modulistica pre e post gara e il polo di preparazione atletica.",
+  portals = getFederalPortals(),
+} = Astro.props;
+---
+
+<section
+  aria-labelledby="area-associati-hero-heading"
+  class="bg-white border-b border-slate-100"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-4 sm:pb-6 text-center">
+    <h1
+      id="area-associati-hero-heading"
+      class="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-[1.1] uppercase text-balance mb-4"
+    >
+      {title}
+    </h1>
+
+    <p class="font-sans text-base sm:text-lg text-slate-700 leading-relaxed text-pretty max-w-2xl mx-auto">
+      {subtitle}
+    </p>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 mt-4 sm:mt-6 text-left">
+      {portals.map((portal) => (
+        <div
+          class:list={[
+            "rounded-sm p-4 sm:p-5 transition-all duration-200 flex flex-col justify-between gap-4 shadow-xs",
+            portal.variant === "primary"
+              ? "border border-blue-200 bg-blue-50/50 hover:border-[#004b97] hover:shadow-sm"
+              : "border border-slate-200 bg-white hover:border-[#004b97] hover:shadow-sm",
+          ]}
+        >
+          <div>
+            <p class="font-heading text-[11px] font-semibold uppercase tracking-widest text-[#004b97] mb-1">
+              {portal.kicker}
+            </p>
+            <h2 class="font-heading text-lg sm:text-xl font-bold text-slate-900 tracking-tight leading-snug">
+              {portal.title}
+            </h2>
+            <p class="font-sans text-sm text-slate-700 leading-relaxed mt-1.5 text-pretty">
+              {portal.description}
+            </p>
+          </div>
+
+          <div class="pt-1">
+            <a
+              href={portal.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class:list={[
+                "w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-sm font-heading font-bold text-xs uppercase tracking-wider transition-all duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]",
+                portal.variant === "primary"
+                  ? "bg-[#004b97] hover:bg-blue-800 text-white shadow-xs"
+                  : "bg-slate-100 hover:bg-slate-200/80 text-slate-900 border border-slate-300",
+              ]}
+            >
+              <span>{portal.ctaLabel}</span>
+              <svg
+                class="w-4 h-4 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 17L17 7M17 7H7M17 7V17"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "rto-01",
+    "number": 1,
+    "date": "2026-09-25",
+    "time": "19:30",
+    "title": "Approfondimenti Tecnici",
+    "target": "A.E. e O.A. OTR",
+    "location": "Locali Sezionali",
+    "category": "CRA"
+  },
+  {
+    "id": "rto-02",
+    "number": 2,
+    "date": "2026-10-09",
+    "time": "19:30",
+    "title": "Disposizioni Inizio Stagione",
+    "target": "Plenaria",
+    "location": "Locali Sezionali",
+    "category": "Plenaria"
+  },
+  {
+    "id": "rto-03",
+    "number": 3,
+    "date": "2026-10-23",
+    "time": "19:30",
+    "title": "Riunione Tecnica OTS-CRA",
+    "target": "A.E. e O.A. OTS-CRA",
+    "location": "Locali Sezionali",
+    "category": "CRA"
+  },
+  {
+    "id": "rto-04",
+    "number": 4,
+    "date": "2026-11-06",
+    "time": "19:30",
+    "title": "Riunione Tecnica Specifica O.T.S.",
+    "target": "A.E. O.T.S.",
+    "location": "Locali Sezionali",
+    "category": "OTS"
+  },
+  {
+    "id": "rto-05",
+    "number": 5,
+    "date": "2026-11-20",
+    "time": "19:30",
+    "title": "Riunione Tecnica Plenaria",
+    "target": "Plenaria",
+    "location": "Locali Sezionali",
+    "category": "Plenaria"
+  },
+  {
+    "id": "rto-06",
+    "number": 6,
+    "date": "2026-12-04",
+    "time": "19:30",
+    "title": "Riunione Tecnica O.T.S.",
+    "target": "A.E. O.T.S.",
+    "location": "Locali Sezionali",
+    "category": "OTS"
+  },
+  {
+    "id": "rto-07",
+    "number": 7,
+    "date": "2026-12-18",
+    "time": "19:30",
+    "title": "Conviviale di Natale",
+    "target": "Plenaria",
+    "location": "Locali da comunicare",
+    "category": "Plenaria"
+  },
+  {
+    "id": "rto-08",
+    "number": 8,
+    "date": "2027-01-15",
+    "time": "19:30",
+    "title": "Riunione Tecnica O.T.S. - CRA",
+    "target": "A.E. e O.A. OTS-CRA",
+    "location": "Locali Sezionali",
+    "category": "CRA"
+  },
+  {
+    "id": "rto-09",
+    "number": 9,
+    "date": "2027-01-29",
+    "time": "19:30",
+    "title": "Riunione Tecnica",
+    "target": "Plenaria",
+    "location": "Locali Sezionali",
+    "category": "Plenaria"
+  },
+  {
+    "id": "rto-10",
+    "number": 10,
+    "date": "2027-02-19",
+    "time": "19:30",
+    "title": "Riunione Tecnica Arbitri O.T.S.",
+    "target": "A.E. O.T.S.",
+    "location": "Locali Sezionali",
+    "category": "OTS"
+  },
+  {
+    "id": "rto-11",
+    "number": 11,
+    "date": "2027-03-05",
+    "time": "19:30",
+    "title": "Riunione Tecnica",
+    "target": "Plenaria",
+    "location": "Locali Sezionali",
+    "category": "Plenaria"
+  },
+  {
+    "id": "rto-12",
+    "number": 12,
+    "date": "2027-03-19",
+    "time": "19:30",
+    "title": "Riunione Tecnica Arbitri e Osservatori O.T.S.",
+    "target": "A.E. e O.A. O.T.S.",
+    "location": "Locali Sezionali",
+    "category": "OTS"
+  },
+  {
+    "id": "rto-13",
+    "number": 13,
+    "date": "2027-04-09",
+    "time": "19:30",
+    "title": "Riunione Tecnica",
+    "target": "Plenaria",
+    "location": "Locali Sezionali",
+    "category": "Plenaria"
+  },
+  {
+    "id": "rto-14",
+    "number": 14,
+    "date": "2027-05-07",
+    "time": "19:30",
+    "title": "Riunione Tecnica O.T.S.",
+    "target": "A.E. O.T.S.",
+    "location": "Locali Sezionali",
+    "category": "OTS"
+  },
+  {
+    "id": "rto-15",
+    "number": 15,
+    "date": "2027-05-28",
+    "time": "19:30",
+    "title": "Riunione Tecnica",
+    "target": "Plenaria",
+    "location": "Locali Sezionali",
+    "category": "Plenaria"
+  },
+  {
+    "id": "rto-16",
+    "number": 16,
+    "date": "2027-06-11",
+    "time": "19:30",
+    "title": "Premio Livatino Conviviale di Fine Anno e Premiazioni",
+    "target": "Plenaria",
+    "location": "Locali da comunicare",
+    "category": "Plenaria"
+  }
+]

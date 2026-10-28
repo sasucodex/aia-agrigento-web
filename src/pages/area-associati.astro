@@ -1,0 +1,73 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AreaHero from "@/components/servizi/AreaHero.astro";
+import RTOSection from "@/components/servizi/RTOSection.astro";
+import FormsModal from "@/components/servizi/FormsModal";
+import {
+  formatRTOOptionLabel,
+  getNextRTOEvent,
+  getRTOCalendar,
+} from "@/lib/utils/services";
+import heroRaduno from "@/assets/images/hero-raduno.jpg";
+
+const rtoCalendar = getRTOCalendar();
+const nextRTO = getNextRTOEvent();
+
+const areaAssociatiJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://aiaagrigento.it/area-associati#webpage",
+  name: "Area Associati & Servizi per l'Arbitro | AIA Sezione di Agrigento FIGC",
+  url: "https://aiaagrigento.it/area-associati",
+  description:
+    "Bacheca operativa per gli arbitri della Sezione di Agrigento: calendario RTO, giustificazioni assenze, download rapido referti di gara, polo atletico, accrediti stadi e regolamenti ufficiali.",
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Calendario Riunioni Tecniche Obbligatorie AIA Agrigento",
+    itemListElement: rtoCalendar.map((event, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "EducationEvent",
+        name: event.title,
+        startDate: `${event.date}T${event.time}:00+01:00`,
+        eventStatus: "https://schema.org/EventScheduled",
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        location: {
+          "@type": "Place",
+          name: `${event.location} - AIA Sezione di Agrigento`,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Via Matteo Cimarra, 38",
+            addressLocality: "Agrigento",
+            addressRegion: "AG",
+            postalCode: "92100",
+            addressCountry: "IT",
+          },
+        },
+        organizer: {
+          "@type": "SportsOrganization",
+          name: "Associazione Italiana Arbitri - Sezione di Agrigento",
+          url: "https://aiaagrigento.it",
+        },
+      },
+    })),
+  },
+};
+---
+
+<Layout
+  title="Area Associati & Servizi per l'Arbitro | AIA Sezione di Agrigento FIGC"
+  description="Bacheca operativa per gli arbitri della Sezione di Agrigento: calendario RTO, giustificazioni assenze, download rapido referti di gara, polo atletico, accrediti stadi e regolamenti ufficiali."
+  image={heroRaduno.src}
+  imageAlt="Area Associati e Bacheca Riunioni Tecniche - Sezione AIA di Agrigento"
+  jsonLd={areaAssociatiJsonLd}
+>
+  <AreaHero />
+  <RTOSection />
+  <FormsModal
+    client:idle
+    rtoEvents={rtoCalendar}
+    defaultEventLabel={formatRTOOptionLabel(nextRTO)}
+  />
+</Layout>
