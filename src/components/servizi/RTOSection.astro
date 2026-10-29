@@ -49,15 +49,12 @@ const {
     <div class="bg-white border-l-4 border-[#004b97] border-y border-r border-slate-200 p-5 sm:p-8 rounded-sm shadow-xs mb-8 sm:mb-10">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8">
         <div class="min-w-0 flex-1">
-          <div class="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-2">
+          <div class="flex flex-wrap items-baseline gap-2 mb-2">
             <span class="font-heading font-bold text-xs uppercase tracking-wider text-[#004b97]">
-              Prossima Riunione Tecnica
-            </span>
-            <span class="text-slate-300 font-bold" aria-hidden="true">
-              ·
+              Prossima Riunione Tecnica:
             </span>
             <span class="font-heading font-semibold text-xs sm:text-sm uppercase tracking-wider text-referee-gold tabular-nums">
-              {formatRTODateVerbose(nextEvent.date)} · Ore {nextEvent.time}
+              {formatRTODateVerbose(nextEvent.date)}, ore {nextEvent.time}
             </span>
           </div>
 
@@ -79,7 +76,7 @@ const {
                 Sede di Svolgimento
               </dt>
               <dd class="font-sans text-sm font-bold text-slate-900 mt-0.5">
-                {nextEvent.location} — Via Matteo Cimarra 38, Agrigento
+                {nextEvent.location}, Via Matteo Cimarra 38, Agrigento
               </dd>
             </div>
           </dl>
@@ -131,8 +128,8 @@ const {
           Calendario Ufficiale S.S. {metadata.season} (16 Riunioni)
         </h3>
         <p class="font-sans text-xs sm:text-sm text-slate-600">
-          Filtra per tipologia di convocazione o seleziona una riunione per
-          trasmettere la giustificazione.
+          La giustificazione si trasmette solo per la prossima riunione in
+          calendario.
         </p>
       </div>
 
@@ -164,36 +161,48 @@ const {
         <div class="col-span-3">Data e Orario</div>
         <div class="col-span-4">Argomento Riunione</div>
         <div class="col-span-2">Destinatari</div>
-        <div class="col-span-3 text-right">Sede e Stato</div>
+        <div class="col-span-3 text-right">Sede</div>
       </div>
 
       <ul class="divide-y divide-slate-100" id="rto-calendar-list">
         {events.map((event) => {
           const isNext = event.id === nextEvent.id;
-          const optionLabel = formatRTOOptionLabel(event);
+          const isPast = event.isCompleted && !isNext;
 
           return (
             <li
               data-rto-category={event.category}
               class:list={[
                 "rto-event-row p-4 sm:px-5 sm:py-4 transition-colors duration-150",
-                isNext
-                  ? "bg-blue-50/40"
-                  : event.isCompleted
-                    ? "bg-white text-slate-500"
-                    : "bg-white hover:bg-slate-50/80",
+                isNext ? "bg-blue-50/40" : "bg-white",
               ]}
             >
               <div class="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4 md:items-center">
-                <div class="md:col-span-3 flex items-center justify-between md:justify-start gap-2.5">
-                  <span class="font-sans font-bold text-xs sm:text-sm text-slate-400 tabular-nums shrink-0 w-5">
+                <div class="md:col-span-3 flex items-center gap-2.5">
+                  <span
+                    class:list={[
+                      "font-sans text-xs sm:text-sm tabular-nums shrink-0 w-5",
+                      isPast ? "text-slate-300" : "font-bold text-slate-400",
+                    ]}
+                  >
                     {event.number}.
                   </span>
-                  <div class="font-sans text-xs sm:text-sm font-bold text-slate-900 tabular-nums">
+                  <div
+                    class:list={[
+                      "font-sans text-xs sm:text-sm tabular-nums",
+                      isPast
+                        ? "font-normal text-slate-400"
+                        : "font-bold text-slate-900",
+                    ]}
+                  >
                     <span>Ven {formatRTODateShort(event.date)}</span>
-                    <span class="text-slate-500 font-normal">
-                      {" "}
-                      · {event.time}
+                    <span
+                      class:list={[
+                        "font-normal",
+                        isPast ? "text-slate-400" : "text-slate-500",
+                      ]}
+                    >
+                      , ore {event.time}
                     </span>
                   </div>
                 </div>
@@ -201,46 +210,45 @@ const {
                 <div class="md:col-span-4">
                   <p
                     class:list={[
-                      "font-heading text-sm sm:text-base font-semibold tracking-tight leading-snug",
-                      event.isCompleted ? "text-slate-600" : "text-slate-900",
+                      "font-heading text-sm sm:text-base tracking-tight leading-snug",
+                      isPast
+                        ? "font-normal text-slate-400"
+                        : "font-semibold text-slate-900",
                     ]}
                   >
                     {event.title}
                   </p>
                 </div>
 
-                <div class="md:col-span-2 flex items-center gap-2">
-                  <span class="font-sans text-xs font-medium text-slate-700">
+                <div class="md:col-span-2">
+                  <span
+                    class:list={[
+                      "font-sans text-xs",
+                      isPast ? "text-slate-400" : "font-medium text-slate-700",
+                    ]}
+                  >
                     {event.target}
                   </span>
                 </div>
 
-                <div class="md:col-span-3 flex flex-wrap items-center justify-between md:justify-end gap-2 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100">
-                  <span class="font-sans text-xs text-slate-500">
+                <div class="md:col-span-3 flex flex-wrap items-center justify-between md:justify-end gap-x-4 gap-y-2">
+                  <span
+                    class:list={[
+                      "font-sans text-xs",
+                      isPast ? "text-slate-400" : "text-slate-500",
+                    ]}
+                  >
                     {event.location}
                   </span>
 
-                  {isNext ? (
+                  {isNext && (
                     <button
                       type="button"
                       data-open-modal="giustificazioni"
-                      data-rto-event={optionLabel}
-                      class="font-heading font-bold text-xs uppercase tracking-wider text-referee-gold hover:underline underline-offset-4 cursor-pointer transition-colors"
+                      data-rto-event={formatRTOOptionLabel(event)}
+                      class="min-h-[40px] md:min-h-0 font-heading font-bold text-xs uppercase tracking-wider text-referee-gold hover:underline underline-offset-4 cursor-pointer transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
                     >
-                      Prossima RTO · Giustifica →
-                    </button>
-                  ) : event.isCompleted ? (
-                    <span class="font-heading font-semibold text-xs uppercase tracking-wider text-slate-400">
-                      Completata
-                    </span>
-                  ) : (
-                    <button
-                      type="button"
-                      data-open-modal="giustificazioni"
-                      data-rto-event={optionLabel}
-                      class="font-heading font-semibold text-xs uppercase tracking-wider text-[#004b97] hover:underline underline-offset-4 cursor-pointer transition-colors"
-                    >
-                      In Programma · Giustifica →
+                      Giustifica Assenza →
                     </button>
                   )}
                 </div>

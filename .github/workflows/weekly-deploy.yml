@@ -1,0 +1,18 @@
+name: Weekly RTO Refresh Deploy
+
+on:
+  schedule:
+    - cron: '0 5 * * 6'
+  workflow_dispatch:
+
+jobs:
+  trigger-vercel-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invia richiesta di deploy a Vercel
+        run: |
+          if [ -z "${{ secrets.VERCEL_DEPLOY_HOOK }}" ]; then
+            echo "Errore: secret VERCEL_DEPLOY_HOOK non configurato su GitHub."
+            exit 1
+          fi
+          curl -s -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"

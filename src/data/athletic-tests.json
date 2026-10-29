@@ -1,0 +1,40 @@
+[
+  {
+    "id": "yo-yo-level1",
+    "name": "Yo-Yo Intermittent Recovery Test (Level 1)",
+    "shortCode": "YYIR1",
+    "target": "Arbitri Calcio a 11 (O.T.S., C.R.A., C.A.N.)",
+    "threshold": "Soglia minima: Liv. 16.4 (O.T.S.), Liv. 17.4 (C.R.A.), Liv. 18.2 (C.A.N.)",
+    "description": "Prova ad intervalli per la valutazione della potenza aerobica e capacità di recupero intermittente su frazioni navetta di 20+20 metri.",
+    "audioUrl": "/documents/audio/yo-yo.mp3",
+    "audioLabel": "Scarica Traccia Audio MP3"
+  },
+  {
+    "id": "sds-test",
+    "name": "Single-Double-Single Test (SDS)",
+    "shortCode": "SDS",
+    "target": "Arbitri e Assistenti Calcio a 11 (O.T.S., C.R.A., C.A.N.)",
+    "threshold": "Protocollo: 3 serie da 10 ripetizioni (O.T.S./C.R.A.), 4 serie (C.A.N.)",
+    "description": "Prova specifica per la valutazione della capacità aerobica e della reattività su cambi di ritmo ad alta intensità.",
+    "audioUrl": "/documents/audio/sds.mp3",
+    "audioLabel": "Scarica Traccia Audio MP3"
+  },
+  {
+    "id": "sprint-40m",
+    "name": "Sprint 40 metri",
+    "shortCode": "40m",
+    "target": "Arbitri Calcio a 11 e Assistenti Arbitrali (30m)",
+    "threshold": "Limite max: 6,00 s (O.T.S.), 5,80 s (C.R.A./C.A.N.), 4,70 s (A.A. 30m)",
+    "description": "Prova di velocità e scatto sui 40 metri lineari con rilevazione tramite fotocellule per la misura della rapidità massimale."
+  },
+  {
+    "id": "ariet-test",
+    "name": "Ariet Test",
+    "shortCode": "ARIET",
+    "target": "Arbitri Calcio a 5 e Assistenti Arbitrali",
+    "threshold": "Soglia minima: Liv. 15.5-5 (1.170 m O.T.S.), Liv. 16.0-4 (1.300 m C.R.A./C.A.N. 5)",
+    "description": "Prova ad intervalli ad alta intensità specifica per arbitri di Calcio a 5 e assistenti, con navette frontali e spostamenti laterali.",
+    "audioUrl": "/documents/audio/ariet.mp3",
+    "audioLabel": "Scarica Traccia Audio MP3"
+  }
+]

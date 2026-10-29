@@ -1,0 +1,111 @@
+[
+  {
+    "id": "modulistica-nazionale",
+    "title": "Modulistica Referti e Relazioni Nazionali",
+    "description": "I modelli ufficiali di referto di gara, rapporti di fine gara e relazioni disciplinari sono gestiti e aggiornati centralmente dalla Federazione all'interno dell'Area Riservata AIA FIGC.",
+    "type": "nazionale-external",
+    "fileName": "Area Riservata Referti AIA FIGC",
+    "previewUrl": "https://www.aia-figc.it/private/",
+    "isExternal": true,
+    "updatedSeason": "Aggiornato Centralmente FIGC"
+  },
+  {
+    "id": "richiesta-indisponibilita",
+    "title": "Richiesta Indisponibilità",
+    "description": "Modulo per la notifica tempestiva del periodo di indisponibilità all'Organo Tecnico Sezionale.",
+    "type": "sezionale",
+    "cluster": "gare-congedi",
+    "fileName": "richiesta-indisponibilita.pdf",
+    "previewUrl": "/documents/richiesta-indisponibilita.pdf",
+    "updatedSeason": "Stagione 2025/2026"
+  },
+  {
+    "id": "rifiuto-gara",
+    "title": "Modulistica Rifiuto Gara",
+    "description": "Modello motivato per la rinuncia giustificata a una designazione pervenuta dall'Organo Tecnico.",
+    "type": "sezionale",
+    "cluster": "gare-congedi",
+    "fileName": "rifiuto-designazione.pdf",
+    "previewUrl": "/documents/rifiuto-designazione.pdf",
+    "updatedSeason": "Stagione 2025/2026"
+  },
+  {
+    "id": "richiesta-congedo",
+    "title": "Modulistica Richiesta Congedo",
+    "description": "Modulo per la richiesta di congedo ordinario o straordinario ai sensi dell'art. 40 del Regolamento AIA.",
+    "type": "sezionale",
+    "cluster": "gare-congedi",
+    "fileName": "richiesta-congedo.pdf",
+    "previewUrl": "/documents/richiesta-congedo.pdf",
+    "updatedSeason": "Stagione 2025/2026"
+  },
+  {
+    "id": "modulo-iscrizione",
+    "title": "Modulo Iscrizione",
+    "description": "Modello anagrafico unico per l'ammissione e il perfezionamento dell'iscrizione sezionale AIA FIGC.",
+    "type": "sezionale",
+    "cluster": "tesseramento-amministrazione",
+    "fileName": "modulo-iscrizione.xlsx",
+    "previewUrl": "/documents/modulo-iscrizione.xlsx",
+    "updatedSeason": "Stagione 2025/2026"
+  },
+  {
+    "id": "comunicazione-iban",
+    "title": "Modulistica Comunicazione IBAN",
+    "description": "Modello per la dichiarazione o variazione delle coordinate bancarie per la liquidazione dei rimborsi spese arbitrali.",
+    "type": "sezionale",
+    "cluster": "tesseramento-amministrazione",
+    "fileName": "modello-accredito-iban.pdf",
+    "previewUrl": "/documents/modello-accredito-iban.pdf",
+    "updatedSeason": "Stagione 2025/2026"
+  },
+  {
+    "id": "doppio-tesseramento",
+    "title": "Richiesta Doppio Tesseramento",
+    "description": "Modulo per la richiesta di autorizzazione all'esercizio del doppio tesseramento Arbitro-Calciatore fino al compimento del 19° anno di età.",
+    "type": "sezionale",
+    "cluster": "tesseramento-amministrazione",
+    "fileName": "doppio-tesseramento.pdf",
+    "previewUrl": "/documents/doppio-tesseramento.pdf",
+    "updatedSeason": "Stagione 2025/2026"
+  },
+  {
+    "id": "modulistica-dimissioni",
+    "title": "Modulistica Dimissioni",
+    "description": "Modulo formale per la comunicazione di dimissioni dall'Associazione Italiana Arbitri.",
+    "type": "sezionale",
+    "cluster": "tesseramento-amministrazione",
+    "fileName": "modulistica-dimissioni.pdf",
+    "previewUrl": "/documents/modulistica-dimissioni.pdf",
+    "updatedSeason": "Stagione 2025/2026"
+  },
+  {
+    "id": "posizionamenti-riprese-giuoco",
+    "title": "Posizionamenti Riprese Di Giuoco OTP",
+    "description": "Vademecum tecnico e grafico sul corretto piazzamento dinamico nelle riprese di gioco per arbitri dell'Organo Tecnico Periferico di Agrigento.",
+    "type": "sezionale",
+    "cluster": "tecnica-campo",
+    "fileName": "guida-posizionamento-otp.pdf",
+    "previewUrl": "/documents/guida-posizionamento-otp.pdf",
+    "updatedSeason": "Stagione 2025/2026"
+  },
+  {
+    "id": "limiti-test-atletici",
+    "title": "Tabella Limiti e Protocolli Test Atletici Federali",
+    "description": "Prospetto ufficiale delle soglie minime di idoneità e delle fasce di merito per Yo-Yo IR1, SDS, Sprint 40m e Ariet Test.",
+    "type": "atletico",
+    "fileName": "limiti-test-atletici.pdf",
+    "previewUrl": "/documents/limiti-test-atletici.pdf",
+    "updatedSeason": "Stagione 2026/2027"
+  },
+  {
+    "id": "area-download-regolamenti",
+    "title": "Area Download Ufficiale Regolamenti AIA FIGC",
+    "description": "Tutti i regolamenti federali costantemente aggiornati: Regole del Gioco IFAB, Circolari Settore Tecnico, Futsal e Regolamento Associativo.",
+    "type": "regolamenti-external",
+    "fileName": "Area Download Nazionale AIA FIGC",
+    "previewUrl": "https://www.aia-figc.it/download/",
+    "isExternal": true,
+    "updatedSeason": "Vigente / Aggiornato da FIGC"
+  }
+]

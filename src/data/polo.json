@@ -1,0 +1,16 @@
+{
+  "kicker": "POLO SEZIONALE E PROTOCOLLI FEDERALI DI ALLENAMENTO",
+  "title": "Il Polo di Allenamento Sezionale",
+  "intro": "Il Polo Atletico della Sezione AIA di Agrigento rappresenta il punto di riferimento settimanale per la preparazione fisica, la prevenzione degli infortuni e la crescita atletica di tutti gli arbitri e assistenti agrigentini in vista dei raduni O.T.S., C.R.A. e C.A.N.",
+  "venue": "Stadio Comunale \"Totò Russo\" di Aragona",
+  "address": "Via Giovanni Falcone 37, Aragona (AG)",
+  "days": "Martedì, Giovedì e Venerdì",
+  "hours": "Ore 19:30",
+  "referents": [
+    "Salvatore Cordaro",
+    "Pietro Bennici"
+  ],
+  "accessPolicy": "Gratuito per tutti gli associati agrigentini muniti di certificato medico agonistico in corso di validità.",
+  "limitsDocumentUrl": "/documents/limiti-test-atletici.pdf",
+  "limitsDocumentLabel": "Tabella Limiti Ufficiali (PDF)"
+}

@@ -61,7 +61,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     const htmlSummary = `
       <div style="font-family: Arial, sans-serif; color: #0f172a; line-height: 1.6; max-width: 640px;">
-        <h2 style="color: #004b97; margin-bottom: 8px;">Giustificazione Assenza R.T.O. — AIA Sezione di Agrigento</h2>
+        <h2 style="color: #004b97; margin-bottom: 8px;">Giustificazione Assenza R.T.O. - AIA Sezione di Agrigento</h2>
         <p style="margin-top: 0; color: #334155;">Ricevuta nuova comunicazione di assenza alla Riunione Tecnica Obbligatoria:</p>
         <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
           <tr><td style="padding: 8px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Associato:</td><td style="padding: 8px; border-bottom: 1px solid #e2e8f0;">${escapeHtml(data.cognome)} ${escapeHtml(data.nome)}</td></tr>
@@ -88,7 +88,7 @@ export const POST: APIRoute = async ({ request }) => {
           to: [recipientEmail],
           cc: [data.email],
           reply_to: data.email,
-          subject: `[Giustificazione RTO] ${data.cognome} ${data.nome} — ${data.evento}`,
+          subject: `[Giustificazione RTO] ${data.cognome} ${data.nome} - ${data.evento}`,
           html: htmlSummary,
         }),
       }).catch(() => null);

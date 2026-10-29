@@ -1,0 +1,159 @@
+---
+import { getAthleticTests, getPoloInfo } from "@/lib/utils/polo";
+import type { AthleticTest, PoloInfo } from "@/types/polo";
+
+export interface Props {
+  polo?: PoloInfo;
+  tests?: AthleticTest[];
+}
+
+const { polo = getPoloInfo(), tests = getAthleticTests() } = Astro.props;
+---
+
+<section
+  id="polo-atletico"
+  aria-labelledby="polo-section-heading"
+  class="bg-slate-50 border-b border-slate-200/80 scroll-mt-20"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="flex items-center gap-2 sm:gap-4 mb-8 sm:mb-12">
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      ></div>
+      <h2
+        id="polo-section-heading"
+        class="font-heading font-extrabold text-xl sm:text-3xl lg:text-4xl text-slate-900 tracking-tight text-balance text-center uppercase"
+      >
+        Preparazione Atletica & Test
+      </h2>
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      ></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="lg:col-span-5">
+        <h3 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 tracking-tight leading-snug">
+          {polo.title}
+        </h3>
+
+        <p class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed mt-3 max-w-prose text-pretty">
+          {polo.intro}
+        </p>
+      </div>
+
+      <dl class="lg:col-span-7 divide-y divide-slate-200 border-y border-slate-200">
+        <div class="py-3.5 sm:py-4 sm:grid sm:grid-cols-12 sm:gap-4">
+          <dt class="sm:col-span-4 font-heading text-xs font-semibold uppercase tracking-wider text-slate-600">
+            Impianto Sportivo
+          </dt>
+          <dd class="mt-1 sm:mt-0 sm:col-span-8 font-sans text-sm sm:text-base font-bold text-slate-900">
+            {polo.venue}
+            <span class="block font-normal text-slate-700 text-xs sm:text-sm mt-0.5">
+              {polo.address}
+            </span>
+          </dd>
+        </div>
+
+        <div class="py-3.5 sm:py-4 sm:grid sm:grid-cols-12 sm:gap-4">
+          <dt class="sm:col-span-4 font-heading text-xs font-semibold uppercase tracking-wider text-slate-600">
+            Sedute Settimanali
+          </dt>
+          <dd class="mt-1 sm:mt-0 sm:col-span-8 font-sans text-sm sm:text-base font-bold text-slate-900 tabular-nums">
+            {polo.days}, ore {polo.hours.replace(/^Ore\s*/i, "")}
+          </dd>
+        </div>
+
+        <div class="py-3.5 sm:py-4 sm:grid sm:grid-cols-12 sm:gap-4">
+          <dt class="sm:col-span-4 font-heading text-xs font-semibold uppercase tracking-wider text-slate-600">
+            Referenti Atletici Sezionali
+          </dt>
+          <dd class="mt-1 sm:mt-0 sm:col-span-8 font-sans text-sm sm:text-base font-bold text-slate-900">
+            {polo.referents.join(" e ")}
+          </dd>
+        </div>
+
+        <div class="py-3.5 sm:py-4 sm:grid sm:grid-cols-12 sm:gap-4">
+          <dt class="sm:col-span-4 font-heading text-xs font-semibold uppercase tracking-wider text-slate-600">
+            Modalità di Accesso
+          </dt>
+          <dd class="mt-1 sm:mt-0 sm:col-span-8 font-sans text-sm text-slate-700 leading-relaxed">
+            {polo.accessPolicy}
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-slate-200">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <h3 class="font-heading font-bold text-xl sm:text-2xl text-slate-900 tracking-tight leading-snug text-balance">
+          I {tests.length} Test Atletici Federali
+        </h3>
+
+        <a
+          href={polo.limitsDocumentUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="self-start sm:self-auto min-h-[38px] inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-sm border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-heading font-semibold text-xs uppercase tracking-wider transition-colors duration-200 shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+        >
+          <span>{polo.limitsDocumentLabel}</span>
+          <svg
+            class="w-3.5 h-3.5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 17L17 7M17 7H7M17 7V17"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <ol class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mt-6 sm:mt-8">
+        {tests.map((test, index) => (
+          <li class="border-t-2 border-slate-900 pt-4">
+            <h4 class="font-heading text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-snug">
+              <span class="text-[#004b97] tabular-nums mr-1">{index + 1}.</span>
+              {test.name}
+            </h4>
+
+            <p class="font-sans text-sm text-slate-700 leading-relaxed mt-2 max-w-prose text-pretty">
+              {test.description}
+            </p>
+
+            {test.audioUrl && (
+              <a
+                href={test.audioUrl}
+                download
+                class="mt-4 min-h-[38px] inline-flex items-center gap-2 px-3.5 py-2 rounded-sm bg-[#004b97] hover:bg-blue-800 active:scale-[0.98] text-white font-heading font-bold text-xs uppercase tracking-wider shadow-xs transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+              >
+                <span>{test.audioLabel ?? "Scarica Traccia Audio MP3"}</span>
+                <svg
+                  class="w-3.5 h-3.5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  />
+                </svg>
+              </a>
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

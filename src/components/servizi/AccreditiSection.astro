@@ -1,0 +1,90 @@
+---
+import { getAccreditiSpecification } from "@/lib/utils/services";
+import type { AccreditiSpecification } from "@/types/services";
+
+export interface Props {
+  accrediti?: AccreditiSpecification;
+}
+
+const { accrediti = getAccreditiSpecification() } = Astro.props;
+---
+
+<section
+  id="accrediti-gare"
+  aria-labelledby="accrediti-section-heading"
+  class="bg-white scroll-mt-20"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="flex items-center gap-2 sm:gap-4 mb-8 sm:mb-10">
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      ></div>
+      <h2
+        id="accrediti-section-heading"
+        class="font-heading font-extrabold text-xl sm:text-3xl lg:text-4xl text-slate-900 tracking-tight text-balance text-center uppercase"
+      >
+        {accrediti.title}
+      </h2>
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      ></div>
+    </div>
+
+    {accrediti.kicker && (
+      <p class="font-heading text-xs font-semibold uppercase tracking-widest text-[#004b97] text-center text-balance mb-8 sm:mb-12">
+        {accrediti.kicker}
+      </p>
+    )}
+
+    <div class="border border-slate-200 bg-white rounded-sm shadow-xs p-5 sm:p-8 lg:p-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div class="lg:col-span-7 space-y-4 font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty max-w-prose">
+          <p>{accrediti.leadParagraph}</p>
+
+          <p>{accrediti.mandatoryFieldsIntro}</p>
+
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 pl-4 list-disc font-semibold text-slate-900 text-sm">
+            {accrediti.mandatoryFields.map((field) => <li>{field}</li>)}
+          </ul>
+
+          <p class="font-semibold text-slate-900 text-sm">
+            {accrediti.delegationNotice}
+          </p>
+
+          <p class="text-sm" set:html={accrediti.confirmationNotice} />
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col gap-5">
+          <div class="rounded-sm bg-slate-50 border border-slate-200 p-4 sm:p-5 font-sans text-sm space-y-2.5">
+            <p class="font-semibold text-slate-900 leading-relaxed">
+              {accrediti.stadiumPickupIntro}
+            </p>
+            <ul class="space-y-1.5 font-medium text-slate-800 leading-relaxed">
+              {accrediti.stadiumDocuments.map((doc) => <li>{doc}</li>)}
+            </ul>
+          </div>
+
+          <p class="font-sans text-sm italic text-slate-600 leading-relaxed text-pretty">
+            {accrediti.closingWarning}
+          </p>
+
+          <p class="font-sans font-bold text-slate-900 text-sm">
+            {accrediti.finalNotice}
+          </p>
+
+          <div class="pt-5 border-t border-slate-100">
+            <button
+              type="button"
+              data-open-modal="accrediti"
+              class="w-full sm:w-auto min-h-[48px] bg-[#004b97] hover:bg-blue-800 active:scale-[0.98] text-white font-heading font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-sm shadow-xs transition-all duration-200 cursor-pointer inline-flex items-center justify-center gap-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+            >
+              <span>{accrediti.ctaLabel} →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

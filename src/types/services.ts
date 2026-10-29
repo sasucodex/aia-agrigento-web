@@ -1,3 +1,7 @@
+import type { AthleticTest, PoloInfo } from "@/types/polo";
+
+export type { AthleticTest, PoloInfo };
+
 export type RTOCategory = "OTS" | "CRA" | "Plenaria" | "Specifica";
 
 export interface RTOEvent {
@@ -32,13 +36,22 @@ export interface RTOSeasonMetadata {
 }
 
 export type DocumentType =
-  "sezionale" | "nazionale-external" | "regolamenti-external" | "atletico";
+  | "sezionale"
+  | "nazionale-external"
+  | "regolamenti-external"
+  | "atletico";
+
+export type DocumentCluster =
+  | "gare-congedi"
+  | "tesseramento-amministrazione"
+  | "tecnica-campo";
 
 export interface ServiceDocument {
   id: string;
   title: string;
   description: string;
   type: DocumentType;
+  cluster?: DocumentCluster;
   fileName: string;
   fileSize?: string;
   previewUrl: string;
@@ -46,20 +59,20 @@ export interface ServiceDocument {
   updatedSeason: string;
 }
 
-export interface AthleticTest {
-  id: string;
-  name: string;
-  description: string;
-  audioUrl?: string;
-}
-
-export interface PoloInfo {
-  venue: string;
-  address: string;
-  days: string;
-  hours: string;
-  referents: string[];
-  medicalCertificateNotice: string;
+export interface AccreditiSpecification {
+  kicker: string;
+  title: string;
+  leadParagraph: string;
+  mandatoryFieldsIntro: string;
+  mandatoryFields: string[];
+  delegationNotice: string;
+  confirmationNotice: string;
+  stadiumPickupIntro: string;
+  stadiumDocuments: string[];
+  closingWarning: string;
+  finalNotice: string;
+  email: string;
+  ctaLabel: string;
 }
 
 export interface GiustificaFormPayload {
