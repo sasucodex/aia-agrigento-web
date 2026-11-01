@@ -53,9 +53,11 @@ const winnersCountLabel =
         <p class="font-sans text-sm text-slate-700 leading-relaxed mt-1 text-pretty max-w-3xl">
           {award.criteria}
         </p>
-        <p class="font-sans text-xs text-slate-500 italic mt-1">
-          {award.dedicatedTo}
-        </p>
+        {award.dedicatedTo && (
+          <p class="font-sans text-xs text-slate-500 italic mt-1">
+            {award.dedicatedTo}
+          </p>
+        )}
       </div>
     </div>
 

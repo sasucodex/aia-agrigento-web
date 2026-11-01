@@ -33,7 +33,7 @@ export interface TraditionalAward {
   id: string;
   name: string;
   category: string;
-  dedicatedTo: string;
+  dedicatedTo?: string;
   criteria: string;
   historicalImage?: string;
   isPersonal: boolean;

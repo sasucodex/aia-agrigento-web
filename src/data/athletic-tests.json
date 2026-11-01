@@ -25,7 +25,7 @@
     "shortCode": "40m",
     "target": "Arbitri Calcio a 11 e Assistenti Arbitrali (30m)",
     "threshold": "Limite max: 6,00 s (O.T.S.), 5,80 s (C.R.A./C.A.N.), 4,70 s (A.A. 30m)",
-    "description": "Prova di velocità e scatto sui 40 metri lineari con rilevazione tramite fotocellule per la misura della rapidità massimale."
+    "description": "Prova di velocità e scatto sui 40 metri lineari."
   },
   {
     "id": "ariet-test",
