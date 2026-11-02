@@ -13,6 +13,16 @@ const ITALIAN_MONTHS = [
   "Dicembre",
 ] as const;
 
+const ITALIAN_WEEKDAYS = [
+  "Domenica",
+  "Lunedì",
+  "Martedì",
+  "Mercoledì",
+  "Giovedì",
+  "Venerdì",
+  "Sabato",
+] as const;
+
 export function formatDateItalian(dateString: string): string {
   const parts = dateString.trim().split("-");
   if (parts.length === 3) {
@@ -35,4 +45,31 @@ export function formatDateItalian(dateString: string): string {
   }
 
   return `${parsed.getUTCDate()} ${ITALIAN_MONTHS[parsed.getUTCMonth()]} ${parsed.getUTCFullYear()}`;
+}
+
+export function formatDateItalianLong(dateString: string): string {
+  const parts = dateString.trim().split("-");
+  if (parts.length === 3) {
+    const year = Number(parts[0]);
+    const monthIndex = Number(parts[1]) - 1;
+    const day = Number(parts[2]);
+    if (
+      !Number.isNaN(year) &&
+      !Number.isNaN(day) &&
+      monthIndex >= 0 &&
+      monthIndex < 12
+    ) {
+      const utcDate = new Date(Date.UTC(year, monthIndex, day));
+      const weekday = ITALIAN_WEEKDAYS[utcDate.getUTCDay()];
+      return `${weekday} ${day} ${ITALIAN_MONTHS[monthIndex]} ${year}`;
+    }
+  }
+
+  const parsed = new Date(dateString);
+  if (Number.isNaN(parsed.getTime())) {
+    return dateString;
+  }
+
+  const weekday = ITALIAN_WEEKDAYS[parsed.getUTCDay()];
+  return `${weekday} ${parsed.getUTCDate()} ${ITALIAN_MONTHS[parsed.getUTCMonth()]} ${parsed.getUTCFullYear()}`;
 }

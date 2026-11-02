@@ -17,6 +17,7 @@ export interface Article {
   category: NewsCategory;
   tags: string[];
   image: string;
+  images?: string[];
   author: string;
   content: string;
   featured?: boolean;

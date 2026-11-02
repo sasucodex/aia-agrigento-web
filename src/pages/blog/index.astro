@@ -1,0 +1,56 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BlogHero from "@/components/blog/BlogHero.astro";
+import BlogExplorer from "@/components/blog/BlogExplorer";
+import { getAllArticles, getCleanExcerpt } from "@/lib/utils/news";
+import heroRadunoImg from "@/assets/images/hero-raduno.jpg";
+
+const allArticles = getAllArticles();
+const firstPageArticles = allArticles.slice(0, 8);
+
+const blogJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["Blog", "CollectionPage"],
+  "@id": "https://aiaagrigento.it/blog#blog",
+  name: "Blog & Notizie Sezionali | AIA Sezione di Agrigento FIGC",
+  description:
+    "Tutte le notizie ufficiali, i comunicati, i raduni tecnici, gli esordi arbitrali e gli eventi della Sezione AIA di Agrigento. Oltre 200 articoli dal 2017 a oggi.",
+  url: "https://aiaagrigento.it/blog",
+  inLanguage: "it-IT",
+  publisher: {
+    "@type": "SportsOrganization",
+    "@id": "https://aiaagrigento.it/#organization",
+    name: "Associazione Italiana Arbitri - Sezione di Agrigento",
+    url: "https://aiaagrigento.it",
+  },
+  blogPost: firstPageArticles.map((article) => ({
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: getCleanExcerpt(article, 24),
+    datePublished: article.pubDate,
+    url: `https://aiaagrigento.it/blog/${article.slug}`,
+    image: `https://aiaagrigento.it${article.image || "/images/blog/fallback-news.webp"}`,
+    author: {
+      "@type": "Organization",
+      name: article.author || "Redazione AIA Agrigento",
+    },
+  })),
+};
+---
+
+<Layout
+  title="Blog & Notizie Sezionali | AIA Sezione di Agrigento FIGC"
+  description="Tutte le notizie ufficiali, i comunicati, i raduni tecnici, gli esordi arbitrali e gli eventi della Sezione AIA di Agrigento. Oltre 200 articoli dal 2017 a oggi."
+  canonical="https://aiaagrigento.it/blog"
+  image={heroRadunoImg.src}
+  imageAlt="Notizie e Comunicati Ufficiali - Sezione AIA di Agrigento FIGC"
+  jsonLd={blogJsonLd}
+>
+  <BlogHero />
+  <BlogExplorer
+    client:load
+    articles={allArticles}
+    initialPage={1}
+    pageSize={8}
+  />
+</Layout>

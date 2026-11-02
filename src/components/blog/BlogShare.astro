@@ -1,0 +1,162 @@
+---
+export interface Props {
+  title: string;
+  url: string;
+  tags?: string[];
+}
+
+const { title, url, tags = [] } = Astro.props;
+
+const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent(`${title} - ${url}`)}`;
+const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+---
+
+<div class="max-w-3xl mx-auto mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+  {tags.length > 0 && (
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="font-heading text-xs font-semibold uppercase tracking-wider text-slate-500 mr-1">
+        Tag:
+      </span>
+      {tags.map((tag) => {
+        const cleanTag = tag.replace(/^#/, "");
+        return (
+          <a
+            href={`/blog?tag=${encodeURIComponent(cleanTag)}`}
+            class="font-sans text-xs text-slate-700 bg-slate-100 hover:bg-slate-200/80 hover:text-[#004b97] px-2.5 py-1 rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+          >
+            #{cleanTag}
+          </a>
+        );
+      })}
+    </div>
+  )}
+
+  <div class="flex flex-wrap items-center gap-4 sm:ml-auto">
+    <span class="font-heading text-xs font-semibold uppercase tracking-wider text-slate-500 mr-0.5">
+      Condividi:
+    </span>
+
+    <a
+      href={whatsappShareUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Condividi questo articolo su WhatsApp"
+      class="inline-flex items-center gap-1 font-heading text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:underline underline-offset-4 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+    >
+      <span>WhatsApp</span>
+      <svg
+        class="w-3.5 h-3.5 shrink-0 text-emerald-600"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M7 17L17 7M17 7H7M17 7V17"
+        />
+      </svg>
+    </a>
+
+    <a
+      href={facebookShareUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Condividi questo articolo su Facebook"
+      class="inline-flex items-center gap-1 font-heading text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:underline underline-offset-4 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+    >
+      <span>Facebook</span>
+      <svg
+        class="w-3.5 h-3.5 shrink-0 text-[#004b97]"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M7 17L17 7M17 7H7M17 7V17"
+        />
+      </svg>
+    </a>
+
+    <button
+      type="button"
+      id="share-instagram-btn"
+      data-title={title}
+      data-url={url}
+      aria-label="Condividi questo articolo su Instagram"
+      class="inline-flex items-center gap-1 font-heading text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:underline underline-offset-4 transition-all cursor-pointer bg-transparent border-none p-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+    >
+      <span id="share-instagram-text">Instagram</span>
+      <svg
+        class="w-3.5 h-3.5 shrink-0 text-[#E1306C]"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M7 17L17 7M17 7H7M17 7V17"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const btn = document.getElementById("share-instagram-btn");
+    if (!btn) return;
+
+    btn.addEventListener("click", async () => {
+      const articleTitle = btn.getAttribute("data-title") || "";
+      const articleUrl = btn.getAttribute("data-url") || window.location.href;
+      const textSpan = document.getElementById("share-instagram-text");
+
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: articleTitle,
+            text: articleTitle,
+            url: articleUrl,
+          });
+          return;
+        } catch (err) {
+          if (err && err.name === "AbortError") {
+            return;
+          }
+        }
+      }
+
+      try {
+        await navigator.clipboard.writeText(articleUrl);
+        if (textSpan) {
+          const original = textSpan.textContent;
+          textSpan.textContent = "Link copiato!";
+          setTimeout(() => {
+            textSpan.textContent = original;
+          }, 2200);
+        }
+        window.open(
+          "https://www.instagram.com/",
+          "_blank",
+          "noopener,noreferrer",
+        );
+      } catch {
+        window.open(
+          "https://www.instagram.com/",
+          "_blank",
+          "noopener,noreferrer",
+        );
+      }
+    });
+  })();
+</script>

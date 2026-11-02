@@ -1,0 +1,73 @@
+---
+import type { GetStaticPathsOptions, Page } from "astro";
+import Layout from "@/layouts/Layout.astro";
+import BlogHero from "@/components/blog/BlogHero.astro";
+import BlogExplorer from "@/components/blog/BlogExplorer";
+import { getAllArticles, getCleanExcerpt } from "@/lib/utils/news";
+import type { Article } from "@/types/news";
+import heroRadunoImg from "@/assets/images/hero-raduno.jpg";
+
+export function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const allArticles = getAllArticles();
+  const paginatedRoutes = paginate(allArticles, { pageSize: 8 });
+
+  return paginatedRoutes
+    .filter((entry) => entry.props.page.currentPage > 1)
+    .map((entry) => ({
+      params: { page: `page/${entry.props.page.currentPage}` },
+      props: {
+        page: entry.props.page,
+        allArticles,
+      },
+    }));
+}
+
+export interface Props {
+  page: Page<Article>;
+  allArticles: Article[];
+}
+
+const { page, allArticles } = Astro.props;
+const currentPage = page.currentPage;
+const totalPages = page.lastPage;
+const canonicalUrl = `https://aiaagrigento.it/blog/page/${currentPage}`;
+
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["Blog", "CollectionPage"],
+  "@id": `${canonicalUrl}#blog-page`,
+  name: `Blog & Notizie Sezionali - Pagina ${currentPage} di ${totalPages} | AIA Sezione di Agrigento FIGC`,
+  description: `Archivio notizie, comunicati e riunioni tecniche della Sezione AIA di Agrigento (Pagina ${currentPage} di ${totalPages}).`,
+  url: canonicalUrl,
+  inLanguage: "it-IT",
+  blogPost: page.data.map((article) => ({
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: getCleanExcerpt(article, 24),
+    datePublished: article.pubDate,
+    url: `https://aiaagrigento.it/blog/${article.slug}`,
+    image: `https://aiaagrigento.it${article.image || "/images/blog/fallback-news.webp"}`,
+    author: {
+      "@type": "Organization",
+      name: article.author || "Redazione AIA Agrigento",
+    },
+  })),
+};
+---
+
+<Layout
+  title={`Blog & Notizie (Pag. ${currentPage}) | AIA Sezione di Agrigento FIGC`}
+  description={`Archivio notizie ufficiali, comunicati, raduni tecnici ed esordi della Sezione AIA di Agrigento - Pagina ${currentPage} di ${totalPages}.`}
+  canonical={canonicalUrl}
+  image={heroRadunoImg.src}
+  imageAlt="Notizie e Comunicati Ufficiali - Sezione AIA di Agrigento FIGC"
+  jsonLd={pageJsonLd}
+>
+  <BlogHero />
+  <BlogExplorer
+    client:load
+    articles={allArticles}
+    initialPage={currentPage}
+    pageSize={8}
+  />
+</Layout>
