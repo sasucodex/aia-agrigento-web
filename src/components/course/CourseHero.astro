@@ -1,0 +1,116 @@
+---
+import { Image } from "astro:assets";
+import courseHeroImage from "@/assets/images/course/arbitro-campo-agrigento.jpg";
+import { buildCourseWhatsAppUrl, getCourseHero } from "@/lib/utils/course";
+import type { CourseHeroData } from "@/types/course";
+
+export interface Props {
+  hero?: CourseHeroData;
+  whatsappUrl?: string;
+}
+
+const { hero = getCourseHero(), whatsappUrl = buildCourseWhatsAppUrl() } =
+  Astro.props;
+
+const badgeStyles: Record<"emerald" | "blue" | "gold", string> = {
+  emerald: "bg-emerald-50 text-emerald-900 border-emerald-200",
+  blue: "bg-blue-50 text-blue-900 border-blue-200",
+  gold: "bg-referee-gold/15 text-slate-900 border-referee-gold/45",
+};
+---
+
+<section
+  aria-labelledby="course-hero-heading"
+  class="bg-white border-b border-slate-100"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 text-center">
+    {hero.kicker && (
+      <span class="font-heading text-xs font-semibold uppercase tracking-widest text-referee-gold mb-2 sm:mb-3 block text-center">
+        {hero.kicker}
+      </span>
+    )}
+    <h1
+      id="course-hero-heading"
+      class="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-[1.1] uppercase text-balance"
+    >
+      {hero.title}
+    </h1>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 lg:pb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-7 text-left">
+        <div class="font-sans text-base sm:text-lg text-slate-700 leading-relaxed font-normal text-pretty max-w-prose space-y-3">
+          {hero.paragraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+
+        {hero.badges && hero.badges.length > 0 && (
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3 mt-6">
+            {hero.badges.map((badge) => (
+              <span
+                class:list={[
+                  "font-heading text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-sm border",
+                  badgeStyles[badge.tone],
+                ]}
+              >
+                {badge.label}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mt-8">
+          <a
+            href={hero.primaryCtaHref}
+            class="min-h-[48px] inline-flex items-center justify-center font-heading text-xs sm:text-sm font-bold uppercase tracking-wider px-6 py-3.5 rounded-sm bg-referee-gold hover:brightness-95 active:scale-[0.98] text-slate-950 transition-all duration-200 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+          >
+            {hero.primaryCtaLabel}
+          </a>
+
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contatta la segreteria su WhatsApp per informazioni sul corso"
+            class="min-h-[48px] inline-flex items-center justify-center gap-2 font-heading text-xs sm:text-sm font-bold uppercase tracking-wider px-5 py-3.5 rounded-sm bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white transition-all duration-200 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+          >
+            <span>{hero.whatsappCtaLabel}</span>
+            <svg
+              class="w-4 h-4 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 17L17 7M17 7H7M17 7V17"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="overflow-hidden rounded-sm border border-slate-200 shadow-xs bg-slate-100">
+          <Image
+            src={courseHeroImage}
+            alt="Giovane arbitro della Sezione AIA di Agrigento sul terreno di gioco prima del fischio d'inizio"
+            width={800}
+            height={600}
+            format="webp"
+            quality={85}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            class="w-full h-auto aspect-4/3 object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

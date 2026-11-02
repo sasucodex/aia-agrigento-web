@@ -1,0 +1,135 @@
+---
+import { Image } from "astro:assets";
+import giovaniArbitriImage from "@/assets/images/course/giovani-arbitri-agrigento.jpg";
+import { getCourseStepsAndRequirements } from "@/lib/utils/course";
+import type { CourseStepsAndRequirementsData } from "@/types/course";
+
+export interface Props {
+  journey?: CourseStepsAndRequirementsData;
+}
+
+const { journey = getCourseStepsAndRequirements() } = Astro.props;
+---
+
+<section
+  id="percorso-corso"
+  aria-labelledby="course-steps-heading"
+  class="bg-white py-16 sm:py-20 border-b border-slate-100 scroll-mt-20"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {journey.stepsKicker && (
+      <span class="font-heading text-xs font-semibold uppercase tracking-widest text-referee-gold mb-2 sm:mb-3 block text-center">
+        {journey.stepsKicker}
+      </span>
+    )}
+
+    <div class="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-4">
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      ></div>
+      <h2
+        id="course-steps-heading"
+        class="font-heading font-extrabold text-xl sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-balance text-center uppercase"
+      >
+        {journey.stepsTitle}
+      </h2>
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      ></div>
+    </div>
+
+    <p class="font-sans text-base text-slate-700 leading-relaxed max-w-3xl mb-10 sm:mb-12 text-pretty text-center mx-auto">
+      {journey.stepsLead}
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-7">
+        <ol class="divide-y divide-slate-200 border-y border-slate-200">
+          {journey.steps.map((step) => (
+            <li class="py-5 sm:py-6 first:pt-4 last:pb-4">
+              <h3 class="font-heading text-lg sm:text-xl font-bold text-slate-900 tracking-tight leading-snug">
+                {step.title}
+              </h3>
+              <p class="mt-2 font-sans text-sm sm:text-base text-slate-700 leading-relaxed max-w-prose text-pretty">
+                {step.description}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="overflow-hidden rounded-sm border border-slate-200 shadow-xs bg-slate-100">
+          <Image
+            src={giovaniArbitriImage}
+            alt="I nuovi arbitri della Sezione AIA di Agrigento abilitati al corso nazionale"
+            width={800}
+            height={600}
+            format="webp"
+            quality={85}
+            loading="lazy"
+            decoding="async"
+            class="w-full h-auto aspect-4/3 object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  id="requisiti-ammissione"
+  aria-labelledby="course-requirements-heading"
+  class="bg-slate-50 py-16 sm:py-20 border-b border-slate-200/80 scroll-mt-20"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {journey.requirementsKicker && (
+      <span class="font-heading text-xs font-semibold uppercase tracking-widest text-referee-gold mb-2 sm:mb-3 block text-center">
+        {journey.requirementsKicker}
+      </span>
+    )}
+
+    <div class="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-4">
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      ></div>
+      <h2
+        id="course-requirements-heading"
+        class="font-heading font-extrabold text-xl sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-balance text-center uppercase"
+      >
+        {journey.requirementsTitle}
+      </h2>
+      <div
+        class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+        aria-hidden="true"
+      ></div>
+    </div>
+
+    {journey.requirementsLead && (
+      <p class="font-sans text-base text-slate-700 leading-relaxed max-w-3xl mb-8 sm:mb-10 text-pretty text-center mx-auto">
+        {journey.requirementsLead}
+      </p>
+    )}
+
+    <dl class="mt-8 sm:mt-10 divide-y divide-slate-200 border-y border-slate-200">
+      {journey.requirements.map((req) => (
+        <div class="py-5 sm:py-6 sm:grid sm:grid-cols-12 sm:gap-8 items-baseline">
+          <dt class="sm:col-span-4 font-heading text-sm sm:text-base font-bold uppercase tracking-wider text-slate-900">
+            {req.term}
+            {req.highlight && (
+              <span class="block font-sans text-xs font-semibold normal-case tracking-normal text-[#004b97] mt-1">
+                {req.highlight}
+              </span>
+            )}
+          </dt>
+          <dd class="mt-2 sm:mt-0 sm:col-span-8 font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty">
+            {req.definition}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

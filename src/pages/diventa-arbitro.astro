@@ -1,0 +1,132 @@
+---
+import { getImage } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import CourseHero from "@/components/course/CourseHero.astro";
+import CourseBenefits from "@/components/course/CourseBenefits.astro";
+import CourseSteps from "@/components/course/CourseSteps.astro";
+import FAQAccordion from "@/components/course/FAQAccordion";
+import CourseForm from "@/components/course/CourseForm";
+import {
+  getCourseData,
+  getCourseFAQs,
+  getCourseRegistrationSection,
+} from "@/lib/utils/course";
+import diventaArbitroCover from "@/assets/images/diventa-arbitro-cover.jpg";
+import sedeAulaImage from "@/assets/images/course/sede-aula-agrigento.jpg";
+
+const courseData = getCourseData();
+const registrationSection = getCourseRegistrationSection();
+const faqs = getCourseFAQs();
+
+const optimizedSedeImage = await getImage({
+  src: sedeAulaImage,
+  width: 1000,
+  height: 700,
+  format: "webp",
+  quality: 85,
+});
+
+const diventaArbitroJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": ["Course", "EducationalOccupationalProgram"],
+    "@id": "https://aiaagrigento.it/diventa-arbitro#course",
+    name: "Corso Nazionale Gratuito per Arbitri di Calcio FIGC - Sezione AIA di Agrigento",
+    description:
+      "Corso gratuito per diventare Arbitro Effettivo della Federazione Italiana Giuoco Calcio (FIGC) presso la Sezione AIA di Agrigento. Aperto a ragazze e ragazzi dai 14 ai 40 anni, con doppio tesseramento fino a 19 anni, Tessera Federale per ingresso gratuito negli stadi, rimborso spese a gara, divisa ufficiale Givova e crediti scolastici PCTO.",
+    url: "https://aiaagrigento.it/diventa-arbitro",
+    inLanguage: "it-IT",
+    isAccessibleForFree: true,
+    educationalCredentialAwarded: "Qualifica di Arbitro Effettivo FIGC",
+    timeToComplete: "P2M",
+    provider: {
+      "@type": "SportsOrganization",
+      "@id": "https://aiaagrigento.it/#organization",
+      name: "Associazione Italiana Arbitri - Sezione di Agrigento",
+      url: "https://aiaagrigento.it",
+      email: courseData.contactEmail,
+      telephone: courseData.contactPhone,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Via Matteo Cimarra, 38",
+        addressLocality: "Agrigento",
+        addressRegion: "AG",
+        postalCode: "92100",
+        addressCountry: "IT",
+      },
+    },
+    audience: {
+      "@type": "EducationalAudience",
+      educationalRole: "Aspiranti Arbitri di Calcio (14-40 anni)",
+      suggestedMinAge: 14,
+      suggestedMaxAge: 40,
+    },
+    offers: {
+      "@type": "Offer",
+      category: "Free",
+      price: "0",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      url: "https://aiaagrigento.it/diventa-arbitro#modulo-iscrizione",
+    },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "onsite",
+      name: courseData.activeEdition,
+      courseSchedule: {
+        "@type": "Schedule",
+        repeatFrequency: "P1W",
+        repeatCount: 16,
+        byDay: ["https://schema.org/Tuesday", "https://schema.org/Thursday"],
+      },
+      location: {
+        "@type": "Place",
+        name: "Sezione AIA di Agrigento - Pietro Arancio",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Via Matteo Cimarra, 38",
+          addressLocality: "Agrigento",
+          addressRegion: "AG",
+          postalCode: "92100",
+          addressCountry: "IT",
+        },
+      },
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://aiaagrigento.it/diventa-arbitro#faq",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  },
+];
+---
+
+<Layout
+  title="Diventa Arbitro di Calcio | Corso Gratuito AIA Agrigento FIGC"
+  description="Partecipa al Corso Arbitri gratuito dell'AIA Sezione di Agrigento: doppio tesseramento fino a 19 anni, tessera federale per entrare gratis negli stadi, rimborso spese a gara, divisa ufficiale Givova e crediti formativi scolastici. Iscriviti online."
+  canonical="https://aiaagrigento.it/diventa-arbitro"
+  image={diventaArbitroCover.src}
+  imageAlt="Giovani arbitri della Sezione AIA di Agrigento - Corso Nazionale Gratuito FIGC"
+  jsonLd={diventaArbitroJsonLd}
+>
+  <CourseHero />
+  <CourseBenefits />
+  <CourseSteps />
+  <FAQAccordion client:visible items={faqs} />
+  <CourseForm
+    client:visible
+    course={courseData}
+    sectionData={registrationSection}
+    sedeImageSrc={optimizedSedeImage.src}
+    sedeImageWidth={optimizedSedeImage.attributes.width as number}
+    sedeImageHeight={optimizedSedeImage.attributes.height as number}
+  />
+</Layout>

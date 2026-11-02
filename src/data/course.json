@@ -1,0 +1,153 @@
+{
+  "activeEdition": "Sessione Ufficiale 2026/2027",
+  "status": "iscrizioni_aperte",
+  "startDate": "Iscrizioni sempre aperte",
+  "schedule": "Due incontri settimanali (ore 18:30 – 20:00)",
+  "location": "Via Matteo Cimarra, 38 - 92100 Agrigento (AG)",
+  "contactEmail": "corsoarbitri@aiaagrigento.it",
+  "contactPhone": "+393924700055",
+  "contactPhoneDisplay": "392 4700055",
+  "whatsappNumber": "393924700055",
+  "whatsappText": "Salve, vorrei ricevere maggiori informazioni sul prossimo Corso Arbitri gratuito della Sezione AIA di Agrigento.",
+  "hero": {
+    "title": "DIVENTA ARBITRO DI CALCIO",
+    "paragraphs": [
+      "Scendere in campo con un fischietto tra le labbra non significa semplicemente applicare 17 regole: significa imparare a prendere decisioni in una frazione di secondo, guardare negli occhi ventidue atleti, gestire la pressione con lucidità e farsi ascoltare con rispetto ed equilibrio.",
+      "L'arbitraggio è una delle palestre educative più potenti e formative che un giovane possa intraprendere. Ti insegna a fidarti del tuo giudizio, ad accettare l'errore come opportunità di crescita e a maturare un'autorevolezza naturale che ti accompagnerà nello studio, nella professione e nella vita quotidiana.",
+      "Nella Sezione di Agrigento non sarai mai solo un numero: dal primo giorno di lezione fino al tuo debutto sui campi della provincia, avrai al tuo fianco una squadra unita di colleghi, osservatori e tutor pronti a guidarti e a condividere con te una passione autentica."
+    ],
+    "primaryCtaLabel": "Iscriviti al Prossimo Corso ↓",
+    "primaryCtaHref": "#modulo-iscrizione",
+    "whatsappCtaLabel": "Chiedi su WhatsApp"
+  },
+  "benefits": {
+    "title": "PERCHÉ DIVENTARE ARBITRO",
+    "lead": "Entrare a far parte dell'Associazione Italiana Arbitri offre benefici immediati e tangibili, sia sotto il profilo sportivo ed economico, sia per il percorso scolastico e la crescita individuale.",
+    "items": [
+      {
+        "id": "benefit-tessera-figc",
+        "number": "01",
+        "title": "Ingresso gratuito in tutti gli stadi italiani",
+        "description": "Al superamento dell'esame ricevi la Tessera Federale FIGC personale, che dà diritto all'accredito gratuito in tutti gli stadi d'Italia per le manifestazioni organizzate dalla Federazione.",
+        "group": "primary"
+      },
+      {
+        "id": "benefit-rimborso-spese",
+        "number": "02",
+        "title": "Rimborso economico per ogni gara diretta",
+        "description": "Fin dalla primissima direzione arbitrale nei campionati giovanili e provinciali, percepisci un rimborso spese forfettario e chilometrico per ogni partita arbitrata, accreditato direttamente sul tuo conto corrente o carta prepagata con IBAN.",
+        "group": "primary"
+      },
+      {
+        "id": "benefit-kit-givova",
+        "number": "03",
+        "title": "Divisa ufficiale Givova gratuita",
+        "description": "La Sezione di Agrigento consegna gratuitamente a ciascun neo-arbitro il kit tecnico ufficiale dello sponsor federale Givova, senza alcun contributo economico richiesto.",
+        "group": "primary"
+      },
+      {
+        "id": "benefit-doppio-tesseramento",
+        "number": "04",
+        "title": "Doppio tesseramento",
+        "description": "Se hai tra i 14 e i 19 anni non devi scegliere tra giocare e arbitrare: grazie al doppio tesseramento federale puoi continuare a scendere in campo come calciatore nella tua società sportiva e contemporaneamente dirigere gare ufficiali come arbitro AIA.",
+        "group": "secondary"
+      },
+      {
+        "id": "benefit-crediti-pcto",
+        "number": "05",
+        "title": "Crediti formativi scolastici",
+        "description": "L'attività arbitrale viene riconosciuta dal Ministero dell'Istruzione e del Merito come credito scolastico per gli studenti, aiutandoti a conciliare sport e studio.",
+        "group": "secondary"
+      },
+      {
+        "id": "benefit-polo-atletico",
+        "number": "06",
+        "title": "Polo atletico sezionale",
+        "description": "Accesso gratuito alle sedute di allenamento collettive presso lo Stadio Comunale \"Totò Russo\" di Aragona (martedì, giovedì e venerdì ore 19:30), seguite passo dopo passo dai referenti atletici sezionali Pietro Bennici e Salvatore Cordaro.",
+        "group": "secondary"
+      },
+      {
+        "id": "benefit-nuove-amicizie",
+        "number": "07",
+        "title": "Nuove amicizie",
+        "description": "Entrerai a far parte di un grande collettivo dove potrai conoscere persone che condividono la tua stessa passione e creare legami autentici che dureranno tutta la vita.",
+        "group": "secondary"
+      },
+      {
+        "id": "benefit-carriera-arbitrale",
+        "number": "08",
+        "title": "Carriera arbitrale",
+        "description": "Mettendoci passione e costanza, potrai fare il salto di categoria fino a calcare i campi nazionali e internazionali più prestigiosi. Dopotutto, anche i grandi fischietti di Serie A sono partiti esattamente dal tuo stesso punto.",
+        "group": "secondary"
+      },
+      {
+        "id": "benefit-erasmus-arbitrale",
+        "number": "09",
+        "title": "Erasmus arbitrale",
+        "description": "Potrai vivere l’esperienza dell’Erasmus Arbitrale e scendere in campo in prestigiosi tornei internazionali, dirigendo le gare in terna con colleghi stranieri, sotto la guida di observer di calibro internazionale.",
+        "group": "secondary"
+      }
+    ]
+  },
+  "journey": {
+    "stepsTitle": "COME FUNZIONA IL CORSO",
+    "stepsLead": "Dall'invio della domanda fino al fischio d'inizio della tua prima partita ufficiale: ecco come si articola il cammino per entrare nell'Associazione Italiana Arbitri.",
+    "steps": [
+      {
+        "id": "step-01",
+        "title": "Iscrizione al corso",
+        "description": "Fai il primo passo compilando il form qui sotto: sarai ricontattato in tempi brevi per definire la tua partecipazione e ricevere fornirti tutti i dettagli sul prossimo corso."
+      },
+      {
+        "id": "step-02",
+        "title": "Lezioni sul regolamento e video analisi",
+        "description": "Due incontri infrasettimanali per circa due mesi, in orario preserale (18:30 – 20:00), pienamente compatibile con studio e allenamenti. Approfondimento dinamico delle 17 Regole del Giuoco del Calcio tramite filmati ufficiali del Settore Tecnico AIA."
+      },
+      {
+        "id": "step-03",
+        "title": "Esame finale",
+        "description": "Prova scritta con quiz tecnici a risposta multipla e colloquio orale davanti alla Commissione Esaminatrice nominata dal Comitato Regionale Arbitri (CRA Sicilia). Al superamento dell'esame acquisisci ufficialmente la qualifica di Arbitro Effettivo FIGC."
+      },
+      {
+        "id": "step-04",
+        "title": "Il tuo debutto sul campo",
+        "description": "Nessuno scende mai in campo da solo. Nelle tue prime gare provinciali dei campionati giovanili sarai affiancato da un Tutor esperto della Sezione che ti accompagnerà all'arrivo al campo, nell'appello delle squadre, nella direzione e nella stesura del referto di gara."
+      }
+    ],
+    "requirementsTitle": "REQUISITI DI PARTECIPAZIONE",
+    "requirements": [
+      {
+        "id": "req-eta",
+        "term": "Fascia d'Età Ammessa",
+        "definition": "Avere compiuto 14 anni e non aver compiuto 40 anni alla data dell'esame finale. Il corso è aperto indifferentemente a ragazze e ragazzi."
+      },
+      {
+        "id": "req-cittadinanza",
+        "term": "Cittadinanza e Residenza",
+        "definition": "Possesso della cittadinanza italiana o di uno Stato membro dell'Unione Europea, oppure regolare permesso di soggiorno per i cittadini extracomunitari residenti o domiciliati per studio/lavoro nella provincia di Agrigento."
+      },
+      {
+        "id": "req-certificato",
+        "term": "Idoneità Fisico-Agonistica",
+        "definition": "Certificato medico di idoneità alla pratica sportiva agonistica, da richiedere e consegnare in originale alla Sezione prima dello svolgimento della sessione d'esame finale."
+      },
+      {
+        "id": "req-esperienza",
+        "term": "Nessuna Esperienza Calcistica Pregressa",
+        "definition": "Nessuna esperienza richiesta. Il programma didattico parte dalle basi assolute del Regolamento del Giuoco del Calcio e forma ciascun allievo passo dopo passo."
+      }
+    ]
+  },
+  "registration": {
+    "title": "ISCRIVITI AL PROSSIMO CORSO",
+    "lead": "Compila il modulo per manifestare il tuo interesse e riservare il tuo posto gratuito. Un responsabile della Sezione ti ricontatterà per fornirti il calendario definitivo degli incontri.",
+    "whatsappBoxTitle": "Preferisci parlare subito con noi?",
+    "whatsappBoxDescription": "Se hai dubbi sugli orari, sul doppio tesseramento o vuoi chiarimenti immediati per te o per tuo figlio, puoi scriverci direttamente su WhatsApp. Il referente sezionale del corso ti risponderà al più presto.",
+    "whatsappButtonLabel": "Scrivici su Whatsapp",
+    "sedeCaption": "I locali della Sezione AIA di Agrigento in Via Matteo Cimarra, 38 durante una riunione tecnica.",
+    "privacyNotice": "Dichiaro di aver preso visione dell'informativa privacy e acconsento al trattamento dei dati personali ai sensi del GDPR per la gestione dell'iscrizione al Corso Arbitri della Sezione AIA di Agrigento.",
+    "submitLabel": "Invia Iscrizione al Corso →",
+    "successTitle": "Iscrizione inviata con successo!",
+    "successMessage": "Iscrizione inviata con successo! Un responsabile del Corso Arbitri della Sezione di Agrigento ti contatterà al numero indicato per confermare la tua iscrizione e indicarti la data del primo incontro in sede."
+  }
+}

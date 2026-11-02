@@ -1,0 +1,51 @@
+[
+  {
+    "id": "faq-costo-corso",
+    "question": "Quanto costa partecipare al corso?",
+    "answer": "Il corso è completamente gratuito. La Sezione fornisce gratuitamente il materiale didattico, il Regolamento del Giuoco del Calcio e, a esame superato, l'intera divisa ufficiale da gara Givova. L'unico costo a carico del candidato è la visita medica agonistica.",
+    "category": "corso",
+    "order": 1
+  },
+  {
+    "id": "faq-doppio-tesseramento",
+    "question": "Posso continuare a giocare a calcio nella mia squadra?",
+    "answer": "Sì, tutti i giovani fino al compimento dei 19 anni possono essere tesserati sia come calciatori in una società FIGC/LND sia come arbitri dell'AIA. L'unica limitazione prevista è il divieto di arbitrare gare appartenenti allo stesso girone in cui milita la propria società di appartenenza.",
+    "category": "corso",
+    "order": 2
+  },
+  {
+    "id": "faq-rimborso-gara",
+    "question": "A quanto ammonta il rimborso per ogni gara diretta?",
+    "answer": "A partire dalla primissima partita arbitrata, ogni arbitro riceve un rimborso economico forfettario e chilometrico, a partire da €36, che varia in base alla distanza percorsa e alla categoria della gara, accreditato direttamente su conto corrente bancario o postale.",
+    "category": "corso",
+    "order": 3
+  },
+  {
+    "id": "faq-tessera-stadi",
+    "question": "Come si ottiene l'ingresso gratuito negli stadi di tutta Italia?",
+    "answer": "Al superamento dell'esame viene rilasciata la Tessera Federale FIGC. Essa consente di richiedere l'accredito gratuito in qualsiasi stadio d'Italia per tutte le gare organizzate dalla Federazione Italiana Giuoco Calcio (inclusi i massimi campionati di Serie A, Serie B, Serie C, Coppa Italia e Nazionale).",
+    "category": "corso",
+    "order": 4
+  },
+  {
+    "id": "faq-sede-orari-lezioni",
+    "question": "Dove e in quali orari si tengono le lezioni?",
+    "answer": "Le lezioni si svolgono presso i locali della Sezione di Agrigento in Via Matteo Cimarra 38, in orari serali (solitamente dalle 18:30 alle 20:00, due volte alla settimana), concordati all'inizio del corso per conciliare studio, università e allenamenti.",
+    "category": "corso",
+    "order": 5
+  },
+  {
+    "id": "faq-tutor-esordio",
+    "question": "Chi mi aiuterà quando andrò a dirigere la mia prima partita?",
+    "answer": "Nessun nuovo arbitro viene lasciato da solo. Per le prime gare provinciali la Sezione assegna un Tutor che ti guiderà prima, durante e dopo la gara, aiutandoti nella gestione dello spogliatoio e nella compilazione del referto.",
+    "category": "corso",
+    "order": 6
+  },
+  {
+    "id": "faq-corso-ragazze",
+    "question": "Il corso è aperto anche alle ragazze?",
+    "answer": "Certamente. L'AIA e la Sezione di Agrigento promuovono attivamente la crescita del movimento arbitrale femminile, che conta arbitri e assistenti di altissimo profilo sia a livello regionale che nazionale.",
+    "category": "corso",
+    "order": 7
+  }
+]

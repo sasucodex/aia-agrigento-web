@@ -123,14 +123,9 @@ export default function Drawer({ currentPath }: DrawerProps) {
                 decoding="async"
                 className="h-11 w-11 shrink-0 object-contain"
               />
-              <div className="flex flex-col">
-                <span className="font-heading text-referee-gold text-[10px] font-semibold tracking-widest uppercase">
-                  F.I.G.C. — A.I.A.
-                </span>
-                <span className="font-heading text-sm font-bold tracking-tight text-white">
-                  Sezione di Agrigento
-                </span>
-              </div>
+              <span className="font-heading text-sm font-bold tracking-tight text-white">
+                Sezione di Agrigento
+              </span>
             </a>
 
             <button
