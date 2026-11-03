@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import tabelloneImg from "@/assets/images/tabellone-404.webp";
+---
+
+<Layout
+  title="Pagina non trovata (Errore 404) | AIA Sezione di Agrigento FIGC"
+  description="La pagina richiesta non è disponibile o è stata spostata. Ritorna alla schermata principale del portale ufficiale dell'Associazione Italiana Arbitri - Sezione di Agrigento."
+  robots="noindex, nofollow"
+  mainClass="flex items-center justify-center bg-white"
+>
+  <section
+    aria-labelledby="error-404-heading"
+    class="w-full bg-white pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-20"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+      <div class="flex justify-center mb-5 sm:mb-7">
+        <Image
+          src={tabelloneImg}
+          alt="Tabellone elettronico delle sostituzioni del quarto ufficiale recante il codice d'errore 404"
+          width={420}
+          height={322}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          class="w-auto h-auto max-w-[260px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px] object-contain"
+        />
+      </div>
+
+      <h1
+        id="error-404-heading"
+        class="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-[1.1] text-balance text-center uppercase my-2"
+      >
+        Pagina Non Trovata
+      </h1>
+
+      <p class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-pretty max-w-lg mx-auto text-center mt-3 sm:mt-4">
+        La pagina o la risorsa richiesta non è disponibile, potrebbe essere stata
+        rimossa o l'indirizzo inserito non è corretto. Ti invitiamo a verificare
+        l'URL digitato o a ritornare alla pagina principale della Sezione.
+      </p>
+
+      <a
+        href="/"
+        class="inline-flex items-center justify-center px-6 py-3 min-h-[48px] rounded-lg font-heading text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-[#004b97] hover:bg-[#003870] active:scale-[0.98] transition-all duration-200 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97] mt-6 sm:mt-8"
+      >
+        Torna alla Home Page
+      </a>
+
+      <p class="font-sans text-xs text-slate-500 mt-6 text-center">
+        Hai riscontrato un collegamento non funzionante?{" "}
+        <a
+          href="/contatti"
+          class="text-[#004b97] font-semibold hover:underline underline-offset-4 decoration-1 decoration-referee-gold transition-colors duration-200"
+        >
+          Segnalalo alla segreteria
+        </a>
+      </p>
+    </div>
+  </section>
+</Layout>
