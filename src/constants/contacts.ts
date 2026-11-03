@@ -3,6 +3,11 @@ import type { SectionContacts } from "@/types/contacts";
 export const SECTION_CONTACTS: SectionContacts = {
   organizationName: "Associazione Italiana Arbitri - Sezione di Agrigento",
   taxId: "93070180844",
+  hero: {
+    title: "CONTATTI & SEDE",
+    subtitle:
+      "La Sezione di Agrigento dell'Associazione Italiana Arbitri ha la propria sede in Via Matteo Cimarra. È il punto di riferimento e ritrovo per tutti gli arbitri, assistenti e osservatori della provincia, sede delle riunioni tecniche, del corso per aspiranti arbitri e delle attività amministrative sezionali.",
+  },
   address: {
     street: "Via Matteo Cimarra, 38",
     city: "Agrigento",
@@ -26,6 +31,14 @@ export const SECTION_CONTACTS: SectionContacts = {
     landlineDisplay: "0922 604783",
     mobile: "+393924700055",
     mobileDisplay: "392 4700055",
+  },
+  whatsapp: {
+    number: "393924700055",
+    display: "392 4700055",
+    url: "https://wa.me/393924700055?text=Salve%2C%20vorrei%20contattare%20la%20segreteria%20della%20Sezione%20AIA%20di%20Agrigento.",
+    defaultMessage:
+      "Salve, vorrei contattare la segreteria della Sezione AIA di Agrigento.",
+    ctaLabel: "SCRIVICI",
   },
   email: "info@aiaagrigento.it",
   emails: {
@@ -60,15 +73,17 @@ export const SECTION_CONTACTS: SectionContacts = {
         url: "https://www.instagram.com/aia_agrigento/",
         description:
           "Foto dalle gare, storie in tempo reale durante i raduni e highlights degli eventi associativi.",
+        ctaLabel: "Segui su Instagram",
       },
       {
         platform: "facebook",
         label: "Facebook",
         kicker: "PAGINA ISTITUZIONALE UFFICIALE",
         handle: "AIA Agrigento",
-        url: "https://www.facebook.com/aiaagrigento",
+        url: "https://www.facebook.com/AiaAgrigento/",
         description:
           "Comunicati stampa, articoli del blog, album ufficiali delle manifestazioni e direttive della Sezione.",
+        ctaLabel: "Visita la Pagina Facebook",
       },
     ],
   },

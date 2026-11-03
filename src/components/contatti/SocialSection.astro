@@ -1,0 +1,88 @@
+---
+import { ArrowUpRight } from "lucide-react";
+import { SECTION_CONTACTS } from "@/constants/contacts";
+import type { SectionContacts } from "@/types/contacts";
+
+export interface Props {
+  social?: SectionContacts["social"];
+}
+
+const { social = SECTION_CONTACTS.social } = Astro.props;
+---
+
+<section
+  aria-labelledby="social-section-heading"
+  class="bg-slate-50 py-16 sm:py-20 border-b border-slate-200/80"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+      <div class="h-[2px] bg-[#004b97] flex-1" aria-hidden="true"></div>
+      <h2
+        id="social-section-heading"
+        class="font-heading font-extrabold text-lg sm:text-2xl lg:text-3xl text-slate-900 tracking-tight text-balance text-center sm:whitespace-nowrap uppercase"
+      >
+        Seguici sui social
+      </h2>
+      <div class="h-[2px] bg-[#004b97] flex-1" aria-hidden="true"></div>
+    </div>
+
+    <p class="font-sans text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 text-center text-pretty">
+      {social.sharedDescription}
+    </p>
+
+    <div class="max-w-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      {social.channels.map((channel) => (
+        <a
+          href={channel.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center justify-between gap-3 py-3.5 px-5 min-h-[52px] rounded-sm border border-slate-200 bg-white shadow-xs hover:border-[#004b97]/40 hover:shadow-sm transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+        >
+          <div class="flex items-center gap-3.5 min-w-0">
+            {channel.platform === "instagram" ? (
+              <svg
+                class="w-5 h-5 shrink-0 text-[#004b97]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            ) : (
+              <svg
+                class="w-5 h-5 shrink-0 text-[#004b97]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            )}
+            <div class="min-w-0 text-left">
+              <span class="block font-heading font-semibold text-sm text-slate-900 group-hover:text-[#004b97] transition-colors">
+                {channel.label}
+              </span>
+              <span class="block font-sans text-xs text-slate-600 truncate">
+                {channel.handle}
+              </span>
+            </div>
+          </div>
+          <ArrowUpRight
+            className="w-4 h-4 shrink-0 text-slate-400 group-hover:text-[#004b97] transition-colors duration-200"
+            aria-hidden="true"
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

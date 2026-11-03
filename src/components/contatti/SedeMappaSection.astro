@@ -1,0 +1,191 @@
+---
+import { Image } from "astro:assets";
+import { ArrowUpRight } from "lucide-react";
+import mapImage from "@/assets/images/map-cimarra.webp";
+import { SECTION_CONTACTS } from "@/constants/contacts";
+import type { SectionContacts } from "@/types/contacts";
+
+export interface Props {
+  contacts?: SectionContacts;
+}
+
+const { contacts = SECTION_CONTACTS } = Astro.props;
+const { address, openingHours, phones, whatsapp, email, maps } = contacts;
+
+const gpsLinks = [
+  { label: "Apri in Google Maps", url: maps.googleMaps },
+  { label: "Apple Maps", url: maps.appleMaps },
+  { label: "Waze", url: maps.waze },
+];
+---
+
+<section
+  aria-labelledby="sede-section-heading"
+  class="bg-white py-12 sm:py-16 border-b border-slate-100"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 id="sede-section-heading" class="sr-only">
+      Sede Sezionale, Orari e Recapiti Ufficiali
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="lg:col-span-7">
+        <div>
+          <span class="font-heading text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1 block">
+            INDIRIZZO SEDE
+          </span>
+          <address class="not-italic">
+            <p class="font-heading text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+              {address.street}
+            </p>
+            <p class="font-sans text-base text-slate-700 mt-0.5 tabular-nums">
+              {address.postalCode} {address.city} ({address.province})
+            </p>
+          </address>
+          {address.notes && (
+            <p class="font-sans text-sm text-slate-700 mt-2 leading-relaxed max-w-prose text-pretty">
+              {address.notes}
+            </p>
+          )}
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-200">
+          <span class="font-heading text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2 block">
+            ORARIO DI APERTURA SEGRETERIA
+          </span>
+          <div class="space-y-3">
+            {openingHours.map((item) => (
+              <div>
+                <p class="font-heading text-lg sm:text-xl font-bold text-slate-900 tracking-tight flex flex-wrap items-baseline gap-2">
+                  <span>{item.day}</span>
+                  <span class="tabular-nums font-semibold text-slate-700 text-base sm:text-lg">
+                    {item.hours}
+                  </span>
+                </p>
+                <p class="font-sans text-sm text-slate-700 mt-1.5 leading-relaxed max-w-prose text-pretty">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-200">
+          <dl class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+            <div>
+              <dt class="font-heading text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Telefono
+              </dt>
+              <dd class="font-sans text-base font-semibold text-slate-900 mt-0.5 tabular-nums">
+                <a
+                  href={`tel:${phones.landline}`}
+                  class="min-h-[44px] inline-flex items-center hover:text-[#004b97] hover:underline underline-offset-4 decoration-referee-gold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+                >
+                  {phones.landlineDisplay}
+                </a>
+              </dd>
+            </div>
+
+            <div>
+              <dt class="font-heading text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Cellulare
+              </dt>
+              <dd class="font-sans text-base font-semibold text-slate-900 mt-0.5 tabular-nums">
+                <a
+                  href={`tel:${phones.mobile}`}
+                  class="min-h-[44px] inline-flex items-center hover:text-[#004b97] hover:underline underline-offset-4 decoration-referee-gold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+                >
+                  {phones.mobileDisplay}
+                </a>
+              </dd>
+            </div>
+
+            <div>
+              <dt class="font-heading text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Contatto WhatsApp
+              </dt>
+              <dd class="font-sans text-sm font-semibold text-slate-900 mt-1.5">
+                <a
+                  href={whatsapp.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="min-h-[44px] inline-flex items-center gap-1.5 px-3.5 py-2 rounded-sm bg-emerald-600 hover:bg-emerald-700 text-white font-heading text-xs font-bold tracking-wide transition-all duration-200 active:scale-[0.98] shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+                >
+                  <span>{whatsapp.ctaLabel}</span>
+                  <ArrowUpRight className="size-3.5 shrink-0" aria-hidden="true" />
+                </a>
+              </dd>
+            </div>
+
+            <div>
+              <dt class="font-heading text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Indirizzo Email
+              </dt>
+              <dd class="font-sans text-base font-medium text-slate-900 mt-0.5">
+                <a
+                  href={`mailto:${email}`}
+                  class="min-h-[44px] inline-flex items-center text-[#004b97] font-semibold hover:underline underline-offset-4 decoration-referee-gold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+                >
+                  {email}
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-200">
+          <span class="font-heading text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3 block">
+            INDICAZIONI STRADALI
+          </span>
+          <div class="flex flex-wrap gap-2.5 sm:gap-3">
+            {gpsLinks.map((gps) => (
+              <a
+                href={gps.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="min-h-[44px] inline-flex items-center gap-1.5 px-3.5 py-2 rounded-sm border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-heading text-xs font-semibold tracking-wide hover:border-referee-gold/60 hover:shadow-xs transition-all duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+              >
+                <span>{gps.label}</span>
+                <ArrowUpRight
+                  className="size-3.5 shrink-0 text-slate-400"
+                  aria-hidden="true"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <a
+          href={maps.googleMaps}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block relative rounded-sm overflow-hidden border border-slate-200 shadow-xs group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97] hover:border-referee-gold/60 transition-all duration-200"
+          aria-label={`Apri la posizione della sede di ${address.street} su Google Maps`}
+        >
+          <Image
+            src={mapImage}
+            alt={`Mappa della sede AIA Sezione di Agrigento in ${address.street}`}
+            width={800}
+            height={500}
+            format="webp"
+            quality={52}
+            loading="lazy"
+            decoding="async"
+            class="w-full h-auto aspect-16/10 object-cover"
+          />
+          <div class="absolute inset-x-0 bottom-0 bg-white/95 backdrop-blur-xs px-4 py-2.5 border-t border-slate-200 flex items-center justify-between gap-2">
+            <span class="font-heading text-xs font-semibold text-slate-800">
+              {address.street}, {address.city}
+            </span>
+            <span class="font-heading text-xs font-bold text-[#004b97] group-hover:underline underline-offset-4 decoration-referee-gold inline-flex items-center gap-1 shrink-0">
+              <span>Apri mappa</span>
+              <ArrowUpRight className="size-3.5 shrink-0" aria-hidden="true" />
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

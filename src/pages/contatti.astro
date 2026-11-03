@@ -1,0 +1,85 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ContattiHero from "@/components/contatti/ContattiHero.astro";
+import SedeMappaSection from "@/components/contatti/SedeMappaSection.astro";
+import SocialSection from "@/components/contatti/SocialSection.astro";
+import { SECTION_CONTACTS } from "@/constants/contacts";
+import contattiCover from "@/assets/images/contatti-cover.jpg";
+
+const { organizationName, taxId, address, phones, email, maps, social } =
+  SECTION_CONTACTS;
+
+const contattiJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://aiaagrigento.it/contatti#contactpage",
+    name: "Contatti e Sede | AIA Sezione di Agrigento FIGC",
+    description:
+      "Recapiti ufficiali, sede e orari di ricevimento dell'Associazione Italiana Arbitri - Sezione di Agrigento: Via Matteo Cimarra 38, telefono, email e canali social ufficiali.",
+    url: "https://aiaagrigento.it/contatti",
+    inLanguage: "it-IT",
+    mainEntity: {
+      "@type": ["SportsOrganization", "LocalBusiness"],
+      "@id": "https://aiaagrigento.it/#organization",
+      name: organizationName,
+      taxID: taxId,
+      url: "https://aiaagrigento.it",
+      email,
+      telephone: `+39 ${phones.landlineDisplay}`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: address.street,
+        addressLocality: address.city,
+        addressRegion: address.province,
+        postalCode: address.postalCode,
+        addressCountry: "IT",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: maps.coordinates.latitude,
+        longitude: maps.coordinates.longitude,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "https://schema.org/Monday",
+          opens: "18:00",
+          closes: "20:00",
+        },
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: `+39 ${phones.landlineDisplay}`,
+          contactType: "customer service",
+          email,
+          areaServed: "IT",
+          availableLanguage: ["Italian"],
+        },
+        {
+          "@type": "ContactPoint",
+          telephone: phones.mobile,
+          contactType: "customer support",
+          areaServed: "IT",
+          availableLanguage: ["Italian"],
+        },
+      ],
+      sameAs: social.channels.map((channel) => channel.url),
+    },
+  },
+];
+---
+
+<Layout
+  title="Contatti e Sede | AIA Sezione di Agrigento FIGC"
+  description="Recapiti ufficiali, sede e orari di ricevimento dell'Associazione Italiana Arbitri - Sezione di Agrigento: Via Matteo Cimarra 38, telefono, email e canali social ufficiali."
+  canonical="https://aiaagrigento.it/contatti"
+  image={contattiCover.src}
+  imageAlt="Sede della Sezione AIA di Agrigento in Via Matteo Cimarra 38"
+  jsonLd={contattiJsonLd}
+>
+  <ContattiHero />
+  <SedeMappaSection />
+  <SocialSection />
+</Layout>

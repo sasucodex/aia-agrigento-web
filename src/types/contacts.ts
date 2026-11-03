@@ -15,6 +15,14 @@ export interface ContactPhones {
   mobileDisplay: string;
 }
 
+export interface WhatsAppContact {
+  number: string;
+  display: string;
+  url: string;
+  defaultMessage: string;
+  ctaLabel: string;
+}
+
 export interface OpeningHourItem {
   day: string;
   hours: string;
@@ -38,6 +46,7 @@ export interface SocialLinkItem {
   handle: string;
   url: string;
   description: string;
+  ctaLabel: string;
 }
 
 export interface OperationalEmails {
@@ -55,12 +64,20 @@ export interface AuthorCredit {
   githubUrl: string;
 }
 
+export interface ContactsHeroData {
+  kicker?: string;
+  title: string;
+  subtitle: string;
+}
+
 export interface SectionContacts {
   organizationName: string;
   taxId: string;
+  hero: ContactsHeroData;
   address: ContactAddress;
   openingHours: OpeningHourItem[];
   phones: ContactPhones;
+  whatsapp: WhatsAppContact;
   email: string;
   emails: OperationalEmails;
   maps: MapLinks;
