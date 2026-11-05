@@ -3,59 +3,77 @@ import type { CourseFAQItem } from "@/types/faq";
 
 export type { CourseFAQItem };
 
-export const CourseRegistrationSchema = z.object({
-  nome: z.string().trim().min(2, "Il nome deve contenere almeno 2 caratteri."),
-  cognome: z
-    .string()
-    .trim()
-    .min(2, "Il cognome deve contenere almeno 2 caratteri."),
-  citta: z.string().trim().min(2, "Inserisci il comune di residenza."),
-  dataNascita: z
-    .string()
-    .trim()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, "Inserisci una data di nascita valida.")
-    .refine(
-      (val) => {
-        const parts = val.split("-").map(Number);
-        if (parts.length !== 3 || parts.some(Number.isNaN)) {
-          return false;
-        }
-        const [year, month, day] = parts;
-        const birthDate = new Date(year, month - 1, day);
-        if (
-          birthDate.getFullYear() !== year ||
-          birthDate.getMonth() !== month - 1 ||
-          birthDate.getDate() !== day
-        ) {
-          return false;
-        }
-        const today = new Date();
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const m = today.getMonth() - birthDate.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-          age--;
-        }
-        return age >= 14 && age <= 40;
-      },
-      {
+export function calculateCandidateAge(dateString: string): number | null {
+  const parts = dateString.trim().split("-").map(Number);
+  if (parts.length !== 3 || parts.some(Number.isNaN)) {
+    return null;
+  }
+  const [year, month, day] = parts;
+  const birthDate = new Date(year, month - 1, day);
+  if (
+    birthDate.getFullYear() !== year ||
+    birthDate.getMonth() !== month - 1 ||
+    birthDate.getDate() !== day
+  ) {
+    return null;
+  }
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
+export const CourseRegistrationSchema = z
+  .object({
+    nome: z.string().trim().min(2, "Il nome deve contenere almeno 2 caratteri."),
+    cognome: z
+      .string()
+      .trim()
+      .min(2, "Il cognome deve contenere almeno 2 caratteri."),
+    citta: z.string().trim().min(2, "Inserisci il comune di residenza."),
+    dataNascita: z
+      .string()
+      .trim()
+      .regex(/^\d{4}-\d{2}-\d{2}$/, "Inserisci una data di nascita valida.")
+      .refine(
+        (val) => {
+          const age = calculateCandidateAge(val);
+          return age !== null && age >= 14 && age < 40;
+        },
+        {
+          message:
+            "Per partecipare al corso è necessario avere tra i 14 anni compiuti e i 40 anni non ancora compiuti.",
+        },
+      ),
+    telefono: z
+      .string()
+      .trim()
+      .min(8, "Inserisci un recapito telefonico valido (almeno 8 cifre).")
+      .regex(
+        /^[+\d\s().-]{8,20}$/,
+        "Inserisci un numero di telefono valido (es. 392 4700055).",
+      ),
+    email: z.string().trim().email("Inserisci un indirizzo email valido."),
+    privacy: z.boolean().refine((val) => val === true, {
+      message:
+        "È obbligatorio confermare la presa visione dell'Informativa sulla Privacy per procedere con l'iscrizione.",
+    }),
+    consensoGenitori: z.boolean().optional().default(false),
+  })
+  .superRefine((data, ctx) => {
+    const age = calculateCandidateAge(data.dataNascita);
+    if (age !== null && age >= 14 && age < 18 && data.consensoGenitori !== true) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["consensoGenitori"],
         message:
-          "L'età per partecipare al corso deve essere compresa tra 14 e 40 anni.",
-      },
-    ),
-  telefono: z
-    .string()
-    .trim()
-    .min(8, "Inserisci un recapito telefonico valido (almeno 8 cifre).")
-    .regex(
-      /^[+\d\s().-]{8,20}$/,
-      "Inserisci un numero di telefono valido (es. 392 4700055).",
-    ),
-  email: z.string().trim().email("Inserisci un indirizzo email valido."),
-  privacy: z.boolean().refine((val) => val === true, {
-    message:
-      "È obbligatorio prendere visione dell'informativa privacy e acconsentire al trattamento dei dati personali.",
-  }),
-});
+          "Per i candidati minorenni (14–17 anni) è obbligatorio confermare che l'esercente la responsabilità genitoriale è informato della candidatura.",
+      });
+    }
+  });
 
 export type CourseRegistrationPayload = z.infer<
   typeof CourseRegistrationSchema
@@ -134,6 +152,7 @@ export interface CourseRegistrationSectionData {
   whatsappButtonLabel: string;
   sedeCaption: string;
   privacyNotice: string;
+  minorsNotice?: string;
   submitLabel: string;
   successTitle: string;
   successMessage: string;

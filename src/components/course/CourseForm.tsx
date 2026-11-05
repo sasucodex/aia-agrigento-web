@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import {
   buildCourseWhatsAppUrl,
+  calculateCandidateAge,
   CourseRegistrationSchema,
   getCourseData,
   getCourseRegistrationSection,
@@ -29,6 +30,7 @@ const initialFormState: CourseRegistrationPayload = {
   telefono: "",
   email: "",
   privacy: false,
+  consensoGenitori: false,
 };
 
 export default function CourseForm({
@@ -394,7 +396,7 @@ export default function CourseForm({
                         htmlFor="course-data-nascita"
                         className="font-heading block text-xs font-semibold tracking-wider text-slate-800 uppercase"
                       >
-                        Data di Nascita (14–40 anni) *
+                        Data di Nascita (14–39 anni) *
                       </label>
                       <input
                         id="course-data-nascita"
@@ -510,38 +512,110 @@ export default function CourseForm({
                     </div>
                   </div>
 
-                  <div className="pt-1">
-                    <label
-                      htmlFor="course-privacy"
-                      className="flex cursor-pointer items-start gap-3 select-none"
-                    >
-                      <input
-                        id="course-privacy"
-                        name="privacy"
-                        type="checkbox"
-                        checked={formData.privacy}
-                        onChange={(e) =>
-                          updateField("privacy", e.target.checked)
-                        }
-                        aria-invalid={Boolean(errors.privacy)}
-                        aria-describedby={
-                          errors.privacy ? "course-privacy-error" : undefined
-                        }
-                        className="mt-1 h-4 w-4 shrink-0 cursor-pointer rounded-xs border-slate-300 accent-[#004b97]"
-                      />
-                      <span className="font-sans text-xs leading-relaxed text-slate-700">
-                        {sectionData.privacyNotice} *
-                      </span>
-                    </label>
-                    {errors.privacy && (
-                      <p
-                        id="course-privacy-error"
-                        className="mt-1.5 font-sans text-xs text-red-700"
+                  <div className="space-y-3 rounded-sm border border-slate-200 bg-slate-50 p-3.5">
+                    <div>
+                      <label
+                        htmlFor="course-privacy"
+                        className="flex cursor-pointer items-start gap-3 select-none"
                       >
-                        {errors.privacy}
-                      </p>
-                    )}
+                        <input
+                          id="course-privacy"
+                          name="privacy"
+                          type="checkbox"
+                          checked={formData.privacy}
+                          onChange={(e) =>
+                            updateField("privacy", e.target.checked)
+                          }
+                          aria-invalid={Boolean(errors.privacy)}
+                          aria-describedby={
+                            errors.privacy ? "course-privacy-error" : undefined
+                          }
+                          className="mt-1 h-4 w-4 shrink-0 cursor-pointer rounded-xs border-slate-300 accent-[#004b97]"
+                        />
+                        <span className="font-sans text-xs leading-relaxed text-slate-700">
+                          Ho letto e compreso l&apos;
+                          <a
+                            href="/privacy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-referee-gold font-medium text-[#004b97] underline underline-offset-2"
+                          >
+                            Informativa sulla Privacy
+                          </a>{" "}
+                          (Art. 13 GDPR) e chiedo di essere ricontattato per la
+                          candidatura preliminare al Corso Arbitri della Sezione
+                          AIA di Agrigento (Art. 6, par. 1, lett. b GDPR). *
+                        </span>
+                      </label>
+                      {errors.privacy && (
+                        <p
+                          id="course-privacy-error"
+                          className="mt-1.5 font-sans text-xs text-red-700"
+                        >
+                          {errors.privacy}
+                        </p>
+                      )}
+                    </div>
+
+                    {(() => {
+                      const candidateAge = calculateCandidateAge(
+                        formData.dataNascita,
+                      );
+                      const isMinor =
+                        candidateAge !== null &&
+                        candidateAge >= 14 &&
+                        candidateAge < 18;
+                      if (!isMinor) return null;
+                      return (
+                        <div className="border-t border-slate-200 pt-3">
+                          <label
+                            htmlFor="course-consenso-genitori"
+                            className="flex cursor-pointer items-start gap-3 select-none"
+                          >
+                            <input
+                              id="course-consenso-genitori"
+                              name="consensoGenitori"
+                              type="checkbox"
+                              checked={Boolean(formData.consensoGenitori)}
+                              onChange={(e) =>
+                                updateField(
+                                  "consensoGenitori",
+                                  e.target.checked,
+                                )
+                              }
+                              aria-invalid={Boolean(errors.consensoGenitori)}
+                              aria-describedby={
+                                errors.consensoGenitori
+                                  ? "course-consenso-genitori-error"
+                                  : undefined
+                              }
+                              className="mt-1 h-4 w-4 shrink-0 cursor-pointer rounded-xs border-slate-300 accent-[#004b97]"
+                            />
+                            <span className="font-sans text-xs leading-relaxed text-slate-700">
+                              Essendo minorenne (14–17 anni), dichiaro che
+                              l&apos;esercente la responsabilità genitoriale è
+                              informato della presente candidatura preliminare e
+                              ha preso visione dell&apos;Informativa Privacy. *
+                            </span>
+                          </label>
+                          {errors.consensoGenitori && (
+                            <p
+                              id="course-consenso-genitori-error"
+                              className="mt-1.5 font-sans text-xs text-red-700"
+                            >
+                              {errors.consensoGenitori}
+                            </p>
+                          )}
+                        </div>
+                      );
+                    })()}
                   </div>
+
+                  {sectionData.minorsNotice && (
+                    <div className="rounded-sm border border-slate-200 bg-slate-50 px-3.5 py-2.5 font-sans text-xs leading-relaxed text-slate-600">
+                      {sectionData.minorsNotice}
+                    </div>
+                  )}
 
                   <div className="border-t border-slate-100 pt-4">
                     <button

@@ -86,6 +86,7 @@ export interface GiustificaFormPayload {
   evento: string;
   motivo: string;
   privacy: boolean;
+  consensoSalute?: boolean;
 }
 
 export interface AccreditoFormPayload {
@@ -98,5 +99,6 @@ export interface AccreditoFormPayload {
   dataNascita: string;
   partita: string;
   note: string;
+  dichiarazioneTessera: boolean;
   privacy: boolean;
 }

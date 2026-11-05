@@ -1,0 +1,535 @@
+{
+  "seo": {
+    "title": "Informativa Privacy & Cookie Policy | AIA Sezione di Agrigento FIGC",
+    "description": "Informativa sul trattamento dei dati personali e Cookie Policy dell'AIA Sezione di Agrigento (FIGC) ai sensi dell'Art. 13 del Regolamento UE 2016/679 (GDPR).",
+    "canonical": "https://aiaagrigento.it/privacy"
+  },
+  "hero": {
+    "kicker": "",
+    "title": "INFORMATIVA PRIVACY E COOKIE",
+    "subtitle": "La presente informativa, resa ai sensi dell'Art. 13 del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003 (Codice Privacy), descrive le modalità di raccolta e trattamento dei dati personali degli associati, degli aspiranti arbitri e dei visitatori del portale istituzionale della Sezione AIA di Agrigento.",
+    "badge": "Ultimo aggiornamento: Novembre 2026 · Informativa ex Art. 13 Reg. UE 2016/679",
+    "lastUpdatedISO": "2026-11-05"
+  },
+  "toc": {
+    "title": "Indice dei capitoli legali",
+    "items": [
+      {
+        "id": "sezione-1",
+        "number": "1.",
+        "label": "Titolare del trattamento e struttura federale",
+        "href": "#sezione-1"
+      },
+      {
+        "id": "sezione-2",
+        "number": "2.",
+        "label": "Tipologia dei dati raccolti",
+        "href": "#sezione-2"
+      },
+      {
+        "id": "sezione-3",
+        "number": "3.",
+        "label": "Finalità e basi giuridiche",
+        "href": "#sezione-3"
+      },
+      {
+        "id": "sezione-4",
+        "number": "4.",
+        "label": "Trattamento dei dati dei minori",
+        "href": "#sezione-4"
+      },
+      {
+        "id": "sezione-5",
+        "number": "5.",
+        "label": "Dati particolari (salute)",
+        "href": "#sezione-5"
+      },
+      {
+        "id": "sezione-6",
+        "number": "6.",
+        "label": "Destinatari e piattaforme terze",
+        "href": "#sezione-6"
+      },
+      {
+        "id": "sezione-7",
+        "number": "7.",
+        "label": "Trasferimenti extra-UE",
+        "href": "#sezione-7"
+      },
+      {
+        "id": "sezione-8",
+        "number": "8.",
+        "label": "Tempi di conservazione",
+        "href": "#sezione-8"
+      },
+      {
+        "id": "sezione-9",
+        "number": "9.",
+        "label": "Diritti dell'interessato",
+        "href": "#sezione-9"
+      },
+      {
+        "id": "cookie-policy",
+        "number": "10.",
+        "label": "Cookie Policy",
+        "href": "#cookie-policy"
+      }
+    ]
+  },
+  "section1Controller": {
+    "id": "sezione-1",
+    "number": "Sezione 1",
+    "title": "Titolare del trattamento e natura dell'articolazione sezionale",
+    "intro": "La Sezione A.I.A. di Agrigento \"Pietro Arancio\" costituisce un'articolazione territoriale periferica dell'Associazione Italiana Arbitri (A.I.A.), componente della Federazione Italiana Giuoco Calcio (F.I.G.C.), dotata di autonomia amministrativa e gestionale locale ai sensi del Regolamento dell'A.I.A. La Sezione opera quale Titolare del trattamento per le attività svolte a livello locale tramite questo portale web e la propria segreteria sezionale, mentre per i trattamenti inerenti al tesseramento federale unificato, alla giustizia sportiva e alle piattaforme informatiche nazionali (es. Sinfonia4You) opera nell'ambito dell'ordinamento sportivo facente capo all'A.I.A. Centrale e alla F.I.G.C.",
+    "fields": [
+      {
+        "label": "Denominazione",
+        "value": "Sezione A.I.A. di Agrigento \"Pietro Arancio\""
+      },
+      {
+        "label": "Natura giuridica e affiliazione",
+        "value": "Articolazione periferica territoriale dell'Associazione Italiana Arbitri (A.I.A. – F.I.G.C.)"
+      },
+      {
+        "label": "Sede legale e operativa",
+        "value": "Via Matteo Cimarra, 38 – 92100 Agrigento (AG)"
+      },
+      {
+        "label": "Codice fiscale",
+        "value": "93070180844",
+        "isMono": true,
+        "note": "Ente associativo sportivo non commerciale privo di Partita IVA."
+      },
+      {
+        "label": "Rappresentante legale pro-tempore",
+        "value": "Il Presidente di Sezione"
+      },
+      {
+        "label": "Email ufficiale per le comunicazioni privacy",
+        "value": "info@aiaagrigento.it",
+        "href": "mailto:info@aiaagrigento.it"
+      },
+      {
+        "label": "Telefono e cellulare segreteria",
+        "value": "Tel. 0922 604783 | Cell. 392 4700055",
+        "isMono": true
+      },
+      {
+        "label": "Responsabile della Protezione dei Dati (RPD / DPO)",
+        "value": "Non designato a livello di singola Sezione territoriale",
+        "note": "Ai sensi dell'Art. 37 GDPR, l'articolazione sezionale periferica non effettua monitoraggio regolare e sistematico su larga scala. Per i trattamenti di competenza federale centrale resta fermo il riferimento agli organi privacy di A.I.A. / F.I.G.C."
+      }
+    ],
+    "closingNote": "Per qualsiasi chiarimento in merito alla presente informativa o per esercitare i diritti previsti dagli Artt. 15–22 del Regolamento (UE) 2016/679, l'interessato può rivolgersi direttamente alla Sezione tramite i recapiti sopra indicati con oggetto \"Richiesta Privacy GDPR\"."
+  },
+  "section2DataCollected": {
+    "id": "sezione-2",
+    "number": "Sezione 2",
+    "title": "Tipologia di dati personali raccolti",
+    "intro": "La Sezione AIA di Agrigento raccoglie e tratta esclusivamente i dati personali pertinenti e limitati a quanto necessario per l'erogazione dei servizi istituzionali richiesti dagli utenti e dagli associati (principio di minimizzazione ex Art. 5, par. 1, lett. c GDPR). I dati appartengono alle seguenti categorie:",
+    "categories": [
+      {
+        "id": "cat-navigazione",
+        "title": "Dati di navigazione e log tecnici di rete (Hosting Vercel Edge Network)",
+        "items": [
+          "Indirizzo IP del dispositivo connesso e parametri del protocollo di rete.",
+          "Informazioni tecniche sul browser e sul sistema operativo (stringa User-Agent).",
+          "Data e orario (timestamp) della richiesta HTTP, URL della risorsa richiesta e codice di stato della risposta."
+        ],
+        "note": "Natura del conferimento: questi dati sono trasmessi implicitamente nell'uso dei protocolli di comunicazione di Internet e sono trattati per consentire la corretta erogazione delle pagine, garantire la sicurezza informatica e mitigare abusi o attacchi di rete (es. DDoS)."
+      },
+      {
+        "id": "cat-corso",
+        "title": "Dati per la candidatura al Corso Arbitri Nazionale",
+        "routeBadge": "/diventa-arbitro",
+        "items": [
+          "Nome e cognome del candidato.",
+          "Comune di residenza.",
+          "Data di nascita (necessaria per verificare il requisito regolamentare di età compresa tra i 14 anni compiuti e i 40 anni non ancora compiuti).",
+          "Recapito telefonico / cellulare (per il contatto organizzativo da parte dei referenti del corso).",
+          "Indirizzo email.",
+          "Per i candidati minorenni (età compresa tra 14 e 17 anni): dichiarazione obbligatoria attestante che l'esercente la responsabilità genitoriale è informato della candidatura preliminare e ha preso visione della presente informativa."
+        ]
+      },
+      {
+        "id": "cat-giustificazioni",
+        "title": "Dati per la giustificazione delle assenze alle Riunioni Tecniche Obbligatorie (RTO)",
+        "routeBadge": "/area-associati",
+        "items": [
+          "Cognome e nome dell'associato.",
+          "Indirizzo email registrato sul portale federale Sinfonia4You.",
+          "Codice meccanografico AIA e numero di tessera federale.",
+          "Luogo di nascita e data di nascita.",
+          "Riunione Tecnica Obbligatoria (RTO) oggetto della giustificazione.",
+          "Motivazione dell'assenza inserita dall'associato nel campo di testo (es. studio, impegni lavorativi, motivi personali o, previo consenso esplicito facoltativo, eventuali riferimenti allo stato di salute o infortuni)."
+        ]
+      },
+      {
+        "id": "cat-accrediti",
+        "title": "Dati per la richiesta di accredito federale alle gare",
+        "routeBadge": "/area-associati",
+        "items": [
+          "Cognome e nome dell'associato.",
+          "Indirizzo email registrato su Sinfonia4You.",
+          "Codice meccanografico AIA e numero di tessera federale in corso di validità (con dichiarazione del relativo possesso).",
+          "Luogo di nascita e data di nascita (richiesti dalle normative di pubblica sicurezza per l'emissione del titolo nominativo d'ingresso allo stadio).",
+          "Gara richiesta (squadre, data e campionato) ed eventuali note operative facoltative."
+        ]
+      },
+      {
+        "id": "cat-spontanei",
+        "title": "Dati inviati spontaneamente tramite posta elettronica o WhatsApp",
+        "items": [
+          "Indirizzo email o numero telefonico del mittente, nome visualizzato sul profilo e qualsiasi ulteriore dato personale inserito volontariamente dall'utente nei messaggi indirizzati alle caselle istituzionali (@aiaagrigento.it) o al recapito telefonico/WhatsApp della segreteria sezionale."
+        ]
+      }
+    ]
+  },
+  "section3Purposes": {
+    "id": "sezione-3",
+    "number": "Sezione 3",
+    "title": "Finalità del trattamento e basi giuridiche (Artt. 6 e 9 GDPR)",
+    "intro": "Il trattamento dei dati personali è svolto nel rispetto dei principi di liceità, correttezza, trasparenza e limitazione della finalità (Art. 5 GDPR), secondo la seguente corrispondenza:",
+    "tableHeaders": {
+      "purpose": "Finalità del trattamento",
+      "dataCategory": "Categoria di dati",
+      "legalBasis": "Base giuridica applicabile (GDPR)",
+      "mandatory": "Natura del conferimento"
+    },
+    "rows": [
+      {
+        "purpose": "Gestione della candidatura preliminare e ricontatto per l'iscrizione al Corso Arbitri",
+        "dataCategory": "Nome, cognome, comune, data di nascita, telefono, email, presa d'atto genitori (se 14–17 anni)",
+        "legalBasisCode": "Art. 6, par. 1, lett. b:",
+        "legalBasisDescription": "Esecuzione di misure precontrattuali e pre-associative adottate su richiesta dell'interessato",
+        "mandatoryNote": "Necessario per processare la domanda di partecipazione al corso. Il mancato conferimento impedisce il ricontatto."
+      },
+      {
+        "purpose": "Trasmissione dei dati agli organismi federali (CRA Sicilia, AIA Centrale, FIGC) in caso di ammissione al corso e tesseramento",
+        "dataCategory": "Dati anagrafici, di contatto e di idoneità associativa dei candidati ammessi e degli associati",
+        "legalBasisCode": "Art. 6, par. 1, lett. b e lett. c:",
+        "legalBasisDescription": "Esecuzione del rapporto associativo federale e adempimento degli obblighi statutari e regolamentari dell'ordinamento sportivo",
+        "mandatoryNote": "Necessario per il perfezionamento del tesseramento federale e l'abilitazione all'attività arbitrale."
+      },
+      {
+        "purpose": "Gestione delle giustificazioni di assenza alle Riunioni Tecniche Obbligatorie (RTO)",
+        "dataCategory": "Dati anagrafici, email, cod. meccanografico, n. tessera, luogo e data di nascita, evento RTO, motivazione ordinaria",
+        "legalBasisCode": "Art. 6, par. 1, lett. b:",
+        "legalBasisDescription": "Esecuzione del rapporto associativo e adempimento dei doveri regolamentari interni (Artt. 40 e 42 Regolamento AIA)",
+        "mandatoryNote": "Necessario per registrare la giustificazione d'assenza secondo le norme associative AIA."
+      },
+      {
+        "purpose": "Trattamento di eventuali informazioni attinenti alla salute inserite nella giustificazione RTO",
+        "dataCategory": "Eventuali riferimenti a stato di salute o infortuni annotati volontariamente dall'associato nel campo motivazione",
+        "legalBasisCode": "Art. 9, par. 2, lett. a:",
+        "legalBasisDescription": "Consenso esplicito dell'interessato per categorie particolari di dati personali",
+        "mandatoryNote": "Facoltativo. In assenza di consenso, l'associato può indicare semplicemente \"motivi personali\" ed esibire l'eventuale documentazione medica in sede."
+      },
+      {
+        "purpose": "Gestione delle richieste di accredito federale e trasmissione alla società calcistica ospitante",
+        "dataCategory": "Nome, cognome, email, cod. meccanografico, n. tessera, luogo e data di nascita, gara richiesta, note",
+        "legalBasisCode": "Art. 6, par. 1, lett. b:",
+        "legalBasisDescription": "Esecuzione di un servizio richiesto dall'associato (compresa la necessaria comunicazione dei dati alla società sportiva organizzatrice dell'evento)",
+        "mandatoryNote": "Necessario per l'inoltro della richiesta di accredito. Il rifiuto rende impossibile il rilascio del titolo di accesso."
+      },
+      {
+        "purpose": "Riscontro a richieste di informazioni ricevute via email o WhatsApp",
+        "dataCategory": "Recapito mittente (email o telefono) e contenuto della comunicazione",
+        "legalBasisCode": "Art. 6, par. 1, lett. b:",
+        "legalBasisDescription": "Esecuzione di misure precontrattuali o riscontro a richieste dell'interessato",
+        "mandatoryNote": "Necessario per consentire alla Segreteria Sezionale di rispondere alla richiesta."
+      },
+      {
+        "purpose": "Sicurezza dell'infrastruttura web, prevenzione abusi e tutela dei diritti in sede giudiziaria o disciplinare",
+        "dataCategory": "Log tecnici di connessione, indirizzi IP, timestamp",
+        "legalBasisCode": "Art. 6, par. 1, lett. f e lett. c:",
+        "legalBasisDescription": "Legittimo interesse del Titolare alla sicurezza informatica del sito e adempimento di obblighi di legge",
+        "mandatoryNote": "Inerente al funzionamento dei protocolli di rete per la consultazione del portale."
+      }
+    ],
+    "noProfilingCallout": "Il Titolare NON effettua alcuna attività di profilazione, NON adotta processi decisionali automatizzati ai sensi dell'Art. 22 GDPR e NON utilizza né cede i dati raccolti per finalità di marketing o comunicazione commerciale."
+  },
+  "section4Minors": {
+    "id": "sezione-4",
+    "number": "Sezione 4",
+    "title": "Trattamento dei dati dei minori di età",
+    "intro": "Ai sensi del Regolamento dell'Associazione Italiana Arbitri, possono presentare domanda di ammissione al Corso Arbitri i giovani che abbiano compiuto il 14° anno di età.",
+    "points": [
+      {
+        "title": "Natura preliminare della candidatura online (14–17 anni)",
+        "description": "La compilazione del modulo web da parte di un aspirante arbitro minorenne (tra i 14 e i 17 anni) costituisce esclusivamente una manifestazione preliminare di interesse finalizzata all'avvio dell'iter informativo e pre-associativo (Art. 6, par. 1, lett. b GDPR)."
+      },
+      {
+        "title": "Presa d'atto sul modulo web e successiva formalizzazione cartacea",
+        "description": "Quando viene inserita una data di nascita corrispondente a un'età compresa tra 14 e 17 anni, il modulo online richiede di confermare che l'esercente la responsabilità genitoriale è stato informato della candidatura e ha preso visione della presente Informativa Privacy. L'effettiva ammissione al corso, la sottoposizione alle visite mediche di idoneità agonistica e il tesseramento federale definitivo restano in ogni caso subordinati alla sottoscrizione autografa della modulistica ufficiale AIA FIGC da parte degli esercenti la responsabilità genitoriale o del tutore legale presso la sede sezionale."
+      },
+      {
+        "title": "Esclusione e cancellazione per gli infra-quattordicenni",
+        "description": "Il modulo di iscrizione blocca preventivamente l'invio di candidature relative a soggetti di età inferiore a 14 anni. Qualora la Sezione dovesse comunque ricevere per altre vie dati riferiti a minori di anni 14 non accompagnati dall'autorizzazione del genitore, provvederà alla loro immediata cancellazione."
+      }
+    ]
+  },
+  "section5HealthData": {
+    "id": "sezione-5",
+    "number": "Sezione 5",
+    "title": "Trattamento di categorie particolari di dati (dati relativi alla salute - Art. 9 GDPR)",
+    "intro": "Nel modulo di giustificazione dell'assenza alle Riunioni Tecniche Obbligatorie (RTO), l'associato espone sinteticamente il motivo dell'indisponibilità. Per tutelare la riservatezza degli associati sono adottate le seguenti garanzie:",
+    "bullets": [
+      {
+        "label": "Minimizzazione e invito a non inserire diagnosi",
+        "description": "Il modulo invita espressamente l'associato a non riportare diagnosi cliniche o dettagli sanitari. Qualora l'assenza sia dovuta a malattia o infortunio, l'associato può limitarsi a scrivere la dicitura neutra \"motivi personali\" senza conferire alcun dato sanitario online."
+      },
+      {
+        "label": "Base giuridica del consenso esplicito (Art. 9, par. 2, lett. a GDPR)",
+        "description": "Nel caso in cui l'associato scelga comunque di annotare spontaneamente nel testo della motivazione riferimenti al proprio stato di salute o a infortuni (dati appartenenti alle \"categorie particolari\" di cui all'Art. 9, par. 1 GDPR), il relativo trattamento avviene esclusivamente sulla base del consenso esplicito, libero e specifico prestato dall'interessato tramite l'apposita casella facoltativa presente nel modulo (Art. 9, par. 2, lett. a GDPR), revocabile in qualsiasi momento ai sensi dell'Art. 7, par. 3 GDPR senza pregiudicare la liceità del trattamento basata sul consenso prima della revoca. Qualora la motivazione contenga riferimenti allo stato di salute in assenza di tale consenso esplicito, la Segreteria Sezionale non utilizzerà tali informazioni, provvederà alla loro cancellazione e potrà invitare l'associato a riformulare la giustificazione con dicitura neutra."
+      },
+      {
+        "label": "Divieto di invio di certificati medici online",
+        "description": "Il portale web non richiede né consente il caricamento di certificati medici, referti o cartelle cliniche. L'eventuale documentazione medica giustificativa o di idoneità sportiva prevista dalle norme federali viene acquisita esclusivamente tramite i canali riservati della Segreteria Sezionale o il portale federale Sinfonia4You, con accesso ristretto al Presidente di Sezione e agli Organi Tecnici competenti."
+      }
+    ]
+  },
+  "section6Recipients": {
+    "id": "sezione-6",
+    "number": "Sezione 6",
+    "title": "Destinatari dei dati e soggetti coinvolti nel trattamento",
+    "intro": "I dati personali raccolti tramite il portale non sono oggetto di diffusione al pubblico, ma possono essere conosciuti o comunicati esclusivamente ai seguenti soggetti per le finalità sopra indicate:",
+    "items": [
+      {
+        "title": "Soggetti autorizzati interni alla Sezione (Art. 29 GDPR e Art. 2-quaterdecies Codice Privacy)",
+        "description": "Presidente di Sezione, componenti del Consiglio Direttivo Sezionale (CDS), Segreteria Sezionale, referenti del Corso Arbitri e Organi Tecnici Sezionali (OTS), ciascuno limitatamente agli ambiti di propria stretta competenza istituzionale."
+      },
+      {
+        "title": "Fornitori di servizi tecnologici (Responsabili del trattamento ex Art. 28 GDPR)",
+        "subItems": [
+          {
+            "name": "Vercel Inc. (440 N Barranca Ave #4133, Covina, CA 91723, USA)",
+            "description": "Fornitore dell'infrastruttura di cloud hosting, rete di distribuzione (CDN / Edge Network) e ambiente di esecuzione serverless del portale web."
+          },
+          {
+            "name": "Aruba S.p.A. (Via San Clemente 53, 24036 Ponte San Pietro, BG, Italia)",
+            "description": "Fornitore del servizio di gestione del dominio e delle caselle di posta elettronica istituzionali (@aiaagrigento.it) della Sezione."
+          }
+        ]
+      },
+      {
+        "title": "Società sportive calcistiche ospitanti (Titolari autonomi per il modulo accrediti)",
+        "description": "Per le sole richieste di accredito gare, i dati identificativi e di tesseramento dell'associato (cognome, nome, luogo e data di nascita, numero di tessera federale e codice meccanografico) vengono comunicati alla Società Sportiva Calcistica organizzatrice dell'incontro. Tale società tratta i dati ricevuti in qualità di Titolare autonomo del trattamento al fine di emettere il titolo nominativo di accesso all'impianto sportivo in conformità alle norme federali FIGC e alle disposizioni di pubblica sicurezza."
+      },
+      {
+        "title": "Organismi federali sovraordinati (AIA Centrale, CRA Sicilia, FIGC)",
+        "description": "Nell'ambito dell'ordinamento sportivo e del vincolo associativo, i dati relativi ai candidati ammessi all'esame e agli associati vengono trasmessi al Comitato Regionale Arbitri (CRA Sicilia), all'Associazione Italiana Arbitri (AIA Centrale) e alla Federazione Italiana Giuoco Calcio (FIGC) per la gestione del tesseramento, delle designazioni e degli adempimenti statutari."
+      },
+      {
+        "title": "Fornitori di piattaforme di messaggistica istantanea (in caso di contatto volontario su WhatsApp)",
+        "description": "Qualora l'utente scelga liberamente di avviare una conversazione con la Sezione tramite i pulsanti \"Scrivici su WhatsApp\", l'interazione avviene sull'infrastruttura gestita da WhatsApp Ireland Limited / Meta Platforms Inc., che tratta i metadati di comunicazione e i dati dell'account dell'utente secondo la propria informativa privacy quale Titolare autonomo."
+      },
+      {
+        "title": "Autorità giudiziaria, di pubblica sicurezza o organi di giustizia sportiva",
+        "description": "Esclusivamente nei casi e nei limiti previsti da norme di legge o dai regolamenti federali."
+      }
+    ]
+  },
+  "section7Transfers": {
+    "id": "sezione-7",
+    "number": "Sezione 7",
+    "title": "Trasferimento di dati verso Paesi terzi (extra-SEE)",
+    "intro": "I servizi di posta elettronica istituzionale (@aiaagrigento.it) sono erogati da Aruba S.p.A. mediante data center situati nel territorio dell'Unione Europea (Italia). L'erogazione tecnica del sito web e delle relative API serverless si avvale invece dell'infrastruttura cloud di Vercel Inc., società con sede negli Stati Uniti d'America; pertanto, sebbene il sito venga distribuito tramite nodi Edge europei, il trattamento dei dati di navigazione e dei flussi transitanti sul portale può comportare un trasferimento di dati verso gli Stati Uniti.",
+    "safeguardsIntro": "Tale trasferimento verso gli Stati Uniti è legittimato ai sensi del Capo V del GDPR (Artt. 45 e 46) dalle seguenti garanzie:",
+    "safeguards": [
+      "Decisione di adeguatezza della Commissione Europea del 10 luglio 2023 relativa all'EU-U.S. Data Privacy Framework (DPF), ai sensi dell'Art. 45 GDPR, quadro normativo a cui Vercel Inc. aderisce mediante certificazione attiva presso il Dipartimento del Commercio degli Stati Uniti;",
+      "In via subordinata e integrativa, sottoscrizione delle Clausole Contrattuali Tipo (Standard Contractual Clauses – SCC) approvate dalla Commissione Europea ai sensi dell'Art. 46, par. 2, lett. c GDPR, integrate nel Data Processing Addendum (DPA) del fornitore unitamente a misure tecniche di cifratura in transito (HTTPS/TLS)."
+    ]
+  },
+  "section8Retention": {
+    "id": "sezione-8",
+    "number": "Sezione 8",
+    "title": "Periodo di conservazione dei dati (data retention)",
+    "intro": "Nel rispetto del principio di limitazione della conservazione (Art. 5, par. 1, lett. e GDPR), i dati personali sono conservati per i soli periodi di seguito specificati:",
+    "items": [
+      {
+        "label": "Domande di iscrizione al Corso Arbitri",
+        "description": "I dati sono conservati per il tempo necessario a gestire la sessione del Corso Arbitri per la quale l'interessato si è candidato e comunque per un periodo non superiore a 12 mesi dalla ricezione della richiesta. In caso di superamento dell'esame finale, i dati confluiscono nel fascicolo associativo federale AIA; in caso di mancata partecipazione, rinuncia o mancato superamento, vengono cancellati entro il termine del predetto periodo."
+      },
+      {
+        "label": "Giustificazioni assenze RTO (inclusi eventuali dati sulla salute)",
+        "description": "Conservate presso la Segreteria Sezionale per la sola durata della stagione sportiva di riferimento (1° luglio – 30 giugno successivo), al fine di verificare il rispetto degli obblighi regolamentari di frequenza ex Artt. 40 e 42 del Regolamento AIA. Al termine della stagione sportiva (o anticipatamente in caso di revoca del consenso per i dati sanitari), le comunicazioni vengono cancellate dalle caselle e dagli archivi sezionali, salvo il caso in cui sia pendente un procedimento disciplinare fino alla sua definizione."
+      },
+      {
+        "label": "Richieste di accredito gare",
+        "description": "Conservate dalla Sezione per un periodo massimo di 30 giorni successivi alla data di disputa della gara richiesta, per consentire eventuali verifiche organizzative con la società sportiva ospitante, dopodiché vengono eliminate."
+      },
+      {
+        "label": "Comunicazioni spontanee via email o WhatsApp",
+        "description": "Conservate per il tempo necessario a fornire riscontro all'interessato e gestire la pratica richiesta, e comunque non oltre 12 mesi dall'ultima comunicazione, salvo che il messaggio riguardi adempimenti amministrativi o associativi soggetti a diversi obblighi di conservazione."
+      },
+      {
+        "label": "Log tecnici di navigazione",
+        "description": "Trattati dall'infrastruttura di hosting per il tempo strettamente necessario a garantire la sicurezza operativa del servizio e la diagnostica di rete, secondo le tempistiche tecniche di rotazione dei log applicate dal fornitore (di norma non superiori a 30 giorni), fatti salvi eventuali ordini di conservazione dell'Autorità Giudiziaria."
+      }
+    ]
+  },
+  "section9Rights": {
+    "id": "sezione-9",
+    "number": "Sezione 9",
+    "title": "Diritti dell'interessato (Artt. 15–22 e Art. 7 GDPR)",
+    "intro": "In qualità di interessato, puoi esercitare in qualsiasi momento nei confronti del Titolare i diritti riconosciuti dal Regolamento (UE) 2016/679:",
+    "rights": [
+      {
+        "title": "Diritto di accesso",
+        "article": "Art. 15",
+        "description": "Ottenere la conferma che sia o meno in corso un trattamento di dati personali che ti riguardano e, in tal caso, ricevere copia dei dati e delle informazioni relative al trattamento."
+      },
+      {
+        "title": "Diritto di rettifica",
+        "article": "Art. 16",
+        "description": "Ottenere senza ingiustificato ritardo la rettifica dei dati personali inesatti o l'integrazione di quelli incompleti."
+      },
+      {
+        "title": "Diritto alla cancellazione (\"Diritto all'oblio\")",
+        "article": "Art. 17",
+        "description": "Ottenere la cancellazione dei dati personali quando non siano più necessari rispetto alle finalità per le quali sono stati raccolti, in caso di revoca del consenso o qualora il trattamento sia illecito."
+      },
+      {
+        "title": "Diritto di limitazione del trattamento",
+        "article": "Art. 18",
+        "description": "Ottenere la limitazione del trattamento quando ricorra una delle ipotesi previste dall'Art. 18 GDPR (es. contestazione dell'esattezza dei dati)."
+      },
+      {
+        "title": "Diritto alla portabilità dei dati",
+        "article": "Art. 20",
+        "description": "Ricevere in un formato strutturato, di uso comune e leggibile da dispositivo automatico i dati personali forniti, qualora il trattamento si basi sul consenso o su un contratto e sia effettuato con mezzi automatizzati."
+      },
+      {
+        "title": "Diritto di opposizione",
+        "article": "Art. 21",
+        "description": "Opporti in qualsiasi momento, per motivi connessi alla tua situazione particolare, al trattamento dei dati personali basato sul legittimo interesse del Titolare (Art. 6, par. 1, lett. f GDPR)."
+      },
+      {
+        "title": "Diritto di revoca del consenso",
+        "article": "Art. 7, par. 3",
+        "description": "Qualora il trattamento sia basato sul consenso (come nel caso di eventuali dati sulla salute inseriti nelle giustificazioni RTO), hai il diritto di revocare il consenso in qualsiasi momento con la stessa facilità con cui è stato accordato, senza pregiudicare la liceità del trattamento basata sul consenso prestato prima della revoca."
+      },
+      {
+        "title": "Diritto di proporre reclamo all'Autorità di controllo (o ricorso giurisdizionale)",
+        "article": "Artt. 77 e 79",
+        "description": "Fatto salvo ogni altro ricorso amministrativo o extragiudiziale, qualora tu ritenga che il trattamento che ti riguarda violi il GDPR, hai il diritto di proporre reclamo al Garante per la Protezione dei Dati Personali (Art. 77 GDPR) o di adire le competenti sedi giurisdizionali (Art. 79 GDPR)."
+      }
+    ],
+    "authority": {
+      "name": "Garante per la Protezione dei Dati Personali",
+      "address": "Piazza Venezia n. 11 – 00187 Roma",
+      "websiteUrl": "https://www.garanteprivacy.it",
+      "websiteLabel": "www.garanteprivacy.it",
+      "phone": "(+39) 06.696771",
+      "pec": "protocollo@pec.gpdp.it"
+    },
+    "exerciseTitle": "Modalità di esercizio dei diritti",
+    "exerciseIntro": "L'esercizio dei diritti è gratuito ai sensi dell'Art. 12 GDPR. Per inviare una richiesta o revocare un consenso è sufficiente scrivere all'indirizzo:",
+    "exerciseEmail": "info@aiaagrigento.it",
+    "exerciseSubjectTemplate": "Esercizio Diritti Privacy - [Nome e Cognome]",
+    "exerciseDeadlineNote": "Il Titolare fornirà riscontro sulle azioni intraprese senza ingiustificato ritardo e, comunque, al più tardi entro un mese dal ricevimento della richiesta, termine prorogabile fino a due mesi nei casi di particolare complessità secondo quanto previsto dall'Art. 12, par. 3 GDPR."
+  },
+  "section10Cookies": {
+    "id": "cookie-policy",
+    "secondaryId": "sezione-10",
+    "number": "Sezione 10",
+    "title": "Cookie Policy e archiviazione sul terminale (Art. 122 D.Lgs. 196/2003)",
+    "intro": "In questa sezione vengono fornite le informazioni sull'uso dei cookie e di altri eventuali strumenti di archiviazione locale sul terminale dell'utente (es. localStorage, sessionStorage) da parte del dominio aiaagrigento.it, in conformità all'Art. 122 del D.Lgs. 196/2003 e alle \"Linee guida cookie e altri strumenti di tracciamento\" emanate dal Garante Privacy il 10 giugno 2021.",
+    "whatAreCookies": {
+      "title": "Che cosa sono i cookie e gli strumenti assimilati?",
+      "description": "I cookie sono stringhe di testo di piccole dimensioni che i siti visitati dall'utente inviano al suo dispositivo (computer, smartphone o tablet), dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva. Alle medesime regole di trasparenza e consenso previste dall'Art. 122 del Codice Privacy sono soggetti anche gli altri strumenti tecnici che comportano l'archiviazione di informazioni nel terminale dell'utente, come il Web Storage del browser (localStorage e sessionStorage)."
+    },
+    "cookieTypes": {
+      "title": "Quadro degli strumenti utilizzati su questo portale",
+      "intro": "Il portale della Sezione AIA di Agrigento è sviluppato secondo i principi di protezione dei dati fin dalla progettazione e per impostazione predefinita (Privacy by Design e Privacy by Default, Art. 25 GDPR):",
+      "tableHeaders": {
+        "type": "Tipologia di strumento",
+        "present": "Utilizzato sul sito?",
+        "details": "Finalità e dettagli tecnici"
+      },
+      "rows": [
+        {
+          "type": "Cookie tecnici e di sicurezza infrastrutturale",
+          "status": "Sì (solo tecnici)",
+          "isPresent": true,
+          "details": "Eventuali cookie tecnici di sessione o header HTTP gestiti dall'infrastruttura di rete Vercel, strettamente necessari per l'instradamento sicuro delle richieste e la mitigazione di traffico malevolo. Non richiedono il consenso dell'utente ai sensi dell'Art. 122, comma 1 del Codice Privacy."
+        },
+        {
+          "type": "Persistenza di dati personali in localStorage / sessionStorage",
+          "status": "No",
+          "isPresent": false,
+          "details": "Il sito NON salva dati anagrafici, profili utente o token di tracciamento nel localStorage o sessionStorage del browser dell'utente."
+        },
+        {
+          "type": "Cookie di profilazione e marketing",
+          "status": "No",
+          "isPresent": false,
+          "details": "Il portale NON utilizza cookie di profilazione né pixel pubblicitari di terze parti (nessun Meta Pixel, TikTok Pixel, Google Ads o strumenti analoghi)."
+        },
+        {
+          "type": "Cookie analitici di prima o terza parte",
+          "status": "No",
+          "isPresent": false,
+          "details": "Il portale NON utilizza Google Analytics né altri servizi di statistica che traccino gli utenti attraverso cookie o identificatori univoci."
+        },
+        {
+          "type": "Widget, video o mappe interattive di terze parti",
+          "status": "No",
+          "isPresent": false,
+          "details": "Le pagine del sito non incorporano iframe esterni (come Google Maps o player video di terze parti) che possano installare cookie al caricamento della pagina; la mappa della sede è riprodotta tramite un'immagine statica ospitata localmente."
+        },
+        {
+          "type": "Caricamento di font da server esterni",
+          "status": "No",
+          "isPresent": false,
+          "details": "I caratteri tipografici del sito (Poppins e Lato) sono ospitati direttamente sul server del portale (@fontsource), evitando connessioni automatiche verso server di terze parti (es. Google Fonts) e la conseguente comunicazione dell'indirizzo IP del visitatore."
+        }
+      ]
+    },
+    "noBannerReason": {
+      "title": "Assenza del banner di consenso cookie",
+      "paragraphs": [
+        "Ai sensi dell'Art. 122, comma 1 del D.Lgs. 196/2003 e delle \"Linee guida cookie e altri strumenti di tracciamento\" del Garante Privacy del 10 giugno 2021 (Provvedimento n. 231/2021), qualora un sito web utilizzi esclusivamente cookie o strumenti tecnici strettamente necessari all'erogazione del servizio e non impieghi alcun cookie di profilazione o analitico non anonimizzato, non è richiesto il preventivo consenso dell'utente né la visualizzazione di un cookie banner all'accesso.",
+        "Le informazioni relative agli strumenti tecnici sono rese direttamente all'interno della presente pagina informativa."
+      ]
+    },
+    "openSource": {
+      "title": "Trasparenza e codice sorgente verificabile",
+      "description": "A conferma di quanto dichiarato nella presente informativa circa l'assenza di tracker pubblicitari, cookie di profilazione o salvataggi occulti di dati sul dispositivo, il codice sorgente di questo portale web è pubblicamente consultabile su GitHub.",
+      "repoUrl": "https://github.com/sasucodex/aia-agrigento-web",
+      "repoLabel": "Repository GitHub Ufficiale",
+      "repoHandle": "sasucodex/aia-agrigento-web"
+    },
+    "browserSettings": {
+      "title": "Gestione dei cookie tramite le impostazioni del browser",
+      "intro": "L'utente può in ogni momento gestire, limitare o cancellare i cookie attraverso le impostazioni del proprio programma di navigazione. Di seguito i collegamenti alle guide ufficiali dei principali browser:",
+      "browsers": [
+        {
+          "name": "Google Chrome",
+          "url": "https://support.google.com/chrome/answer/95647"
+        },
+        {
+          "name": "Mozilla Firefox",
+          "url": "https://support.mozilla.org/it/kb/Eliminare%20i%20cookie"
+        },
+        {
+          "name": "Apple Safari",
+          "url": "https://support.apple.com/it-it/guide/safari/sfri11471/mac"
+        },
+        {
+          "name": "Microsoft Edge",
+          "url": "https://support.microsoft.com/it-it/microsoft-edge/eliminare-i-cookie-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09"
+        }
+      ]
+    }
+  },
+  "rightsContactBox": {
+    "kicker": "",
+    "title": "Esercizio dei diritti dell'interessato (Artt. 15–22 e Art. 7 GDPR)",
+    "description": "Per richiedere l'accesso ai tuoi dati personali, la rettifica, la limitazione, la cancellazione dagli archivi sezionali o per revocare il consenso eventualmente prestato, puoi inviare una comunicazione alla Segreteria Sezionale.",
+    "email": "info@aiaagrigento.it",
+    "subjectLine": "Esercizio Diritti Privacy - [Nome e Cognome]",
+    "responseGuarantee": "Riscontro entro 1 mese dal ricevimento della richiesta (Art. 12, par. 3 GDPR) · Procedura gratuita."
+  }
+}

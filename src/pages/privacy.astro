@@ -1,0 +1,825 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getPrivacyPolicyData } from "@/lib/utils/privacy";
+import heroRaduno from "@/assets/images/hero-raduno.jpg";
+
+const privacy = getPrivacyPolicyData();
+const {
+  seo,
+  hero,
+  toc,
+  section1Controller,
+  section2DataCollected,
+  section3Purposes,
+  section4Minors,
+  section5HealthData,
+  section6Recipients,
+  section7Transfers,
+  section8Retention,
+  section9Rights,
+  section10Cookies,
+  rightsContactBox,
+} = privacy;
+
+const privacyJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": ["WebPage", "AboutPage"],
+    "@id": "https://aiaagrigento.it/privacy#webpage",
+    name: seo.title,
+    description: seo.description,
+    url: seo.canonical,
+    inLanguage: "it-IT",
+    dateModified: hero.lastUpdatedISO,
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": "https://aiaagrigento.it/#website",
+      name: "AIA Sezione di Agrigento - FIGC",
+      url: "https://aiaagrigento.it",
+    },
+    about: {
+      "@type": "SportsOrganization",
+      "@id": "https://aiaagrigento.it/#organization",
+      name: "Sezione A.I.A. di Agrigento",
+    },
+    publisher: {
+      "@type": "SportsOrganization",
+      "@id": "https://aiaagrigento.it/#organization",
+      name: "Sezione A.I.A. di Agrigento",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://aiaagrigento.it",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Informativa Privacy e Cookie Policy",
+        item: "https://aiaagrigento.it/privacy",
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title={seo.title}
+  description={seo.description}
+  canonical={seo.canonical}
+  robots="index, follow"
+  image={heroRaduno.src}
+  imageAlt="Informativa Privacy e Cookie Policy - AIA Sezione di Agrigento FIGC"
+  jsonLd={privacyJsonLd}
+>
+  <article class="bg-white py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-12 sm:mb-14 text-center max-w-4xl mx-auto">
+        <h1
+          class="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-[1.1] uppercase text-balance mb-4"
+        >
+          {hero.title}
+        </h1>
+
+        <p class="font-sans text-base sm:text-lg text-slate-700 leading-relaxed text-pretty max-w-2xl mx-auto">
+          {hero.subtitle}
+        </p>
+
+        <p class="font-sans text-xs text-slate-500 mt-4 tabular-nums">
+          {hero.badge}
+        </p>
+      </header>
+
+      <nav
+        aria-labelledby="privacy-toc-heading"
+        class="bg-slate-50 border border-slate-200 p-6 sm:p-7 rounded-sm mb-14 max-w-4xl mx-auto"
+      >
+        <h2
+          id="privacy-toc-heading"
+          class="font-heading text-xs font-bold uppercase tracking-wider text-slate-900 mb-4 text-center"
+        >
+          {toc.title}
+        </h2>
+        <ol class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 max-w-2xl mx-auto font-sans text-xs sm:text-sm">
+          {toc.items.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="inline-flex items-baseline gap-2 text-slate-700 hover:text-[#004b97] hover:underline underline-offset-4 decoration-1 transition-colors duration-200 py-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+              >
+                <span class="font-heading font-semibold text-[#004b97] tabular-nums shrink-0">
+                  {item.number}
+                </span>
+                <span>{item.label}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <div class="space-y-12">
+        <section
+          id={section1Controller.id}
+          aria-labelledby="heading-sezione-1"
+          class="scroll-mt-24"
+        >
+          <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-10">
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+            <h2
+              id="heading-sezione-1"
+              class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-900 tracking-tight text-balance text-center uppercase"
+            >
+              {section1Controller.number}: {section1Controller.title}
+            </h2>
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <div class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty space-y-4 max-w-4xl mx-auto">
+            <p>{section1Controller.intro}</p>
+
+            <dl class="divide-y divide-slate-200 border-y border-slate-200 my-4 text-xs sm:text-sm">
+              {section1Controller.fields.map((field) => (
+                <div class="py-2.5 sm:py-3 grid grid-cols-1 sm:grid-cols-12 gap-1 sm:gap-4">
+                  <dt class="sm:col-span-4 font-heading font-semibold text-slate-900">
+                    {field.label}
+                  </dt>
+                  <dd
+                    class:list={[
+                      "sm:col-span-8 text-slate-700",
+                      field.isMono && "tabular-nums font-medium text-slate-900",
+                    ]}
+                  >
+                    {field.href ? (
+                      <a
+                        href={field.href}
+                        class="font-semibold text-[#004b97] hover:underline underline-offset-4"
+                      >
+                        {field.value}
+                      </a>
+                    ) : (
+                      <span class="font-medium text-slate-900">{field.value}</span>
+                    )}
+                    {field.note && (
+                      <span class="block text-xs text-slate-500 mt-0.5">
+                        {field.note}
+                      </span>
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            <p>{section1Controller.closingNote}</p>
+          </div>
+        </section>
+
+        <section
+          id={section2DataCollected.id}
+          aria-labelledby="heading-sezione-2"
+          class="scroll-mt-24"
+        >
+          <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-10">
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+            <h2
+              id="heading-sezione-2"
+              class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-900 tracking-tight text-balance text-center uppercase"
+            >
+              {section2DataCollected.number}: {section2DataCollected.title}
+            </h2>
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <div class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty space-y-4 max-w-4xl mx-auto">
+            <p>{section2DataCollected.intro}</p>
+
+            <ul class="space-y-6">
+              {section2DataCollected.categories.map((cat) => (
+                <li class="pb-5 border-b border-slate-100 last:border-b-0 last:pb-0">
+                  <h3 class="font-heading text-base sm:text-lg font-semibold text-slate-900 leading-snug flex flex-wrap items-center gap-2">
+                    <span>{cat.title}</span>
+                    {cat.routeBadge && (
+                      <span class="font-sans text-xs text-slate-500 font-normal">
+                        ({cat.routeBadge})
+                      </span>
+                    )}
+                  </h3>
+                  <ul class="mt-2 list-disc list-inside space-y-1 text-xs sm:text-sm text-slate-700">
+                    {cat.items.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                  {cat.note && (
+                    <p class="mt-2 text-xs sm:text-sm text-slate-600 italic">
+                      {cat.note}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id={section3Purposes.id}
+          aria-labelledby="heading-sezione-3"
+          class="scroll-mt-24"
+        >
+          <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-10">
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+            <h2
+              id="heading-sezione-3"
+              class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-900 tracking-tight text-balance text-center uppercase"
+            >
+              {section3Purposes.number}: {section3Purposes.title}
+            </h2>
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <div class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty space-y-4 max-w-4xl mx-auto">
+            <p>{section3Purposes.intro}</p>
+
+            <div class="overflow-x-auto border border-slate-200 rounded-sm my-4">
+              <table class="w-full text-left font-sans text-xs sm:text-sm divide-y divide-slate-200">
+                <thead class="bg-slate-100 font-heading font-semibold text-slate-900">
+                  <tr>
+                    <th scope="col" class="px-3.5 py-3 sm:px-4">
+                      {section3Purposes.tableHeaders.purpose}
+                    </th>
+                    <th scope="col" class="px-3.5 py-3 sm:px-4">
+                      {section3Purposes.tableHeaders.dataCategory}
+                    </th>
+                    <th scope="col" class="px-3.5 py-3 sm:px-4">
+                      {section3Purposes.tableHeaders.legalBasis}
+                    </th>
+                    <th scope="col" class="px-3.5 py-3 sm:px-4">
+                      {section3Purposes.tableHeaders.mandatory}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white">
+                  {section3Purposes.rows.map((row) => (
+                    <tr class="even:bg-slate-50/70 align-top">
+                      <td class="px-3.5 py-3 sm:px-4 font-semibold text-slate-900">
+                        {row.purpose}
+                      </td>
+                      <td class="px-3.5 py-3 sm:px-4 text-slate-700">
+                        {row.dataCategory}
+                      </td>
+                      <td class="px-3.5 py-3 sm:px-4 text-slate-700">
+                        <strong class="font-semibold text-slate-900">
+                          {row.legalBasisCode}
+                        </strong>{" "}
+                        {row.legalBasisDescription}
+                      </td>
+                      <td class="px-3.5 py-3 sm:px-4 text-slate-700">
+                        {row.mandatoryNote}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div
+              role="note"
+              class="bg-slate-50 border border-slate-200 px-4 py-3.5 sm:px-5 sm:py-4 rounded-sm text-xs sm:text-sm text-slate-800 text-center font-medium"
+            >
+              {section3Purposes.noProfilingCallout}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id={section4Minors.id}
+          aria-labelledby="heading-sezione-4"
+          class="scroll-mt-24"
+        >
+          <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-10">
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+            <h2
+              id="heading-sezione-4"
+              class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-900 tracking-tight text-balance text-center uppercase"
+            >
+              {section4Minors.number}: {section4Minors.title}
+            </h2>
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <div class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty space-y-3 max-w-4xl mx-auto">
+            <p>{section4Minors.intro}</p>
+
+            <ul class="space-y-3 pt-1">
+              {section4Minors.points.map((point) => (
+                <li class="pb-3 border-b border-slate-100 last:border-b-0 last:pb-0">
+                  <strong class="font-semibold text-slate-900">
+                    {point.title}:
+                  </strong>{" "}
+                  {point.description}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id={section5HealthData.id}
+          aria-labelledby="heading-sezione-5"
+          class="scroll-mt-24"
+        >
+          <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-10">
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+            <h2
+              id="heading-sezione-5"
+              class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-900 tracking-tight text-balance text-center uppercase"
+            >
+              {section5HealthData.number}: {section5HealthData.title}
+            </h2>
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <div class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty space-y-3 max-w-4xl mx-auto">
+            <p>{section5HealthData.intro}</p>
+
+            <ul class="space-y-3 pt-1">
+              {section5HealthData.bullets.map((bullet) => (
+                <li class="pb-3 border-b border-slate-100 last:border-b-0 last:pb-0">
+                  <strong class="font-semibold text-slate-900">
+                    {bullet.label}:
+                  </strong>{" "}
+                  {bullet.description}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id={section6Recipients.id}
+          aria-labelledby="heading-sezione-6"
+          class="scroll-mt-24"
+        >
+          <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-10">
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+            <h2
+              id="heading-sezione-6"
+              class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-900 tracking-tight text-balance text-center uppercase"
+            >
+              {section6Recipients.number}: {section6Recipients.title}
+            </h2>
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <div class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty space-y-3 max-w-4xl mx-auto">
+            <p>{section6Recipients.intro}</p>
+
+            <ul class="space-y-4 pt-1">
+              {section6Recipients.items.map((item) => (
+                <li class="pb-4 border-b border-slate-100 last:border-b-0 last:pb-0">
+                  <div>
+                    <strong class="font-semibold text-slate-900">
+                      {item.title}:
+                    </strong>{" "}
+                    {item.description && <span>{item.description}</span>}
+                    {item.subItems && (
+                      <ul class="mt-2 space-y-2 border-l border-slate-200 pl-4 text-xs sm:text-sm">
+                        {item.subItems.map((sub) => (
+                          <li>
+                            <strong class="font-semibold text-slate-900">
+                              {sub.name}:
+                            </strong>{" "}
+                            {sub.description}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id={section7Transfers.id}
+          aria-labelledby="heading-sezione-7"
+          class="scroll-mt-24"
+        >
+          <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-10">
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+            <h2
+              id="heading-sezione-7"
+              class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-900 tracking-tight text-balance text-center uppercase"
+            >
+              {section7Transfers.number}: {section7Transfers.title}
+            </h2>
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <div class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty space-y-3 max-w-4xl mx-auto">
+            <p>{section7Transfers.intro}</p>
+            <p>{section7Transfers.safeguardsIntro}</p>
+            <ul class="list-disc list-inside space-y-2">
+              {section7Transfers.safeguards.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id={section8Retention.id}
+          aria-labelledby="heading-sezione-8"
+          class="scroll-mt-24"
+        >
+          <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-10">
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+            <h2
+              id="heading-sezione-8"
+              class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-900 tracking-tight text-balance text-center uppercase"
+            >
+              {section8Retention.number}: {section8Retention.title}
+            </h2>
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <div class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty space-y-3 max-w-4xl mx-auto">
+            <p>{section8Retention.intro}</p>
+
+            <ul class="space-y-4 pt-1">
+              {section8Retention.items.map((item) => (
+                <li class="pb-3 border-b border-slate-100 last:border-b-0 last:pb-0">
+                  <strong class="font-semibold text-slate-900">
+                    {item.label}:
+                  </strong>{" "}
+                  {item.description}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id={section9Rights.id}
+          aria-labelledby="heading-sezione-9"
+          class="scroll-mt-24"
+        >
+          <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-10">
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+            <h2
+              id="heading-sezione-9"
+              class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-900 tracking-tight text-balance text-center uppercase"
+            >
+              {section9Rights.number}: {section9Rights.title}
+            </h2>
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <div class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty space-y-4 max-w-4xl mx-auto">
+            <p>{section9Rights.intro}</p>
+
+            <ul class="space-y-2.5">
+              {section9Rights.rights.map((right) => (
+                <li class="pb-2 border-b border-slate-100 last:border-b-0 last:pb-0">
+                  <strong class="font-semibold text-slate-900">
+                    {right.title} ({right.article}):
+                  </strong>{" "}
+                  {right.description}
+                </li>
+              ))}
+            </ul>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-sm p-4 sm:p-5 text-xs sm:text-sm">
+              <p class="font-heading font-bold text-slate-900">
+                {section9Rights.authority.name}
+              </p>
+              <p class="mt-1 text-slate-700">
+                {section9Rights.authority.address}
+              </p>
+              <p class="mt-1 text-slate-700 tabular-nums">
+                Sito web:{" "}
+                <a
+                  href={section9Rights.authority.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-medium text-[#004b97] hover:underline underline-offset-4"
+                >
+                  {section9Rights.authority.websiteLabel}
+                </a>{" "}
+                | Centralino: {section9Rights.authority.phone} | PEC:{" "}
+                <code class="font-sans font-medium text-slate-900">
+                  {section9Rights.authority.pec}
+                </code>
+              </p>
+            </div>
+
+            <div class="pt-2">
+              <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900 mb-2">
+                {section9Rights.exerciseTitle}
+              </h3>
+              <p>
+                {section9Rights.exerciseIntro}{" "}
+                <a
+                  href={`mailto:${section9Rights.exerciseEmail}?subject=${encodeURIComponent(section9Rights.exerciseSubjectTemplate)}`}
+                  class="font-semibold text-[#004b97] hover:underline underline-offset-4"
+                >
+                  {section9Rights.exerciseEmail}
+                </a>{" "}
+                con oggetto{" "}
+                <em class="font-medium text-slate-900">
+                  &ldquo;{section9Rights.exerciseSubjectTemplate}&rdquo;
+                </em>.
+              </p>
+              <p class="mt-2">{section9Rights.exerciseDeadlineNote}</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id={section10Cookies.id}
+          aria-labelledby="heading-cookie-policy"
+          class="scroll-mt-24"
+        >
+          <span
+            id={section10Cookies.secondaryId}
+            class="scroll-mt-24 block"
+            aria-hidden="true"
+          ></span>
+          <div class="flex items-center gap-2 sm:gap-4 my-8 sm:my-10">
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+            <h2
+              id="heading-cookie-policy"
+              class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-900 tracking-tight text-balance text-center uppercase"
+            >
+              {section10Cookies.number}: {section10Cookies.title}
+            </h2>
+            <div
+              class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+              aria-hidden="true"
+            ></div>
+          </div>
+
+          <div class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty space-y-6 max-w-4xl mx-auto">
+            <p>{section10Cookies.intro}</p>
+
+            <div>
+              <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900 mb-2">
+                {section10Cookies.whatAreCookies.title}
+              </h3>
+              <p>{section10Cookies.whatAreCookies.description}</p>
+            </div>
+
+            <div>
+              <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900 mb-2">
+                {section10Cookies.cookieTypes.title}
+              </h3>
+              <p class="mb-4">
+                {section10Cookies.cookieTypes.intro}
+              </p>
+
+              <div class="overflow-x-auto border border-slate-200 rounded-sm">
+                <table class="w-full text-left font-sans text-xs sm:text-sm divide-y divide-slate-200">
+                  <thead class="bg-slate-100 font-heading font-semibold text-slate-900">
+                    <tr>
+                      <th scope="col" class="px-3.5 py-3 sm:px-4">
+                        {section10Cookies.cookieTypes.tableHeaders.type}
+                      </th>
+                      <th scope="col" class="px-3.5 py-3 sm:px-4">
+                        {section10Cookies.cookieTypes.tableHeaders.present}
+                      </th>
+                      <th scope="col" class="px-3.5 py-3 sm:px-4">
+                        {section10Cookies.cookieTypes.tableHeaders.details}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200 bg-white">
+                    {section10Cookies.cookieTypes.rows.map((row) => (
+                      <tr class="even:bg-slate-50/70 align-top">
+                        <td class="px-3.5 py-3 sm:px-4 font-semibold text-slate-900">
+                          {row.type}
+                        </td>
+                        <td class="px-3.5 py-3 sm:px-4 whitespace-nowrap">
+                          <span class="font-heading text-xs font-semibold text-slate-800">
+                            {row.status}
+                          </span>
+                        </td>
+                        <td class="px-3.5 py-3 sm:px-4 text-slate-700">
+                          {row.details}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900">
+                {section10Cookies.noBannerReason.title}
+              </h3>
+              {section10Cookies.noBannerReason.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+
+            {section10Cookies.openSource && (
+              <div class="space-y-3">
+                <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900">
+                  {section10Cookies.openSource.title}
+                </h3>
+                <p>
+                  {section10Cookies.openSource.description}
+                </p>
+                <div class="pt-1">
+                  <a
+                    href={section10Cookies.openSource.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group inline-flex items-center justify-between gap-4 py-3.5 px-5 min-h-[52px] w-full sm:w-auto sm:min-w-[320px] max-w-md rounded-sm border border-slate-200 bg-white shadow-xs hover:border-[#004b97]/40 hover:shadow-sm transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+                  >
+                    <div class="flex items-center gap-3.5 min-w-0">
+                      <svg
+                        class="w-5 h-5 shrink-0 text-[#004b97]"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                        />
+                      </svg>
+                      <div class="min-w-0 text-left">
+                        <span class="block font-heading font-semibold text-sm text-slate-900 group-hover:text-[#004b97] transition-colors">
+                          {section10Cookies.openSource.repoLabel}
+                        </span>
+                        <span class="block font-sans text-xs text-slate-600 truncate">
+                          {section10Cookies.openSource.repoHandle}
+                        </span>
+                      </div>
+                    </div>
+                    <svg
+                      class="w-4 h-4 shrink-0 text-slate-400 group-hover:text-[#004b97] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            )}
+
+            <div>
+              <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900 mb-2">
+                {section10Cookies.browserSettings.title}
+              </h3>
+              <p class="mb-3">{section10Cookies.browserSettings.intro}</p>
+              <ul class="flex flex-wrap gap-2.5 sm:gap-3">
+                {section10Cookies.browserSettings.browsers.map((browser) => (
+                  <li>
+                    <a
+                      href={browser.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="min-h-[42px] inline-flex items-center justify-center gap-2 px-4 py-2 rounded-sm bg-[#004b97] hover:bg-blue-800 active:scale-[0.98] text-white font-heading font-bold text-xs uppercase tracking-wider shadow-xs transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]"
+                    >
+                      <span>{browser.name}</span>
+                      <svg
+                        class="w-3.5 h-3.5 shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M7 17L17 7M17 7H7M17 7V17"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside
+        aria-labelledby="privacy-contact-box-heading"
+        class="bg-slate-50 border border-slate-200 p-6 sm:p-8 mt-16 rounded-sm text-center max-w-4xl mx-auto"
+      >
+        <h2
+          id="privacy-contact-box-heading"
+          class="font-heading text-lg sm:text-xl font-bold text-slate-900 tracking-tight"
+        >
+          {rightsContactBox.title}
+        </h2>
+        <p class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed mt-2 max-w-2xl mx-auto">
+          {rightsContactBox.description}
+        </p>
+
+        <dl class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm border-y border-slate-200 py-4 max-w-xl mx-auto">
+          <div>
+            <dt class="font-heading font-semibold text-slate-500 uppercase text-xs">
+              Indirizzo E-Mail
+            </dt>
+            <dd class="mt-0.5">
+              <a
+                href={`mailto:${rightsContactBox.email}?subject=${encodeURIComponent(rightsContactBox.subjectLine)}`}
+                class="font-sans font-bold text-[#004b97] hover:underline underline-offset-4"
+              >
+                {rightsContactBox.email}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="font-heading font-semibold text-slate-500 uppercase text-xs">
+              Oggetto
+            </dt>
+            <dd class="mt-0.5 font-sans font-medium text-slate-900">
+              {rightsContactBox.subjectLine}
+            </dd>
+          </div>
+        </dl>
+
+        <p class="mt-5 font-sans text-xs text-slate-600">
+          {rightsContactBox.responseGuarantee}
+        </p>
+      </aside>
+    </div>
+  </article>
+</Layout>

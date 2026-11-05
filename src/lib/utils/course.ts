@@ -1,6 +1,7 @@
 import courseRaw from "@/data/course.json";
 import { getCourseFAQs } from "@/lib/utils/faq";
 import {
+  calculateCandidateAge,
   CourseRegistrationSchema,
   type CourseBenefitsData,
   type CourseDataset,
@@ -12,7 +13,7 @@ import {
 
 const courseData = courseRaw as CourseDataset;
 
-export { CourseRegistrationSchema, getCourseFAQs };
+export { calculateCandidateAge, CourseRegistrationSchema, getCourseFAQs };
 export type { CourseRegistrationPayload };
 
 export function getCourseData(): CourseDataset {

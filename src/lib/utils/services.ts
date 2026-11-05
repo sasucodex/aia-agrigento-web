@@ -262,8 +262,9 @@ export const giustificaFormSchema = z.object({
     .boolean()
     .refine(
       (val) => val === true,
-      "È obbligatorio prendere visione dell'informativa privacy e acconsentire al trattamento dei dati.",
+      "È obbligatorio confermare la presa visione dell'Informativa Privacy per trasmettere la giustificazione.",
     ),
+  consensoSalute: z.boolean().optional().default(false),
 });
 
 export const accreditoFormSchema = z.object({
@@ -306,10 +307,16 @@ export const accreditoFormSchema = z.object({
       "Indica la gara richiesta con data e campionato (es. Akragas - Siracusa del 15/03/2026).",
     ),
   note: z.string().trim().optional().default(""),
+  dichiarazioneTessera: z
+    .boolean()
+    .refine(
+      (val) => val === true,
+      "È obbligatorio dichiarare il possesso di tessera federale AIA in corso di validità.",
+    ),
   privacy: z
     .boolean()
     .refine(
       (val) => val === true,
-      "È obbligatorio confermare la titolarità della tessera federale e acconsentire al trattamento dei dati.",
+      "È obbligatorio confermare la presa visione dell'Informativa Privacy e della necessaria comunicazione dei dati alla società sportiva ospitante.",
     ),
 });

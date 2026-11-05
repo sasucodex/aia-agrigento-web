@@ -19,18 +19,6 @@ export interface FormsModalProps {
   defaultEventLabel?: string;
 }
 
-const PROFILE_STORAGE_KEY = "aia_ag_referee_profile_v1";
-
-interface StoredRefereeProfile {
-  cognome: string;
-  nome: string;
-  email: string;
-  meccanografico: string;
-  numeroTessera: string;
-  luogoNascita: string;
-  dataNascita: string;
-}
-
 export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
   const fallbackDefaultEvent =
     defaultEventLabel ?? formatRTOOptionLabel(getNextRTOEvent());
@@ -55,6 +43,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
     evento: fallbackDefaultEvent,
     motivo: "",
     privacy: false,
+    consensoSalute: false,
   });
 
   const [accreditoData, setAccreditoData] = useState<AccreditoFormPayload>({
@@ -67,6 +56,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
     dataNascita: "",
     partita: "",
     note: "",
+    dichiarazioneTessera: false,
     privacy: false,
   });
 
@@ -85,39 +75,6 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const lastTriggerRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(PROFILE_STORAGE_KEY);
-      if (!raw) return;
-      const saved = JSON.parse(raw) as Partial<StoredRefereeProfile>;
-      const profilePatch: StoredRefereeProfile = {
-        cognome: typeof saved.cognome === "string" ? saved.cognome : "",
-        nome: typeof saved.nome === "string" ? saved.nome : "",
-        email: typeof saved.email === "string" ? saved.email : "",
-        meccanografico:
-          typeof saved.meccanografico === "string" ? saved.meccanografico : "",
-        numeroTessera:
-          typeof saved.numeroTessera === "string" ? saved.numeroTessera : "",
-        luogoNascita:
-          typeof saved.luogoNascita === "string" ? saved.luogoNascita : "",
-        dataNascita:
-          typeof saved.dataNascita === "string" ? saved.dataNascita : "",
-      };
-      setGiustificaData((prev) => ({ ...prev, ...profilePatch }));
-      setAccreditoData((prev) => ({ ...prev, ...profilePatch }));
-    } catch {
-      void 0;
-    }
-  }, []);
-
-  const persistProfile = (profile: StoredRefereeProfile) => {
-    try {
-      window.localStorage.setItem(PROFILE_STORAGE_KEY, JSON.stringify(profile));
-    } catch {
-      void 0;
-    }
-  };
 
   useEffect(() => {
     const handleDocumentClick = (event: MouseEvent) => {
@@ -305,15 +262,6 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
     setSubmitStatus("submitting");
 
     const validData = validation.data;
-    persistProfile({
-      cognome: validData.cognome,
-      nome: validData.nome,
-      email: validData.email,
-      meccanografico: validData.meccanografico,
-      numeroTessera: validData.numeroTessera,
-      luogoNascita: validData.luogoNascita,
-      dataNascita: validData.dataNascita,
-    });
     setAccreditoData((prev) => ({
       ...prev,
       cognome: validData.cognome,
@@ -354,7 +302,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
       setSubmitStatus("success");
       setServerMessage(
         result.message ??
-          "Giustificazione registrata con successo. Una copia di riepilogo è stata inviata al tuo indirizzo email.",
+          "Giustificazione registrata con successo e presa in carico dalla Segreteria Sezionale.",
       );
     } catch {
       setSubmitStatus("error");
@@ -392,15 +340,6 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
     setSubmitStatus("submitting");
 
     const validData = validation.data;
-    persistProfile({
-      cognome: validData.cognome,
-      nome: validData.nome,
-      email: validData.email,
-      meccanografico: validData.meccanografico,
-      numeroTessera: validData.numeroTessera,
-      luogoNascita: validData.luogoNascita,
-      dataNascita: validData.dataNascita,
-    });
     setGiustificaData((prev) => ({
       ...prev,
       cognome: validData.cognome,
@@ -573,6 +512,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
                         ...prev,
                         partita: "",
                         note: "",
+                        dichiarazioneTessera: false,
                         privacy: false,
                       }));
                     } else {
@@ -581,6 +521,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
                         evento: fallbackDefaultEvent,
                         motivo: "",
                         privacy: false,
+                        consensoSalute: false,
                       }));
                     }
                   }}
@@ -980,42 +921,96 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
                 )}
               </div>
 
-              <div className="rounded-sm border border-slate-200 bg-slate-50 p-3.5">
-                <label
-                  htmlFor="accredito-privacy"
-                  className="flex cursor-pointer items-start gap-3"
-                >
-                  <input
-                    id="accredito-privacy"
-                    name="privacy"
-                    type="checkbox"
-                    checked={accreditoData.privacy}
-                    onChange={(e) =>
-                      updateAccreditoField("privacy", e.target.checked)
-                    }
-                    aria-invalid={Boolean(accreditoErrors.privacy)}
-                    aria-describedby={
-                      accreditoErrors.privacy
-                        ? "accredito-privacy-error"
-                        : undefined
-                    }
-                    className="mt-0.5 h-4 w-4 shrink-0 rounded-xs border-slate-300 text-[#004b97] focus:ring-[#004b97]"
-                  />
-                  <span className="font-sans text-xs leading-relaxed text-slate-700">
-                    Dichiaro di essere in possesso di regolare tessera federale
-                    AIA in corso di validità e acconsento al trattamento dei
-                    dati personali per l&apos;inoltro della richiesta di
-                    accredito alla società ospitante. *
-                  </span>
-                </label>
-                {accreditoErrors.privacy && (
-                  <p
-                    id="accredito-privacy-error"
-                    className="mt-1.5 font-sans text-xs text-red-700"
+              <div className="space-y-3 rounded-sm border border-slate-200 bg-slate-50 p-3.5">
+                <div>
+                  <label
+                    htmlFor="accredito-dichiarazione-tessera"
+                    className="flex cursor-pointer items-start gap-3 select-none"
                   >
-                    {accreditoErrors.privacy}
-                  </p>
-                )}
+                    <input
+                      id="accredito-dichiarazione-tessera"
+                      name="dichiarazioneTessera"
+                      type="checkbox"
+                      checked={accreditoData.dichiarazioneTessera}
+                      onChange={(e) =>
+                        updateAccreditoField(
+                          "dichiarazioneTessera",
+                          e.target.checked,
+                        )
+                      }
+                      aria-invalid={Boolean(
+                        accreditoErrors.dichiarazioneTessera,
+                      )}
+                      aria-describedby={
+                        accreditoErrors.dichiarazioneTessera
+                          ? "accredito-dichiarazione-tessera-error"
+                          : undefined
+                      }
+                      className="mt-1 h-4 w-4 shrink-0 cursor-pointer rounded-xs border-slate-300 accent-[#004b97]"
+                    />
+                    <span className="font-sans text-xs leading-relaxed text-slate-700">
+                      Dichiaro di essere in possesso di tessera federale AIA in
+                      corso di validità per la stagione sportiva corrente. *
+                    </span>
+                  </label>
+                  {accreditoErrors.dichiarazioneTessera && (
+                    <p
+                      id="accredito-dichiarazione-tessera-error"
+                      className="mt-1.5 font-sans text-xs text-red-700"
+                    >
+                      {accreditoErrors.dichiarazioneTessera}
+                    </p>
+                  )}
+                </div>
+
+                <div className="border-t border-slate-200 pt-3">
+                  <label
+                    htmlFor="accredito-privacy"
+                    className="flex cursor-pointer items-start gap-3 select-none"
+                  >
+                    <input
+                      id="accredito-privacy"
+                      name="privacy"
+                      type="checkbox"
+                      checked={accreditoData.privacy}
+                      onChange={(e) =>
+                        updateAccreditoField("privacy", e.target.checked)
+                      }
+                      aria-invalid={Boolean(accreditoErrors.privacy)}
+                      aria-describedby={
+                        accreditoErrors.privacy
+                          ? "accredito-privacy-error"
+                          : undefined
+                      }
+                      className="mt-1 h-4 w-4 shrink-0 cursor-pointer rounded-xs border-slate-300 accent-[#004b97]"
+                    />
+                    <span className="font-sans text-xs leading-relaxed text-slate-700">
+                      Ho letto l&apos;
+                      <a
+                        href="/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-referee-gold font-medium text-[#004b97] underline underline-offset-2"
+                      >
+                        Informativa Privacy
+                      </a>{" "}
+                      (Art. 13 GDPR) e prendo atto che, per dare esecuzione alla
+                      richiesta di accredito (Art. 6, par. 1, lett. b GDPR), i
+                      miei dati anagrafici e di tesseramento saranno comunicati
+                      alla Società Sportiva ospitante, che li tratterà in
+                      qualità di Titolare autonomo per l&apos;emissione del
+                      titolo di accesso. *
+                    </span>
+                  </label>
+                  {accreditoErrors.privacy && (
+                    <p
+                      id="accredito-privacy-error"
+                      className="mt-1.5 font-sans text-xs text-red-700"
+                    >
+                      {accreditoErrors.privacy}
+                    </p>
+                  )}
+                </div>
               </div>
 
               <div className="flex flex-col-reverse gap-3 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
@@ -1398,14 +1393,14 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
                   htmlFor="giustifica-motivo"
                   className="font-heading block text-xs font-semibold tracking-wider text-slate-800 uppercase"
                 >
-                  Motivazione Dettagliata dell&apos;Assenza *
+                  Motivazione dell&apos;Assenza *
                 </label>
                 <textarea
                   id="giustifica-motivo"
                   name="motivo"
                   rows={3}
                   required
-                  placeholder="Indica la motivazione (Studio, Impegni lavorativi documentati, Motivi di salute)..."
+                  placeholder="Indica la motivazione (es. studio, impegni lavorativi, motivi personali o familiari)..."
                   value={giustificaData.motivo}
                   onChange={(e) =>
                     updateGiustificaField("motivo", e.target.value)
@@ -1414,7 +1409,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
                   aria-describedby={
                     giustificaErrors.motivo
                       ? "giustifica-motivo-error"
-                      : undefined
+                      : "giustifica-motivo-hint"
                   }
                   className={cn(
                     "mt-1.5 block w-full rounded-sm border bg-white px-3.5 py-2.5 font-sans text-sm text-slate-900 transition-colors focus:border-[#004b97] focus:outline-none",
@@ -1423,6 +1418,16 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
                       : "border-slate-300",
                   )}
                 />
+                <p
+                  id="giustifica-motivo-hint"
+                  className="mt-1.5 font-sans text-xs leading-relaxed text-slate-600"
+                >
+                  Non inserire diagnosi o dati sanitari dettagliati. Per
+                  assenze dovute a salute o infortunio è sufficiente indicare
+                  &ldquo;motivi personali&rdquo; (consegnando eventuale
+                  documentazione in sede), oppure prestare il consenso
+                  specifico qui sotto.
+                </p>
                 {giustificaErrors.motivo && (
                   <p
                     id="giustifica-motivo-error"
@@ -1433,42 +1438,93 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
                 )}
               </div>
 
-              <div className="rounded-sm border border-slate-200 bg-slate-50 p-3.5">
-                <label
-                  htmlFor="giustifica-privacy"
-                  className="flex cursor-pointer items-start gap-3"
-                >
-                  <input
-                    id="giustifica-privacy"
-                    name="privacy"
-                    type="checkbox"
-                    checked={giustificaData.privacy}
-                    onChange={(e) =>
-                      updateGiustificaField("privacy", e.target.checked)
-                    }
-                    aria-invalid={Boolean(giustificaErrors.privacy)}
-                    aria-describedby={
-                      giustificaErrors.privacy
-                        ? "giustifica-privacy-error"
-                        : undefined
-                    }
-                    className="mt-0.5 h-4 w-4 shrink-0 rounded-xs border-slate-300 text-[#004b97] focus:ring-[#004b97]"
-                  />
-                  <span className="font-sans text-xs leading-relaxed text-slate-700">
-                    Dichiaro di aver preso visione dell&apos;informativa privacy
-                    e acconsento al trattamento dei dati personali ai sensi del
-                    GDPR per la gestione dell&apos;assenza alla riunione tecnica
-                    sezionale. *
-                  </span>
-                </label>
-                {giustificaErrors.privacy && (
-                  <p
-                    id="giustifica-privacy-error"
-                    className="mt-1.5 font-sans text-xs text-red-700"
+              <div className="space-y-3 rounded-sm border border-slate-200 bg-slate-50 p-3.5">
+                <div>
+                  <label
+                    htmlFor="giustifica-privacy"
+                    className="flex cursor-pointer items-start gap-3 select-none"
                   >
-                    {giustificaErrors.privacy}
-                  </p>
-                )}
+                    <input
+                      id="giustifica-privacy"
+                      name="privacy"
+                      type="checkbox"
+                      checked={giustificaData.privacy}
+                      onChange={(e) =>
+                        updateGiustificaField("privacy", e.target.checked)
+                      }
+                      aria-invalid={Boolean(giustificaErrors.privacy)}
+                      aria-describedby={
+                        giustificaErrors.privacy
+                          ? "giustifica-privacy-error"
+                          : undefined
+                      }
+                      className="mt-1 h-4 w-4 shrink-0 cursor-pointer rounded-xs border-slate-300 accent-[#004b97]"
+                    />
+                    <span className="font-sans text-xs leading-relaxed text-slate-700">
+                      Ho preso visione dell&apos;
+                      <a
+                        href="/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-referee-gold font-medium text-[#004b97] underline underline-offset-2"
+                      >
+                        Informativa Privacy
+                      </a>{" "}
+                      (Art. 13 GDPR) e trasmetto la giustificazione alla
+                      Segreteria Sezionale per gli adempimenti regolamentari e
+                      associativi (Art. 6, par. 1, lett. b GDPR). *
+                    </span>
+                  </label>
+                  {giustificaErrors.privacy && (
+                    <p
+                      id="giustifica-privacy-error"
+                      className="mt-1.5 font-sans text-xs text-red-700"
+                    >
+                      {giustificaErrors.privacy}
+                    </p>
+                  )}
+                </div>
+
+                <div className="border-t border-slate-200 pt-3">
+                  <label
+                    htmlFor="giustifica-consenso-salute"
+                    className="flex cursor-pointer items-start gap-3 select-none"
+                  >
+                    <input
+                      id="giustifica-consenso-salute"
+                      name="consensoSalute"
+                      type="checkbox"
+                      checked={Boolean(giustificaData.consensoSalute)}
+                      onChange={(e) =>
+                        updateGiustificaField(
+                          "consensoSalute",
+                          e.target.checked,
+                        )
+                      }
+                      className="mt-1 h-4 w-4 shrink-0 cursor-pointer rounded-xs border-slate-300 accent-[#004b97]"
+                    />
+                    <span className="font-sans text-xs leading-relaxed text-slate-700">
+                      <strong className="font-semibold text-slate-900">
+                        Consenso facoltativo per eventuali dati sulla salute:
+                      </strong>{" "}
+                      qualora io abbia inserito spontaneamente nella motivazione
+                      informazioni attinenti al mio stato di salute o a
+                      infortuni, acconsento espressamente al loro trattamento da
+                      parte della Sezione AIA di Agrigento per la sola gestione
+                      della presente giustificazione (Art. 9, par. 2, lett. a
+                      GDPR). Posso revocare il consenso in ogni momento
+                      scrivendo a{" "}
+                      <a
+                        href="mailto:info@aiaagrigento.it"
+                        className="font-medium text-[#004b97] underline underline-offset-2"
+                      >
+                        info@aiaagrigento.it
+                      </a>
+                      . In assenza di tale consenso, eventuali dati sanitari
+                      inseriti non saranno utilizzati e verranno cancellati.
+                    </span>
+                  </label>
+                </div>
               </div>
 
               <div className="flex flex-col-reverse gap-3 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">

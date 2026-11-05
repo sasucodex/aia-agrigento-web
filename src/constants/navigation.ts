@@ -15,6 +15,12 @@ export const PRIMARY_CTA = {
   href: "/diventa-arbitro",
 } as const;
 
+export const LEGAL_NAV_ITEMS: NavItem[] = [
+  { label: "Informativa Privacy", href: "/privacy" },
+  { label: "Cookie Policy", href: "/privacy#cookie-policy" },
+  { label: "Note Legali & Recapiti", href: "/contatti" },
+];
+
 export const NAVIGATION_CONFIG: NavigationConfig = {
   mainNav: MAIN_NAV_ITEMS,
   cta: PRIMARY_CTA,

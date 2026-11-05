@@ -32,6 +32,14 @@ export default defineConfig({
       status: 301,
       destination: "/blog",
     },
+    "/privacy-policy": {
+      status: 301,
+      destination: "/privacy",
+    },
+    "/cookie-policy": {
+      status: 301,
+      destination: "/privacy",
+    },
   },
   adapter: vercel(),
 });
