@@ -6,10 +6,7 @@
   "address": "Via Giovanni Falcone 37, Aragona (AG)",
   "days": "Martedì, Giovedì e Venerdì",
   "hours": "Ore 19:30",
-  "referents": [
-    "Salvatore Cordaro",
-    "Pietro Bennici"
-  ],
+  "referents": ["Salvatore Cordaro", "Pietro Bennici"],
   "accessPolicy": "Gratuito per tutti gli associati agrigentini muniti di certificato medico agonistico in corso di validità.",
   "limitsDocumentUrl": "/documents/limiti-test-atletici.pdf",
   "limitsDocumentLabel": "Tabella Limiti Ufficiali (PDF)"

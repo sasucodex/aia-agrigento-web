@@ -28,7 +28,10 @@ export function calculateCandidateAge(dateString: string): number | null {
 
 export const CourseRegistrationSchema = z
   .object({
-    nome: z.string().trim().min(2, "Il nome deve contenere almeno 2 caratteri."),
+    nome: z
+      .string()
+      .trim()
+      .min(2, "Il nome deve contenere almeno 2 caratteri."),
     cognome: z
       .string()
       .trim()
@@ -62,10 +65,16 @@ export const CourseRegistrationSchema = z
         "È obbligatorio confermare la presa visione dell'Informativa sulla Privacy per procedere con l'iscrizione.",
     }),
     consensoGenitori: z.boolean().optional().default(false),
+    website: z.string().optional().default(""),
   })
   .superRefine((data, ctx) => {
     const age = calculateCandidateAge(data.dataNascita);
-    if (age !== null && age >= 14 && age < 18 && data.consensoGenitori !== true) {
+    if (
+      age !== null &&
+      age >= 14 &&
+      age < 18 &&
+      data.consensoGenitori !== true
+    ) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         path: ["consensoGenitori"],

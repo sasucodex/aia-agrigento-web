@@ -91,7 +91,7 @@ export const ACCREDITI_SPECIFICATION: AccreditiSpecification = {
   delegationNotice:
     "Non sono ammesse deleghe e non sono accettate richieste che non rispettino i criteri di cui sopra.",
   confirmationNotice:
-    "Le richieste di accredito verranno confermate esclusivamente attraverso l'indirizzo <a href=\"mailto:accrediti@aiaagrigento.it\" class=\"text-[#004b97] hover:underline underline-offset-4\">accrediti@aiaagrigento.it</a> rispettando l’ordine di ricezione e comunque fino ad esaurimento dei posti disponibili. In caso di mancata risposta, la richiesta è da considerarsi respinta a causa dell’esaurimento dei posti disponibili.",
+    'Le richieste di accredito verranno confermate esclusivamente attraverso l\'indirizzo <a href="mailto:accrediti@aiaagrigento.it" class="text-[#004b97] hover:underline underline-offset-4">accrediti@aiaagrigento.it</a> rispettando l’ordine di ricezione e comunque fino ad esaurimento dei posti disponibili. In caso di mancata risposta, la richiesta è da considerarsi respinta a causa dell’esaurimento dei posti disponibili.',
   stadiumPickupIntro:
     "In caso di avvenuta conferma, dovrai presentarti allo Stadio almeno 60 minuti prima dell'inizio dell'incontro presso il botteghino accrediti sito nello stadio esibendo:",
   stadiumDocuments: [
@@ -265,6 +265,7 @@ export const giustificaFormSchema = z.object({
       "È obbligatorio confermare la presa visione dell'Informativa Privacy per trasmettere la giustificazione.",
     ),
   consensoSalute: z.boolean().optional().default(false),
+  website: z.string().optional().default(""),
 });
 
 export const accreditoFormSchema = z.object({
@@ -319,4 +320,5 @@ export const accreditoFormSchema = z.object({
       (val) => val === true,
       "È obbligatorio confermare la presa visione dell'Informativa Privacy e della necessaria comunicazione dei dati alla società sportiva ospitante.",
     ),
+  website: z.string().optional().default(""),
 });

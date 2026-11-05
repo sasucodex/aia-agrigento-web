@@ -44,6 +44,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
     motivo: "",
     privacy: false,
     consensoSalute: false,
+    website: "",
   });
 
   const [accreditoData, setAccreditoData] = useState<AccreditoFormPayload>({
@@ -58,6 +59,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
     note: "",
     dichiarazioneTessera: false,
     privacy: false,
+    website: "",
   });
 
   const [giustificaErrors, setGiustificaErrors] = useState<
@@ -465,7 +467,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
           </button>
         </div>
 
-        <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 py-5 sm:px-6 sm:py-6">
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-5 sm:px-6 sm:py-6">
           {submitStatus === "success" ? (
             <div className="py-6 text-left">
               <span className="font-heading inline-flex items-center text-xs font-bold tracking-wider text-emerald-800 uppercase">
@@ -483,20 +485,40 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
               <dl className="mt-5 grid grid-cols-1 gap-3 rounded-sm border border-slate-200 bg-slate-50 p-4 text-xs sm:grid-cols-2">
                 <div>
                   <dt className="font-heading font-semibold text-slate-500 uppercase">
-                    Associato
+                    Cognome
                   </dt>
                   <dd className="mt-0.5 font-sans font-bold text-slate-900">
                     {isAccrediti
-                      ? `${accreditoData.cognome} ${accreditoData.nome} (Mecc. ${accreditoData.meccanografico})`
-                      : `${giustificaData.cognome} ${giustificaData.nome} (Mecc. ${giustificaData.meccanografico})`}
+                      ? accreditoData.cognome
+                      : giustificaData.cognome}
                   </dd>
                 </div>
                 <div>
                   <dt className="font-heading font-semibold text-slate-500 uppercase">
-                    {isAccrediti ? "Gara Richiesta" : "Riunione Giustificata"}
+                    Nome
                   </dt>
                   <dd className="mt-0.5 font-sans font-bold text-slate-900">
-                    {isAccrediti ? accreditoData.partita : giustificaData.evento}
+                    {isAccrediti ? accreditoData.nome : giustificaData.nome}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-heading font-semibold text-slate-500 uppercase">
+                    Codice Meccanografico
+                  </dt>
+                  <dd className="mt-0.5 font-sans font-bold text-slate-900 tabular-nums">
+                    {isAccrediti
+                      ? accreditoData.meccanografico
+                      : giustificaData.meccanografico}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-heading font-semibold text-slate-500 uppercase">
+                    {isAccrediti ? "Gara Richiesta" : "Riunione Tecnica"}
+                  </dt>
+                  <dd className="mt-0.5 font-sans font-bold text-slate-900">
+                    {isAccrediti
+                      ? accreditoData.partita
+                      : giustificaData.evento}
                   </dd>
                 </div>
               </dl>
@@ -546,6 +568,21 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
               noValidate
               className="space-y-4"
             >
+              <div style={{ display: "none" }} aria-hidden="true">
+                <label htmlFor="accredito-website">Website</label>
+                <input
+                  id="accredito-website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={accreditoData.website ?? ""}
+                  onChange={(e) =>
+                    updateAccreditoField("website", e.target.value)
+                  }
+                />
+              </div>
+
               {submitStatus === "error" && serverMessage && (
                 <div
                   role="alert"
@@ -1039,6 +1076,21 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
               noValidate
               className="space-y-4"
             >
+              <div style={{ display: "none" }} aria-hidden="true">
+                <label htmlFor="giustifica-website">Website</label>
+                <input
+                  id="giustifica-website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={giustificaData.website ?? ""}
+                  onChange={(e) =>
+                    updateGiustificaField("website", e.target.value)
+                  }
+                />
+              </div>
+
               {submitStatus === "error" && serverMessage && (
                 <div
                   role="alert"
@@ -1422,11 +1474,11 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
                   id="giustifica-motivo-hint"
                   className="mt-1.5 font-sans text-xs leading-relaxed text-slate-600"
                 >
-                  Non inserire diagnosi o dati sanitari dettagliati. Per
-                  assenze dovute a salute o infortunio è sufficiente indicare
+                  Non inserire diagnosi o dati sanitari dettagliati. Per assenze
+                  dovute a salute o infortunio è sufficiente indicare
                   &ldquo;motivi personali&rdquo; (consegnando eventuale
-                  documentazione in sede), oppure prestare il consenso
-                  specifico qui sotto.
+                  documentazione in sede), oppure prestare il consenso specifico
+                  qui sotto.
                 </p>
                 {giustificaErrors.motivo && (
                   <p

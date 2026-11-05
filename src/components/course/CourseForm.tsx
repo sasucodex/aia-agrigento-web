@@ -31,6 +31,7 @@ const initialFormState: CourseRegistrationPayload = {
   email: "",
   privacy: false,
   consensoGenitori: false,
+  website: "",
 };
 
 export default function CourseForm({
@@ -206,18 +207,34 @@ export default function CourseForm({
                   <dl className="mt-5 grid grid-cols-1 gap-3 rounded-sm border border-slate-200 bg-slate-50 p-4 text-xs sm:grid-cols-2">
                     <div>
                       <dt className="font-heading font-semibold text-slate-500 uppercase">
-                        Candidato
+                        Cognome
                       </dt>
                       <dd className="mt-0.5 font-sans font-bold text-slate-900">
-                        {formData.nome} {formData.cognome}
+                        {formData.cognome}
                       </dd>
                     </div>
                     <div>
                       <dt className="font-heading font-semibold text-slate-500 uppercase">
-                        Comune e Data di Nascita
+                        Nome
+                      </dt>
+                      <dd className="mt-0.5 font-sans font-bold text-slate-900">
+                        {formData.nome}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="font-heading font-semibold text-slate-500 uppercase">
+                        Comune di Residenza
+                      </dt>
+                      <dd className="mt-0.5 font-sans font-bold text-slate-900">
+                        {formData.citta}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="font-heading font-semibold text-slate-500 uppercase">
+                        Data di Nascita
                       </dt>
                       <dd className="mt-0.5 font-sans font-bold text-slate-900 tabular-nums">
-                        {formData.citta} ({formData.dataNascita})
+                        {formData.dataNascita}
                       </dd>
                     </div>
                     <div>
@@ -268,6 +285,19 @@ export default function CourseForm({
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                  <div style={{ display: "none" }} aria-hidden="true">
+                    <label htmlFor="course-website">Website</label>
+                    <input
+                      id="course-website"
+                      name="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.website ?? ""}
+                      onChange={(e) => updateField("website", e.target.value)}
+                    />
+                  </div>
+
                   {submitStatus === "error" && serverMessage && (
                     <div
                       role="alert"
@@ -278,43 +308,6 @@ export default function CourseForm({
                   )}
 
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="course-nome"
-                        className="font-heading block text-xs font-semibold tracking-wider text-slate-800 uppercase"
-                      >
-                        Nome *
-                      </label>
-                      <input
-                        id="course-nome"
-                        name="nome"
-                        type="text"
-                        required
-                        autoComplete="given-name"
-                        placeholder="Es. Mario"
-                        value={formData.nome}
-                        onChange={(e) => updateField("nome", e.target.value)}
-                        aria-invalid={Boolean(errors.nome)}
-                        aria-describedby={
-                          errors.nome ? "course-nome-error" : undefined
-                        }
-                        className={cn(
-                          "mt-1.5 block min-h-[44px] w-full rounded-sm border bg-white px-3.5 py-2 font-sans text-sm text-slate-900 transition-colors focus:border-[#004b97] focus:outline-none",
-                          errors.nome
-                            ? "border-red-500 bg-red-50/30"
-                            : "border-slate-300",
-                        )}
-                      />
-                      {errors.nome && (
-                        <p
-                          id="course-nome-error"
-                          className="mt-1 font-sans text-xs text-red-700"
-                        >
-                          {errors.nome}
-                        </p>
-                      )}
-                    </div>
-
                     <div>
                       <label
                         htmlFor="course-cognome"
@@ -348,6 +341,43 @@ export default function CourseForm({
                           className="mt-1 font-sans text-xs text-red-700"
                         >
                           {errors.cognome}
+                        </p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="course-nome"
+                        className="font-heading block text-xs font-semibold tracking-wider text-slate-800 uppercase"
+                      >
+                        Nome *
+                      </label>
+                      <input
+                        id="course-nome"
+                        name="nome"
+                        type="text"
+                        required
+                        autoComplete="given-name"
+                        placeholder="Es. Mario"
+                        value={formData.nome}
+                        onChange={(e) => updateField("nome", e.target.value)}
+                        aria-invalid={Boolean(errors.nome)}
+                        aria-describedby={
+                          errors.nome ? "course-nome-error" : undefined
+                        }
+                        className={cn(
+                          "mt-1.5 block min-h-[44px] w-full rounded-sm border bg-white px-3.5 py-2 font-sans text-sm text-slate-900 transition-colors focus:border-[#004b97] focus:outline-none",
+                          errors.nome
+                            ? "border-red-500 bg-red-50/30"
+                            : "border-slate-300",
+                        )}
+                      />
+                      {errors.nome && (
+                        <p
+                          id="course-nome-error"
+                          className="mt-1 font-sans text-xs text-red-700"
+                        >
+                          {errors.nome}
                         </p>
                       )}
                     </div>

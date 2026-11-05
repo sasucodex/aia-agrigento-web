@@ -40,8 +40,12 @@ const primaryHours = openingHours[0];
 
     <address class="not-italic font-sans text-xs sm:text-sm text-blue-100/90 leading-relaxed max-w-2xl mx-auto mt-2.5 space-y-1.5">
       <p class="tabular-nums">
-        <span>{address.street} - {address.postalCode} {address.city}</span>
-        <span class="mx-1.5 text-blue-300/60" aria-hidden="true">—</span>
+        <span>
+          {address.street} - {address.postalCode} {address.city}
+        </span>
+        <span class="mx-1.5 text-blue-300/60" aria-hidden="true">
+          —
+        </span>
         <span>
           Tel. e Fax{" "}
           <a
@@ -51,7 +55,9 @@ const primaryHours = openingHours[0];
             {phones.landlineDisplay}
           </a>
         </span>
-        <span class="mx-1.5 text-blue-300/60" aria-hidden="true">—</span>
+        <span class="mx-1.5 text-blue-300/60" aria-hidden="true">
+          —
+        </span>
         <span>C.F./P.IVA {taxId}</span>
       </p>
 
@@ -65,7 +71,9 @@ const primaryHours = openingHours[0];
             {phones.mobileDisplay}
           </a>
         </span>
-        <span class="mx-1.5 text-blue-300/60" aria-hidden="true">·</span>
+        <span class="mx-1.5 text-blue-300/60" aria-hidden="true">
+          ·
+        </span>
         <span>
           Email:{" "}
           <a
@@ -77,7 +85,9 @@ const primaryHours = openingHours[0];
         </span>
         {primaryHours && (
           <>
-            <span class="mx-1.5 text-blue-300/60" aria-hidden="true">·</span>
+            <span class="mx-1.5 text-blue-300/60" aria-hidden="true">
+              ·
+            </span>
             <span>
               Segreteria: {primaryHours.day} ore {primaryHours.hours}
             </span>
@@ -95,7 +105,9 @@ const primaryHours = openingHours[0];
           class="inline-flex items-center gap-1 text-blue-100/90 hover:text-referee-gold transition-colors duration-200 py-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-referee-gold"
         >
           <span class="text-blue-200/90 font-medium">{channel.label}:</span>
-          <span class="text-white hover:underline underline-offset-4">{channel.handle}</span>
+          <span class="text-white hover:underline underline-offset-4">
+            {channel.handle}
+          </span>
         </a>
       ))}
     </div>
@@ -105,7 +117,9 @@ const primaryHours = openingHours[0];
         {LEGAL_NAV_ITEMS.map((item, index) => (
           <>
             {index > 0 && (
-              <span class="text-blue-400/60" aria-hidden="true">·</span>
+              <span class="text-blue-400/60" aria-hidden="true">
+                ·
+              </span>
             )}
             <a
               href={item.href}

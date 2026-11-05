@@ -36,15 +36,10 @@ export interface RTOSeasonMetadata {
 }
 
 export type DocumentType =
-  | "sezionale"
-  | "nazionale-external"
-  | "regolamenti-external"
-  | "atletico";
+  "sezionale" | "nazionale-external" | "regolamenti-external" | "atletico";
 
 export type DocumentCluster =
-  | "gare-congedi"
-  | "tesseramento-amministrazione"
-  | "tecnica-campo";
+  "gare-congedi" | "tesseramento-amministrazione" | "tecnica-campo";
 
 export interface ServiceDocument {
   id: string;
@@ -87,6 +82,7 @@ export interface GiustificaFormPayload {
   motivo: string;
   privacy: boolean;
   consensoSalute?: boolean;
+  website?: string;
 }
 
 export interface AccreditoFormPayload {
@@ -101,4 +97,5 @@ export interface AccreditoFormPayload {
   note: string;
   dichiarazioneTessera: boolean;
   privacy: boolean;
+  website?: string;
 }

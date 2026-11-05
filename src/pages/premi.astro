@@ -15,10 +15,7 @@ const premiJsonLd = {
   "@id": "https://aiaagrigento.it/#organization",
   name: "Associazione Italiana Arbitri - Sezione di Agrigento",
   url: "https://aiaagrigento.it/premi",
-  award: [
-    livatino.title,
-    ...traditional.map((award) => award.name),
-  ],
+  award: [livatino.title, ...traditional.map((award) => award.name)],
   alumni: livatino.winners.map((winner) => ({
     "@type": "Person",
     name: winner.name,

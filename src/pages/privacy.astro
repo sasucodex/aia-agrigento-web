@@ -81,9 +81,7 @@ const privacyJsonLd = [
   <article class="bg-white py-12 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <header class="mb-12 sm:mb-14 text-center max-w-4xl mx-auto">
-        <h1
-          class="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-[1.1] uppercase text-balance mb-4"
-        >
+        <h1 class="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-[1.1] uppercase text-balance mb-4">
           {hero.title}
         </h1>
 
@@ -169,7 +167,9 @@ const privacyJsonLd = [
                         {field.value}
                       </a>
                     ) : (
-                      <span class="font-medium text-slate-900">{field.value}</span>
+                      <span class="font-medium text-slate-900">
+                        {field.value}
+                      </span>
                     )}
                     {field.note && (
                       <span class="block text-xs text-slate-500 mt-0.5">
@@ -587,7 +587,8 @@ const privacyJsonLd = [
                 con oggetto{" "}
                 <em class="font-medium text-slate-900">
                   &ldquo;{section9Rights.exerciseSubjectTemplate}&rdquo;
-                </em>.
+                </em>
+                .
               </p>
               <p class="mt-2">{section9Rights.exerciseDeadlineNote}</p>
             </div>
@@ -635,9 +636,7 @@ const privacyJsonLd = [
               <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900 mb-2">
                 {section10Cookies.cookieTypes.title}
               </h3>
-              <p class="mb-4">
-                {section10Cookies.cookieTypes.intro}
-              </p>
+              <p class="mb-4">{section10Cookies.cookieTypes.intro}</p>
 
               <div class="overflow-x-auto border border-slate-200 rounded-sm">
                 <table class="w-full text-left font-sans text-xs sm:text-sm divide-y divide-slate-200">
@@ -689,9 +688,7 @@ const privacyJsonLd = [
                 <h3 class="font-heading text-base sm:text-lg font-bold text-slate-900">
                   {section10Cookies.openSource.title}
                 </h3>
-                <p>
-                  {section10Cookies.openSource.description}
-                </p>
+                <p>{section10Cookies.openSource.description}</p>
                 <div class="pt-1">
                   <a
                     href={section10Cookies.openSource.repoUrl}

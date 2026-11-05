@@ -46,7 +46,9 @@ const { accrediti = getAccreditiSpecification() } = Astro.props;
           <p>{accrediti.mandatoryFieldsIntro}</p>
 
           <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 pl-4 list-disc font-semibold text-slate-900 text-sm">
-            {accrediti.mandatoryFields.map((field) => <li>{field}</li>)}
+            {accrediti.mandatoryFields.map((field) => (
+              <li>{field}</li>
+            ))}
           </ul>
 
           <p class="font-semibold text-slate-900 text-sm">
@@ -62,7 +64,9 @@ const { accrediti = getAccreditiSpecification() } = Astro.props;
               {accrediti.stadiumPickupIntro}
             </p>
             <ul class="space-y-1.5 font-medium text-slate-800 leading-relaxed">
-              {accrediti.stadiumDocuments.map((doc) => <li>{doc}</li>)}
+              {accrediti.stadiumDocuments.map((doc) => (
+                <li>{doc}</li>
+              ))}
             </ul>
           </div>
 

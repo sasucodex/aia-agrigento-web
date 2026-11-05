@@ -1,11 +1,7 @@
 export type LivelloOrganico = "nazionale" | "regionale" | "ots";
 
 export type SettoreTecnico =
-  | "c11"
-  | "c5"
-  | "assistente"
-  | "osservatore"
-  | "dirigente";
+  "c11" | "c5" | "assistente" | "osservatore" | "dirigente";
 
 export type QualificaArbitro = "AB" | "AE" | "AE5" | "AA" | "OA" | "AFR";
 

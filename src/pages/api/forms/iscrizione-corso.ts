@@ -1,5 +1,14 @@
 import type { APIRoute } from "astro";
 import { SECTION_CONTACTS } from "@/constants/contacts";
+import {
+  buildCourseSectionNotificationEmail,
+  buildCourseUserConfirmationEmail,
+} from "@/lib/emails/courseRegistration";
+import {
+  isHoneypotTriggered,
+  sendFormDualEmails,
+  SMTP_ERROR_USER_MESSAGE,
+} from "@/lib/emails/mailer";
 import { CourseRegistrationSchema } from "@/lib/utils/course";
 
 export const prerender = false;
@@ -16,6 +25,20 @@ export const POST: APIRoute = async ({ request }) => {
         }),
         {
           status: 400,
+          headers: { "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    if (isHoneypotTriggered(rawBody as Record<string, unknown>)) {
+      return new Response(
+        JSON.stringify({
+          ok: true,
+          message:
+            "Iscrizione inviata con successo! Un responsabile del Corso Arbitri della Sezione di Agrigento ti contatterà al numero indicato per confermare la tua iscrizione e indicarti la data del primo incontro in sede.",
+        }),
+        {
+          status: 200,
           headers: { "Content-Type": "application/json" },
         },
       );
@@ -46,6 +69,15 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    const data = parsed.data;
+    const userConfirmation = buildCourseUserConfirmationEmail(data);
+    const sectionNotification = buildCourseSectionNotificationEmail(data);
+
+    await sendFormDualEmails({
+      userConfirmation,
+      sectionNotification,
+    });
+
     const recipientEmail = SECTION_CONTACTS.emails.corsoArbitri;
     const submittedAt = new Date().toISOString();
 
@@ -62,12 +94,15 @@ export const POST: APIRoute = async ({ request }) => {
         headers: { "Content-Type": "application/json" },
       },
     );
-  } catch {
+  } catch (error) {
+    console.error(
+      "[API /api/forms/iscrizione-corso] Errore invio SMTP:",
+      error,
+    );
     return new Response(
       JSON.stringify({
         ok: false,
-        error:
-          "Si è verificato un problema durante l'invio dell'iscrizione. Riprova tra qualche istante o contattaci su WhatsApp.",
+        error: SMTP_ERROR_USER_MESSAGE,
       }),
       {
         status: 500,

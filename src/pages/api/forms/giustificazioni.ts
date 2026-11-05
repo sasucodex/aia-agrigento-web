@@ -1,5 +1,14 @@
 import type { APIRoute } from "astro";
 import { SECTION_CONTACTS } from "@/constants/contacts";
+import {
+  isHoneypotTriggered,
+  sendFormDualEmails,
+  SMTP_ERROR_USER_MESSAGE,
+} from "@/lib/emails/mailer";
+import {
+  buildRTOSectionNotificationEmail,
+  buildRTOUserConfirmationEmail,
+} from "@/lib/emails/rtoJustification";
 import { giustificaFormSchema } from "@/lib/utils/services";
 
 export const prerender = false;
@@ -16,6 +25,20 @@ export const POST: APIRoute = async ({ request }) => {
         }),
         {
           status: 400,
+          headers: { "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    if (isHoneypotTriggered(rawBody as Record<string, unknown>)) {
+      return new Response(
+        JSON.stringify({
+          ok: true,
+          message:
+            "Giustificazione registrata con successo e presa in carico dalla Segreteria Sezionale.",
+        }),
+        {
+          status: 200,
           headers: { "Content-Type": "application/json" },
         },
       );
@@ -46,6 +69,15 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    const data = parsed.data;
+    const userConfirmation = buildRTOUserConfirmationEmail(data);
+    const sectionNotification = buildRTOSectionNotificationEmail(data);
+
+    await sendFormDualEmails({
+      userConfirmation,
+      sectionNotification,
+    });
+
     const recipientEmail = SECTION_CONTACTS.emails.giustificazioniRto;
     const submittedAt = new Date().toISOString();
 
@@ -62,12 +94,12 @@ export const POST: APIRoute = async ({ request }) => {
         headers: { "Content-Type": "application/json" },
       },
     );
-  } catch {
+  } catch (error) {
+    console.error("[API /api/forms/giustificazioni] Errore invio SMTP:", error);
     return new Response(
       JSON.stringify({
         ok: false,
-        error:
-          "Si è verificato un problema durante la registrazione della giustificazione. Riprova tra qualche istante.",
+        error: SMTP_ERROR_USER_MESSAGE,
       }),
       {
         status: 500,

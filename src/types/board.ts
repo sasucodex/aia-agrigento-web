@@ -1,8 +1,5 @@
 export type BoardCategory =
-  | "president"
-  | "executive"
-  | "referent"
-  | "collaborator";
+  "president" | "executive" | "referent" | "collaborator";
 
 export interface BoardMember {
   id: string;
