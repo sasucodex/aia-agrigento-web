@@ -20,6 +20,7 @@ export interface CourseFormProps {
   sedeImageSrc?: string;
   sedeImageWidth?: number;
   sedeImageHeight?: number;
+  hideSectionHeader?: boolean;
 }
 
 const initialFormState: CourseRegistrationPayload = {
@@ -40,6 +41,7 @@ export default function CourseForm({
   sedeImageSrc,
   sedeImageWidth = 1000,
   sedeImageHeight = 700,
+  hideSectionHeader = false,
 }: CourseFormProps) {
   const [formData, setFormData] =
     useState<CourseRegistrationPayload>(initialFormState);
@@ -148,36 +150,46 @@ export default function CourseForm({
   return (
     <section
       id="modulo-iscrizione"
-      aria-labelledby="course-registration-heading"
-      className="scroll-mt-20 border-b border-slate-200/80 bg-slate-50 py-16 sm:py-24"
+      aria-labelledby={
+        hideSectionHeader ? undefined : "course-registration-heading"
+      }
+      aria-label={hideSectionHeader ? sectionData.title : undefined}
+      className={cn(
+        "scroll-mt-20 border-b border-slate-200/80 bg-slate-50",
+        hideSectionHeader ? "py-10 sm:py-16" : "py-16 sm:py-24",
+      )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {sectionData.kicker && (
-          <span className="font-heading text-referee-gold mb-2 block text-center text-xs font-semibold tracking-widest uppercase sm:mb-3">
-            {sectionData.kicker}
-          </span>
+        {!hideSectionHeader && (
+          <>
+            {sectionData.kicker && (
+              <span className="font-heading text-referee-gold mb-2 block text-center text-xs font-semibold tracking-widest uppercase sm:mb-3">
+                {sectionData.kicker}
+              </span>
+            )}
+
+            <div className="mb-3 flex items-center gap-2 sm:mb-4 sm:gap-4">
+              <div
+                className="h-[2px] min-w-5 flex-1 shrink-0 bg-[#004b97] sm:min-w-8"
+                aria-hidden="true"
+              />
+              <h2
+                id="course-registration-heading"
+                className="font-heading text-center text-xl font-extrabold tracking-tight text-balance text-slate-900 uppercase sm:text-2xl lg:text-3xl"
+              >
+                {sectionData.title}
+              </h2>
+              <div
+                className="h-[2px] min-w-5 flex-1 shrink-0 bg-[#004b97] sm:min-w-8"
+                aria-hidden="true"
+              />
+            </div>
+
+            <p className="mx-auto mb-10 max-w-3xl text-center font-sans text-base leading-relaxed text-pretty text-slate-700 sm:mb-12">
+              {sectionData.lead}
+            </p>
+          </>
         )}
-
-        <div className="mb-3 flex items-center gap-2 sm:mb-4 sm:gap-4">
-          <div
-            className="h-[2px] min-w-5 flex-1 shrink-0 bg-[#004b97] sm:min-w-8"
-            aria-hidden="true"
-          />
-          <h2
-            id="course-registration-heading"
-            className="font-heading text-center text-xl font-extrabold tracking-tight text-balance text-slate-900 uppercase sm:text-2xl lg:text-3xl"
-          >
-            {sectionData.title}
-          </h2>
-          <div
-            className="h-[2px] min-w-5 flex-1 shrink-0 bg-[#004b97] sm:min-w-8"
-            aria-hidden="true"
-          />
-        </div>
-
-        <p className="mx-auto mb-10 max-w-3xl text-center font-sans text-base leading-relaxed text-pretty text-slate-700 sm:mb-12">
-          {sectionData.lead}
-        </p>
 
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">

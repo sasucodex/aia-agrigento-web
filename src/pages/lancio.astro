@@ -1,0 +1,177 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import CountdownTimer from "@/components/lancio/CountdownTimer";
+import FormsModal from "@/components/servizi/FormsModal";
+import { getLaunchData } from "@/lib/utils/launch";
+import { formatRTOOptionLabel, getNextRTOEvent } from "@/lib/utils/services";
+import { SECTION_CONTACTS } from "@/constants/contacts";
+
+const launchData = getLaunchData();
+const nextRTO = getNextRTOEvent();
+const { address, taxId } = SECTION_CONTACTS;
+---
+
+<Layout
+  title={launchData.seo.title}
+  description={launchData.seo.description}
+  robots={launchData.seo.robots}
+  canonical={launchData.seo.canonical}
+>
+  <header
+    slot="header"
+    class="w-full bg-[#004b97] border-b border-blue-900/40 shadow-xs"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between gap-4">
+      <a
+        href="/lancio"
+        aria-label={launchData.header.logoAlt}
+        class="inline-flex items-center shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-referee-gold"
+      >
+        <img
+          src="/favicon.svg"
+          alt={launchData.header.logoAlt}
+          width="80"
+          height="80"
+          loading="eager"
+          decoding="async"
+          class="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+        />
+      </a>
+    </div>
+  </header>
+
+  <section
+    aria-labelledby="lancio-hero-heading"
+    class="bg-white py-16 sm:py-24"
+  >
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1
+        id="lancio-hero-heading"
+        class="font-heading text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 uppercase leading-[1.15] text-balance"
+      >
+        {launchData.hero.title.split("\n").map((line) => (
+          <span class="block">{line}</span>
+        ))}
+      </h1>
+
+      <p class="font-sans text-base sm:text-lg text-slate-700 leading-relaxed text-pretty max-w-2xl mx-auto mt-6">
+        {launchData.hero.lead}
+      </p>
+
+      <CountdownTimer
+        client:load
+        targetDate={launchData.meetingDate}
+        countdown={launchData.countdown}
+        meetingTitle={launchData.meetingTitle}
+        meetingLocation={launchData.meetingLocation}
+      />
+    </div>
+  </section>
+
+  <section
+    aria-labelledby="lancio-servizi-heading"
+    class="bg-slate-50 border-t border-slate-200/80 py-16 sm:py-20"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-2 sm:gap-4 mb-3">
+        <div
+          class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+          aria-hidden="true"
+        ></div>
+        <h2
+          id="lancio-servizi-heading"
+          class="font-heading text-xl sm:text-3xl font-bold tracking-tight text-slate-900 uppercase text-center text-balance"
+        >
+          {launchData.services.title}
+        </h2>
+        <div
+          class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      <p class="font-sans text-sm sm:text-base text-slate-600 text-center max-w-xl mx-auto mb-10">
+        {launchData.services.subtitle}
+      </p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        {launchData.services.items.map((item) => {
+          const buttonClasses =
+            item.style === "gold"
+              ? "bg-referee-gold hover:brightness-95 text-slate-950 font-heading font-bold text-sm uppercase tracking-wider py-3 px-6 rounded-xs shadow-xs"
+              : item.style === "blue"
+                ? "bg-[#004b97] hover:bg-blue-900 text-white font-heading font-semibold text-sm uppercase tracking-wider py-3 px-6 rounded-xs shadow-xs"
+                : "border border-slate-300 hover:border-slate-400 hover:bg-slate-50 bg-white text-slate-800 font-heading font-semibold text-sm uppercase tracking-wider py-3 px-6 rounded-xs shadow-xs";
+
+          return (
+            <article class="bg-white border border-slate-200 rounded-sm shadow-xs p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:border-amber-500/50 hover:shadow-sm text-left">
+              <div>
+                <h3 class="font-heading text-lg sm:text-xl font-bold tracking-tight text-slate-900 leading-snug">
+                  {item.title}
+                </h3>
+
+                <p class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty mt-3">
+                  {item.description}
+                </p>
+              </div>
+
+              <div class="mt-6 pt-5 border-t border-slate-100">
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    class:list={[
+                      "w-full min-h-[48px] inline-flex items-center justify-center text-center transition-all duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]",
+                      buttonClasses,
+                    ]}
+                  >
+                    {item.buttonText}
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    data-open-modal={item.modalTarget}
+                    class:list={[
+                      "w-full min-h-[48px] inline-flex items-center justify-center text-center cursor-pointer transition-all duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004b97]",
+                      buttonClasses,
+                    ]}
+                  >
+                    {item.buttonText}
+                  </button>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <FormsModal client:idle defaultEventLabel={formatRTOOptionLabel(nextRTO)} />
+
+  <footer
+    slot="footer"
+    class="bg-[#004b97] text-white border-t border-blue-900/40 py-10"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="font-heading font-bold text-base sm:text-lg text-white tracking-tight">
+        {launchData.footer.organizationFullTitle}
+      </p>
+
+      <address class="not-italic font-sans text-xs sm:text-sm text-blue-100/90 leading-relaxed max-w-2xl mx-auto mt-2 space-y-1">
+        <p class="tabular-nums">
+          <span>
+            {address.street} — {address.postalCode} {address.city} ({address.province})
+          </span>
+          <span class="mx-1.5 text-blue-300/60" aria-hidden="true">
+            ·
+          </span>
+          <span>C.F. / P.IVA {taxId}</span>
+        </p>
+      </address>
+
+      <p class="font-sans text-xs text-blue-200/80 mt-5 pt-4 border-t border-blue-800/60 max-w-xl mx-auto">
+        {launchData.footer.confidentialityNote}
+      </p>
+    </div>
+  </footer>
+</Layout>

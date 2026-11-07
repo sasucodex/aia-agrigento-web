@@ -1,0 +1,85 @@
+{
+  "meetingDate": "2026-11-20T19:00:00+01:00",
+  "meetingTitle": "Riunione Plenaria Ufficiale",
+  "meetingLocation": "Sezione AIA di Agrigento, Via Matteo Cimarra 38",
+  "seo": {
+    "title": "Nuovo Portale in Arrivo | AIA Sezione di Agrigento FIGC",
+    "description": "La nuova piattaforma digitale dell'Associazione Italiana Arbitri - Sezione di Agrigento sarà presentata a breve. I moduli di iscrizione al corso arbitri, giustificazioni RTO e accrediti sono pienamente operativi.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://aiaagrigento.it/lancio"
+  },
+  "header": {
+    "overline": "FEDERAZIONE ITALIANA GIUOCO CALCIO",
+    "subtitle": "SEZIONE DI AGRIGENTO • DAL 1950",
+    "logoAlt": "Associazione Italiana Arbitri - Sezione di Agrigento"
+  },
+  "hero": {
+    "kicker": "",
+    "title": "Non è solo un sito.\nÈ l'inizio di qualcosa di nuovo.",
+    "lead": "In occasione della prossima Riunione Sezionale Plenaria presenteremo ufficialmente la nuova piattaforma online della Sezione AIA di Agrigento. Nel frattempo, per garantire la piena continuità operativa, i canali per l'iscrizione al nuovo Corso Arbitri, le giustificazioni delle assenze e le richieste di accredito federale sono attivi e funzionanti."
+  },
+  "countdown": {
+    "labels": {
+      "days": "Giorni",
+      "hours": "Ore",
+      "minutes": "Minuti",
+      "seconds": "Secondi"
+    },
+    "completedMessage": "Lancio in corso durante la Riunione Sezionale"
+  },
+  "services": {
+    "kicker": "",
+    "title": "Servizi Operativi di Sezione",
+    "subtitle": "Seleziona il servizio necessario per trasmettere la tua pratica alla segreteria.",
+    "items": [
+      {
+        "id": "corso",
+        "title": "Diventa Arbitro",
+        "badge": "",
+        "audience": "",
+        "description": "Iscriviti al Corso per Arbitri della Sezione di Agrigento dell'AIA.",
+        "buttonText": "Compila Iscrizione Online",
+        "href": "/corso-arbitri",
+        "style": "gold"
+      },
+      {
+        "id": "giustificazioni",
+        "title": "Giustificazioni Assenze RTO",
+        "badge": "",
+        "audience": "",
+        "description": "Comunica e motiva l'assenza alla Riunione Tecnica Obbligatoria del calendario stagionale.",
+        "buttonText": "Invia Giustificazione RTO",
+        "modalTarget": "giustificazioni",
+        "style": "blue"
+      },
+      {
+        "id": "accrediti",
+        "title": "Richiesta Accrediti Gare",
+        "badge": "",
+        "audience": "",
+        "description": "Richiedi l'accredito per assistere alle gare dei campionati professionistici.",
+        "buttonText": "Richiedi Accredito Gara",
+        "modalTarget": "accrediti",
+        "style": "outline"
+      }
+    ]
+  },
+  "footer": {
+    "organizationFullTitle": "Associazione Italiana Arbitri — Sezione di Agrigento",
+    "confidentialityNote": "Portale in configurazione di pre-lancio riservato. Tutti i diritti riservati © FIGC - AIA Sezione di Agrigento."
+  },
+  "coursePage": {
+    "seo": {
+      "title": "Iscrizione Corso Nazionale Arbitri di Calcio | AIA Sezione di Agrigento FIGC",
+      "description": "Compila il modulo ufficiale per partecipare al Corso Arbitri gratuito della Sezione AIA di Agrigento: tessera FIGC per entrare gratis negli stadi, divisa Givova ufficiale, rimborsi a gara e crediti formativi.",
+      "robots": "index, follow",
+      "canonical": "https://aiaagrigento.it/corso-arbitri"
+    },
+    "backLinkLabel": "← Torna alla comunicazione di lancio",
+    "backLinkHref": "/lancio",
+    "kicker": "",
+    "title": "Modulo di Iscrizione Corso Arbitri",
+    "lead": "Compila il modulo sottostante per inviare la tua candidatura gratuita al prossimo Corso per Arbitri della Sezione di Agrigento dell'AIA. Un responsabile del corso ti ricontatterà per confermare l'iscrizione e fornirti il calendario degli incontri.",
+    "badges": []
+  }
+}

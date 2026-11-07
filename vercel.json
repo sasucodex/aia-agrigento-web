@@ -1,0 +1,41 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/diventa-arbitro",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "anteprima_segreta",
+          "value": "attiva"
+        }
+      ],
+      "destination": "/corso-arbitri",
+      "permanent": false
+    },
+    {
+      "source": "/:path((?!$|lancio|corso-arbitri|utilita/corso-arbitri|api|_astro|assets|documents|favicon|robots\\.txt|sitemap).*)",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "anteprima_segreta",
+          "value": "attiva"
+        }
+      ],
+      "destination": "/lancio",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "anteprima_segreta",
+          "value": "attiva"
+        }
+      ],
+      "destination": "/lancio",
+      "permanent": false
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+---
+import { getImage } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import CourseForm from "@/components/course/CourseForm";
+import { getLaunchCoursePageData, getLaunchData } from "@/lib/utils/launch";
+import {
+  getCourseData,
+  getCourseRegistrationSection,
+} from "@/lib/utils/course";
+import { SECTION_CONTACTS } from "@/constants/contacts";
+import diventaArbitroCover from "@/assets/images/diventa-arbitro-cover.jpg";
+import sedeAulaImage from "@/assets/images/course/sede-aula-agrigento.jpg";
+
+const launchData = getLaunchData();
+const coursePage = getLaunchCoursePageData();
+const courseData = getCourseData();
+const registrationSection = getCourseRegistrationSection();
+const { address, taxId } = SECTION_CONTACTS;
+
+const optimizedSedeImage = await getImage({
+  src: sedeAulaImage,
+  width: 1000,
+  height: 700,
+  format: "webp",
+  quality: 85,
+});
+
+const corsoArbitriJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["Course", "EducationalOccupationalProgram"],
+  "@id": "https://aiaagrigento.it/corso-arbitri#course",
+  name: "Corso Nazionale Gratuito per Arbitri di Calcio FIGC - Sezione AIA di Agrigento",
+  description: coursePage.seo.description,
+  url: "https://aiaagrigento.it/corso-arbitri",
+  inLanguage: "it-IT",
+  isAccessibleForFree: true,
+  educationalCredentialAwarded: "Qualifica di Arbitro Effettivo FIGC",
+  timeToComplete: "P2M",
+  provider: {
+    "@type": "SportsOrganization",
+    "@id": "https://aiaagrigento.it/#organization",
+    name: "Associazione Italiana Arbitri - Sezione di Agrigento",
+    url: "https://aiaagrigento.it",
+    email: courseData.contactEmail,
+    telephone: courseData.contactPhone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: address.street,
+      addressLocality: address.city,
+      addressRegion: address.province,
+      postalCode: address.postalCode,
+      addressCountry: "IT",
+    },
+  },
+};
+---
+
+<Layout
+  title={coursePage.seo.title}
+  description={coursePage.seo.description}
+  robots={coursePage.seo.robots}
+  canonical={coursePage.seo.canonical}
+  image={diventaArbitroCover.src}
+  imageAlt="Iscrizione Corso Arbitri Gratuito - Sezione AIA di Agrigento FIGC"
+  jsonLd={corsoArbitriJsonLd}
+>
+  <header
+    slot="header"
+    class="w-full bg-[#004b97] border-b border-blue-900/40 shadow-xs"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between gap-4">
+      <a
+        href="/lancio"
+        aria-label={launchData.header.logoAlt}
+        class="inline-flex items-center shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-referee-gold"
+      >
+        <img
+          src="/favicon.svg"
+          alt={launchData.header.logoAlt}
+          width="80"
+          height="80"
+          loading="eager"
+          decoding="async"
+          class="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+        />
+      </a>
+
+      <div class="text-right">
+        <a
+          href={coursePage.backLinkHref}
+          class="font-heading text-xs sm:text-sm font-semibold text-white hover:text-referee-gold hover:underline underline-offset-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-referee-gold"
+        >
+          {coursePage.backLinkLabel}
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section
+    aria-labelledby="corso-arbitri-heading"
+    class="bg-white border-b border-slate-200/80 py-12 sm:py-16"
+  >
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex items-center gap-2 sm:gap-4 mb-6">
+        <div
+          class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+          aria-hidden="true"
+        ></div>
+        <h1
+          id="corso-arbitri-heading"
+          class="font-heading text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 uppercase leading-[1.1] text-balance"
+        >
+          {coursePage.title}
+        </h1>
+        <div
+          class="h-[2px] bg-[#004b97] flex-1 min-w-5 sm:min-w-8 shrink-0"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      <p class="font-sans text-sm sm:text-base text-slate-700 leading-relaxed text-pretty max-w-2xl mx-auto">
+        {coursePage.lead}
+      </p>
+    </div>
+  </section>
+
+  <CourseForm
+    client:load
+    hideSectionHeader={true}
+    course={courseData}
+    sectionData={registrationSection}
+    sedeImageSrc={optimizedSedeImage.src}
+    sedeImageWidth={optimizedSedeImage.attributes.width as number}
+    sedeImageHeight={optimizedSedeImage.attributes.height as number}
+  />
+
+  <footer
+    slot="footer"
+    class="bg-[#004b97] text-white border-t border-blue-900/40 py-10"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="font-heading font-bold text-base sm:text-lg text-white tracking-tight">
+        {launchData.footer.organizationFullTitle}
+      </p>
+
+      <address class="not-italic font-sans text-xs sm:text-sm text-blue-100/90 leading-relaxed max-w-2xl mx-auto mt-2 space-y-1">
+        <p class="tabular-nums">
+          <span>
+            {address.street} — {address.postalCode} {address.city} ({address.province})
+          </span>
+          <span class="mx-1.5 text-blue-300/60" aria-hidden="true">
+            ·
+          </span>
+          <span>C.F. / P.IVA {taxId}</span>
+        </p>
+      </address>
+
+      <p class="font-sans text-xs text-blue-200/80 mt-5 pt-4 border-t border-blue-800/60 max-w-xl mx-auto">
+        {launchData.footer.confidentialityNote}
+      </p>
+    </div>
+  </footer>
+</Layout>
