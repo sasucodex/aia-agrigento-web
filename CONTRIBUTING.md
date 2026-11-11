@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://aiaagrigento.it">
-    <img src="./src/assets/logos/logo-aia-agrigento.svg" alt="AIA FIGC Sezione di Agrigento Logo" width="96" height="96" />
+    <img src="./src/assets/logos/logo-aia-agrigento.svg" alt="AIA FIGC Sezione di Agrigento Logo" width="128" height="128" />
   </a>
 
   # Contributing to AIA Agrigento Web
