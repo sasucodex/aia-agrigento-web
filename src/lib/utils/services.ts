@@ -229,8 +229,8 @@ export const giustificaFormSchema = z.object({
     .string()
     .trim()
     .regex(
-      /^\d{5,8}$/,
-      "Inserisci un Codice Meccanografico AIA valido (solo cifre, es. 7 numeri).",
+      /^\d{8}$/,
+      "Inserisci un Codice Meccanografico AIA valido (8 cifre, es. 12345678).",
     ),
   numeroTessera: z
     .string()
@@ -282,8 +282,8 @@ export const accreditoFormSchema = z.object({
     .string()
     .trim()
     .regex(
-      /^\d{5,8}$/,
-      "Inserisci un Codice Meccanografico AIA valido (solo cifre, es. 7 numeri).",
+      /^\d{8}$/,
+      "Inserisci un Codice Meccanografico AIA valido (8 cifre, es. 12345678).",
     ),
   numeroTessera: z
     .string()

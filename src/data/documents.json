@@ -80,13 +80,23 @@
     "updatedSeason": "Stagione 2025/2026"
   },
   {
-    "id": "posizionamenti-riprese-giuoco",
-    "title": "Posizionamenti Riprese Di Giuoco OTP",
-    "description": "Vademecum tecnico e grafico sul corretto piazzamento dinamico nelle riprese di gioco.",
+    "id": "posizionamenti-riprese-giuoco-c11",
+    "title": "Posizionamenti Riprese Di Giuoco C11",
+    "description": "Vademecum tecnico e grafico sul corretto piazzamento dinamico nelle riprese di gioco per il Calcio a 11.",
     "type": "sezionale",
     "cluster": "tecnica-campo",
-    "fileName": "guida-posizionamento-otp.pdf",
-    "previewUrl": "/documents/guida-posizionamento-otp.pdf",
+    "fileName": "guida-posizionamento-c11.pdf",
+    "previewUrl": "/documents/guida-posizionamento-c11.pdf",
+    "updatedSeason": "Stagione 2025/2026"
+  },
+  {
+    "id": "posizionamenti-riprese-giuoco-c5",
+    "title": "Posizionamenti Riprese Di Giuoco C5",
+    "description": "Vademecum tecnico e grafico sul corretto piazzamento dinamico nelle riprese di gioco per il Calcio a 5.",
+    "type": "sezionale",
+    "cluster": "tecnica-campo",
+    "fileName": "guida-posizionamento-c5.pdf",
+    "previewUrl": "/documents/guida-posizionamento-c5.pdf",
     "updatedSeason": "Stagione 2025/2026"
   },
   {

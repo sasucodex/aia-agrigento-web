@@ -727,7 +727,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
                     type="text"
                     inputMode="numeric"
                     required
-                    placeholder="7 cifre (es. 1234567)"
+                    placeholder="8 cifre (es. 12345678)"
                     value={accreditoData.meccanografico}
                     onChange={(e) =>
                       updateAccreditoField(
@@ -1239,7 +1239,7 @@ export default function FormsModal({ defaultEventLabel }: FormsModalProps) {
                     type="text"
                     inputMode="numeric"
                     required
-                    placeholder="7 cifre (es. 1234567)"
+                    placeholder="8 cifre (es. 12345678)"
                     value={giustificaData.meccanografico}
                     onChange={(e) =>
                       updateGiustificaField(
