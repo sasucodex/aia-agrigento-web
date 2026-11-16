@@ -37,7 +37,7 @@
     "role": "Cassiere",
     "category": "executive",
     "order": 5,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Zambuto Sitra-Salvatore.jpg"
   },
   {
     "id": "fuca-salvatore",
@@ -45,7 +45,7 @@
     "role": "Consigliere Uff. Presidenza",
     "category": "executive",
     "order": 6,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Fucà-Salvatore.jpg"
   },
   {
     "id": "costanza-pietro",
@@ -53,7 +53,7 @@
     "role": "Consigliere Collab. OT Osservatori",
     "category": "executive",
     "order": 7,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Costanza-Pietro.jpg"
   },
   {
     "id": "sicurella-giuseppe",
@@ -69,7 +69,7 @@
     "role": "O.T. C11",
     "category": "executive",
     "order": 9,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Cumbo-Piero.jpg"
   },
   {
     "id": "butera-ilaria",
@@ -77,7 +77,7 @@
     "role": "Comp. Referee Woman",
     "category": "executive",
     "order": 10,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Butera-Ilaria.jpg"
   },
   {
     "id": "di-gregorio-flaminia",
@@ -93,7 +93,7 @@
     "role": "Comp. Resp. Codice Etico",
     "category": "executive",
     "order": 12,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Marino-Rosario.jpg"
   },
   {
     "id": "di-pumpo-bernardino",
@@ -133,7 +133,7 @@
     "role": "Osservatorio violenza",
     "category": "referent",
     "order": 17,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Milioto-Agostino.jpg"
   },
   {
     "id": "catalano-gaetano",
@@ -141,7 +141,7 @@
     "role": "Rappr. Giudice sportivo",
     "category": "referent",
     "order": 18,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Catalano-Gaetano.jpg"
   },
   {
     "id": "principato-federico",
@@ -181,7 +181,7 @@
     "role": "Perfez. C5 Prep. Atletica",
     "category": "collaborator",
     "order": 23,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Giarratano-Gaspare.jpg"
   },
   {
     "id": "carita-francesco",
@@ -189,7 +189,7 @@
     "role": "Perfez. Atletico C11",
     "category": "collaborator",
     "order": 24,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Carità-Francesco.jpg"
   },
   {
     "id": "mandracchia-giuseppe",
@@ -205,7 +205,7 @@
     "role": "Perfezionamento Tecnico",
     "category": "collaborator",
     "order": 26,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Canicattì-Luigi.jpg"
   },
   {
     "id": "leone-domenico",
@@ -229,7 +229,7 @@
     "role": "Perfezionamento Tecnico",
     "category": "collaborator",
     "order": 29,
-    "image": "/images/cds/Linsinicchia-Gabriele.jpg"
+    "image": "/images/cds/Lisinicchia-Gabriele.jpg"
   },
   {
     "id": "gentile-federico",
@@ -245,7 +245,7 @@
     "role": "Collaboratore OA",
     "category": "collaborator",
     "order": 31,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Barbaro-Giuseppe.jpg"
   },
   {
     "id": "pasciuta-domenico",
@@ -277,7 +277,7 @@
     "role": "Collab. Referee Woman",
     "category": "collaborator",
     "order": 35,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Garufo-Simona.jpg"
   },
   {
     "id": "coraggioso-ivana-celine",
@@ -285,7 +285,7 @@
     "role": "Collab. Referee Woman",
     "category": "collaborator",
     "order": 36,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Coraggioso-Ivana Celine.jpg"
   },
   {
     "id": "contino-salvatore",
@@ -301,7 +301,7 @@
     "role": "Collab. Cassiere",
     "category": "collaborator",
     "order": 38,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Rotulo-Andrea.jpg"
   },
   {
     "id": "provenzano-luigi",
@@ -333,7 +333,7 @@
     "role": "Collab. Corso Arbitri",
     "category": "collaborator",
     "order": 42,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Bentivegna-Francesco.jpg"
   },
   {
     "id": "alaimo-calogero",
@@ -349,7 +349,7 @@
     "role": "Collab. Segreteria",
     "category": "collaborator",
     "order": 44,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Di Vita-Giuseppe.jpg"
   },
   {
     "id": "milioto-calogero",
@@ -365,7 +365,7 @@
     "role": "Collab. Segreteria",
     "category": "collaborator",
     "order": 46,
-    "image": "/images/avatar-placeholder.svg"
+    "image": "/images/cds/Frumusa-Carlotta.jpg"
   },
   {
     "id": "fabrizio-daniele-pietro",
