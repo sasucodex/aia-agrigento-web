@@ -24,9 +24,17 @@ export default defineConfig({
       status: 301,
       destination: "/area-associati",
     },
+    "/corso-arbitri": {
+      status: 301,
+      destination: "/diventa-arbitro",
+    },
     "/utilita/corso-arbitri": {
       status: 301,
-      destination: "/corso-arbitri",
+      destination: "/diventa-arbitro",
+    },
+    "/lancio": {
+      status: 301,
+      destination: "/",
     },
     "/news": {
       status: 301,
