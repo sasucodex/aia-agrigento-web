@@ -1,7 +1,7 @@
 {
   "membersCount": "150+",
   "historyYears": "75+",
-  "nationalReferees": "11",
+  "benemeritiReferees": "13",
   "nationalAwards": "1",
   "items": [
     {
@@ -17,10 +17,10 @@
       "sublabel": "Sezione fondata nel 1950"
     },
     {
-      "id": "national-referees",
-      "value": "11",
-      "label": "Arbitri nazionali",
-      "sublabel": "Impegnati in CAN, CAN 5 e CON"
+      "id": "benemeriti-referees",
+      "value": "13",
+      "label": "Arbitri Benemeriti",
+      "sublabel": "Memoria storica e guida della Sezione"
     },
     {
       "id": "national-awards",

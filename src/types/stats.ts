@@ -1,5 +1,5 @@
 export interface StatMetricItem {
-  id: "members" | "history" | "national-referees" | "national-awards";
+  id: "members" | "history" | "benemeriti-referees" | "national-awards";
   value: string;
   label: string;
   sublabel?: string;
@@ -8,7 +8,7 @@ export interface StatMetricItem {
 export interface StatsDataset {
   membersCount: string;
   historyYears: string;
-  nationalReferees: string;
+  benemeritiReferees: string;
   nationalAwards: string;
   items: StatMetricItem[];
 }
